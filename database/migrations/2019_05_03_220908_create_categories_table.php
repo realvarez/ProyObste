@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatogoriesTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCatogoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('catogories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('category_name');
             $table->smallInteger('category_level');
@@ -21,8 +21,6 @@ class CreateCatogoriesTable extends Migration
             $table->boolean('state');
             $table->dateTime('elimination_date')->nullable($value = true)->default(null);
             $table->timestamps();
-
-            
         });
     }
 
@@ -33,6 +31,7 @@ class CreateCatogoriesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('categories');
         Schema::dropIfExists('catogories');
     }
 }

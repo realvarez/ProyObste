@@ -16,7 +16,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'role_id',
+        'name', 
+        'email', 
+        'password',
+        'avatar_image_path',
+        'status',
+        'elimination_date',
     ];
 
     /**
@@ -36,4 +42,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function has_role(){
+        return $this -> belongsTo('App\Role');
+    }
+
+    public function files_uploaded(){
+        return $this -> hasMany('App\File');
+    }
+
+    public function category_order(){
+        return $this -> hasMany('App\Category');
+    }
 }

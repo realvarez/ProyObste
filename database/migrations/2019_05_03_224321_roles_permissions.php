@@ -15,13 +15,13 @@ class RolesPermissions extends Migration
     {
         Schema::create('roles_permissions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('role_id');
-            $table->integer('permission_id');
+            $table->bigInteger('role_id')->unsigned();
+            $table->bigInteger('permission_id')->unsigned();
             $table->boolean('value');
             $table->timestamps();
             
-            // $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
-            // $table->foreign('permission_id')->references('id')->on('permission')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->foreign('permission_id')->references('id')->on('permissions')->onDelete('cascade');
         });
     }
 
