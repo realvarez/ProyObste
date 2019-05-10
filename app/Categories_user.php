@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class catogory extends Model
+class Categories_user extends Model
 {
     //
 }

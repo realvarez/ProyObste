@@ -14,13 +14,13 @@ class CategoriesUsers extends Migration
     public function up()
     {
         Schema::create('categories_users', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('catogory_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned();
             $table->integer('order');
             $table->timestamps();
 
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            // $table->foreign('catogory_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 

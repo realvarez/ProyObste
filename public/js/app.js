@@ -49427,8 +49427,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Proyectos\Pingeso\ProyObste\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Proyectos\Pingeso\ProyObste\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> ca048bb56cfca54e7d3e832b7b64910c1569a3a9
 
 
 /***/ })

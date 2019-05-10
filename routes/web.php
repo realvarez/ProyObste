@@ -23,3 +23,6 @@ Route::get('/tables-basic', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('files','FileController');
+Route::resource('users','UserController');
