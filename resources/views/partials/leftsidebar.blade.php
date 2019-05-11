@@ -26,13 +26,13 @@
 					<li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-file-text-o"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
-                                <li><a href="forms-general.html">General Elements</a></li>
-								<li><a href="forms-select2.html">Select2</a></li>
-                                <li><a href="forms-validation.html">Form Validation</a></li>
-                                <li><a href="forms-text-editor.html">Text Editors</a></li>
-								<li><a href="forms-upload.html">Multiple File Upload</a></li>
-								<li><a href="forms-datetime-picker.html">Date and Time Picker</a></li>
-								<li><a href="forms-color-picker.html">Color Picker</a></li>
+                                <li><a href="forms-general">General Elements</a></li>
+								<li><a href="forms-select2">Select2</a></li>
+                                <li><a href="forms-validation">Form Validation</a></li>
+                                <li><a href="forms-text-editor">Text Editors</a></li>
+								<li><a href="forms-upload">Multiple File Upload</a></li>
+								<li><a href="forms-datetime-picker">Date and Time Picker</a></li>
+								<li><a href="forms-color-picker">Color Picker</a></li>
                             </ul>
                     </li>
 					

@@ -2,7 +2,7 @@
 
 		<!-- LOGO -->
         <div class="headerbar-left">
-			<a href="index.html" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Admin</span></a>
+			<a href="index.html" class="logo"><img alt="Logo" src="{{asset('images/logo.png')}}" /> <span>Admin</span></a>
         </div>
 
         <nav class="navbar-custom">
@@ -144,7 +144,7 @@
 
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                                <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
+                                <img src="{{asset('images/avatars/admin.png')}}" alt="Profile image" class="avatar-rounded">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->

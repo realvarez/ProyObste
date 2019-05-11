@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::get('/tables-basic', function () {
     return view('tables-basic');
 });
+Route::get('/forms-upload', function () {
+    return view('tables-basic');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
