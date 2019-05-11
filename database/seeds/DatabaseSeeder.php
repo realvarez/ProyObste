@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\role;
+use App\Role;
 use App\User;
-use App\categorie;
-use App\file;
+use App\Category;
+use App\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
         	 ],
         	  ];
       foreach ($category as $category) {
-           categorie::create($category);
+           Category::create($category);
         }
 
         $files =[
