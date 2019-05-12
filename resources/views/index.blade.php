@@ -3,7 +3,7 @@
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<title>Pike Admin - Free Bootstrap 4 Admin Template</title>
 		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
 		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
@@ -13,17 +13,17 @@
 
 		<!-- Bootstrap CSS -->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		
+
 		<!-- Font Awesome CSS -->
 		<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		
+
 		<!-- Custom CSS -->
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-		
+
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
-		
+
 </head>
 
 <body class="adminbody">
@@ -41,7 +41,7 @@
         <nav class="navbar-custom">
 
                     <ul class="list-inline float-right mb-0">
-						
+
 						<li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-question-circle"></i>
@@ -53,7 +53,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Do you want custom development to integrate this theme?</b>
                                         <span>Contact Us</span>
@@ -61,12 +61,12 @@
                                 </a>
 
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
                                         <span>Try Pike Admin PRO</span>
                                     </p>
-                                </a>                               
+                                </a>
 
                                 <!-- All-->
                                 <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
@@ -75,7 +75,7 @@
 
                             </div>
                         </li>
-						
+
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-envelope-o"></i><span class="notif-bullet"></span>
@@ -87,7 +87,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Jokn Doe</b>
                                         <span>New message received</span>
@@ -96,7 +96,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Michael Jackson</b>
                                         <span>New message received</span>
@@ -105,7 +105,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Foxy Johnes</b>
                                         <span>New message received</span>
@@ -120,7 +120,7 @@
 
                             </div>
                         </li>
-                        
+
 						<li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-bell-o"></i><span class="notif-bullet"></span>
@@ -130,7 +130,7 @@
                                 <div class="dropdown-item noti-title">
                                     <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
                                 </div>
-								
+
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-faded">
@@ -186,15 +186,15 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="pro-profile.html" class="dropdown-item notify-item">
-                                    <i class="fa fa-user"></i> <span>Profile</span>
+                                <a href="{{ route('login') }} class="dropdown-item notify-item">
+                                    <i class="fa fa-user"></i> <span>Login</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
                                     <i class="fa fa-power-off"></i> <span>Logout</span>
                                 </a>
-								
+
 								<!-- item-->
                                 <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                     <i class="fa fa-external-link"></i> <span>Pike Admin</span>
@@ -209,22 +209,22 @@
                             <button class="button-menu-mobile open-left">
 								<i class="fa fa-fw fa-bars"></i>
                             </button>
-                        </li>                        
+                        </li>
                     </ul>
 
         </nav>
 
 	</div>
 	<!-- End Navigation -->
-	
- 
+
+
 	<!-- Left Sidebar -->
 	<div class="left main-sidebar">
-	
+
 		<div class="sidebar-inner leftscroll">
 
 			<div id="sidebar-menu">
-        
+
 			<ul>
 
 					<li class="submenu">
@@ -234,7 +234,7 @@
 					<li class="submenu">
                         <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
                     </li>
-					
+
 					<li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">
@@ -242,7 +242,7 @@
 								<li><a href="tables-datatable.html">Data Tables</a></li>
 							</ul>
                     </li>
-										
+
                     <li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-tv"></i> <span> User Interface </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
@@ -269,7 +269,7 @@
 								<li><a href="forms-color-picker.html">Color Picker</a></li>
                             </ul>
                     </li>
-					
+
                     <li class="submenu">
 						<a href="#"><i class="fa fa-fw fa-th"></i> <span> Plugins </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
@@ -286,22 +286,22 @@
 					<li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-image"></i> <span> Images and Galleries </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">
-								<li><a href="media-fancybox.html"><span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a></li>								
+								<li><a href="media-fancybox.html"><span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a></li>
 								<li><a href="media-masonry.html">Masonry</a></li>
 								<li><a href="media-lightbox.html">Lightbox</a></li>
 								<li><a href="media-owl-carousel.html">Owl Carousel</a></li>
 								<li><a href="media-image-magnifier.html">Image Magnifier</a></li>
-								
+
 							</ul>
                     </li>
-					
+
                     <li class="submenu">
                         <a href="#"><span class="label radius-circle bg-danger float-right">20</span><i class="fa fa-fw fa-copy"></i><span> Example Pages </span></a>
-                            <ul class="list-unstyled">								
+                            <ul class="list-unstyled">
                                 <li><a href="page-pricing-tables.html">Pricing Tables</a></li>
-                                <li><a target="_blank" href="page-coming-soon.html">Countdown</a></li>								
-                                <li><a href="page-invoice.html">Invoice</a></li>                        
-								<li><a href="page-login.html">Login / Register</a></li>								
+                                <li><a target="_blank" href="page-coming-soon.html">Countdown</a></li>
+                                <li><a href="page-invoice.html">Invoice</a></li>
+								<li><a href="page-login.html">Login / Register</a></li>
 								<li><a href="page-blank.html">Blank Page</a></li>
                             </ul>
                     </li>
@@ -318,31 +318,31 @@
                                             <li><a href="#"><span>Third Level Item</span></a></li>
                                             <li><a href="#"><span>Third Level Item</span></a></li>
                                         </ul>
-                                </li>                                
+                                </li>
                             </ul>
                     </li>
 
 					<li class="submenu">
                         <a class="pro" href="#"><i class="fa fa-fw fa-star"></i><span> Pike Admin PRO </span> <span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">								
+                            <ul class="list-unstyled">
                                 <li><a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro">Admin PRO features</a></li>
 								<li><a href="pro-settings.html">Settings</a></li>
 								<li><a href="pro-profile.html">My Profile</a></li>
                                 <li><a href="pro-users.html">Users</a></li>
                                 <li><a href="pro-articles.html">Articles</a></li>
                                 <li><a href="pro-categories.html">Categories</a></li>
-								<li><a href="pro-pages.html">Pages</a></li>								
+								<li><a href="pro-pages.html">Pages</a></li>
                                 <li><a href="pro-contact-messages.html">Contact Messages</a></li>
 								<li><a href="pro-slider.html">Slider</a></li>
                             </ul>
                     </li>
-					
+
             </ul>
 
             <div class="clearfix"></div>
 
 			</div>
-        
+
 			<div class="clearfix"></div>
 
 		</div>
@@ -352,12 +352,12 @@
 
 
     <div class="content-page">
-	
+
 		<!-- Start content -->
         <div class="content">
-            
+
 			<div class="container-fluid">
-					
+
 						<div class="row">
 									<div class="col-xl-12">
 											<div class="breadcrumb-holder">
@@ -378,7 +378,7 @@
 						<p>Or try our PRO version: <b>Save over 50 hours of development with our Pro Framework: Registration / Login / Users Management, CMS, Front-End Template (who will load contend added in admin area and saved in MySQL database), Contact Messages Management, manage Website Settings and many more, at an incredible price!</b></p>
 						<p>Read more about all PRO features here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin PRO features</b></a></p>
 						</div>
-						
+
 							<div class="row">
 									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
 											<div class="card-box noradius noborder bg-default">
@@ -419,66 +419,66 @@
 							<!-- end row -->
 
 
-							
+
 							<div class="row">
-							
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">						
+
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-line-chart"></i> Items Sold Amount</h3>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
 											</div>
-												
+
 											<div class="card-body">
 												<canvas id="lineChart"></canvas>
-											</div>							
+											</div>
 											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-										</div><!-- end card-->					
+										</div><!-- end card-->
 									</div>
 
-									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-bar-chart-o"></i> Colour Analytics</h3>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
 											</div>
-												
+
 											<div class="card-body">
 												<canvas id="pieChart"></canvas>
 											</div>
 											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-										</div><!-- end card-->					
+										</div><!-- end card-->
 									</div>
-									
-									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-bar-chart-o"></i> Colour Analytics 2</h3>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
 											</div>
-												
+
 											<div class="card-body">
 												<canvas id="doughnutChart"></canvas>
 											</div>
 											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-										</div><!-- end card-->					
+										</div><!-- end card-->
 									</div>
-									
+
 							</div>
 							<!-- end row -->
-							
-							
+
+
 							<div class="row">
 
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">						
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-users"></i> Staff details</h3>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
 											</div>
-												
+
 											<div class="card-body">
-												
+
 												<table id="example1" class="table table-bordered table-responsive-xl table-hover display">
 													<thead>
 														<tr>
@@ -489,7 +489,7 @@
 															<th>Start date</th>
 															<th>Salary</th>
 														</tr>
-													</thead>													
+													</thead>
 													<tbody>
 														<tr>
 															<td>Tiger Nixon</td>
@@ -586,7 +586,7 @@
 															<td>22</td>
 															<td>2013/03/03</td>
 															<td>$342,000</td>
-														</tr>										
+														</tr>
 														<tr>
 															<td>Fiona Green</td>
 															<td>Chief Operating Officer (COO)</td>
@@ -637,88 +637,88 @@
 														</tr>
 													</tbody>
 												</table>
-												
-											</div>														
-										</div><!-- end card-->					
+
+											</div>
+										</div><!-- end card-->
 									</div>
 
-									
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">						
+
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-star-o"></i> Tasks progress</h3>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 											</div>
-												
+
 											<div class="card-body">
 												<p class="font-600 m-b-5">Task 1 <span class="text-primary pull-right"><b>95%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="95"></div>
 												</div>
-												
+
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 2 <span class="text-primary pull-right"><b>88%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-primary" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="88"></div>
 												</div>
-												
+
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 3 <span class="text-info pull-right"><b>75%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-info" role="progressbar" style="width: 78%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75"></div>
 												</div>
 
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 4 <span class="text-info pull-right"><b>70%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-info" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="70"></div>
 												</div>
 
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 5 <span class="text-warning pull-right"><b>68%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="68"></div>
 												</div>
 
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 6 <span class="text-warning pull-right"><b>65%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="65"></div>
-												</div>	
+												</div>
 
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 7 <span class="text-danger pull-right"><b>55%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-danger" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="55"></div>
-												</div>	
+												</div>
 
 												<div class="m-b-20"></div>
-												
+
 												<p class="font-600 m-b-5">Task 8 <span class="text-danger pull-right"><b>40%</b></span></p>
 												<div class="progress">
 												<div class="progress-bar progress-bar-striped progress-xs bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-												</div>									
+												</div>
 											</div>
 											<div class="card-footer small text-muted">Updated today at 11:59 PM</div>
-										</div><!-- end card-->					
+										</div><!-- end card-->
 									</div>
-							
-							
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">						
+
+
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-envelope-o"></i> Latest messages</h3>
 												Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 											</div>
-												
+
 											<div class="card-body">
-												
+
 												<div class="widget-messages nicescroll" style="height: 400px;">
 																<a href="#">
 																	<div class="message-item">
@@ -801,13 +801,13 @@
 																	</div>
 																</a>
 															</div>
-												
+
 											</div>
 											<div class="card-footer small text-muted">Updated today at 11:59 PM</div>
-										</div><!-- end card-->					
+										</div><!-- end card-->
 									</div>
-									
-							</div>			
+
+							</div>
 
 
 
@@ -819,7 +819,7 @@
 
     </div>
 	<!-- END content-page -->
-    
+
 	<footer class="footer">
 		<span class="text-right">
 		Copyright <a target="_blank" href="#">Your Website</a>
@@ -835,7 +835,7 @@
 <script src="assets/js/modernizr.min.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/moment.min.js"></script>
-		
+
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 
@@ -854,21 +854,21 @@
 
 	<!-- Counter-Up-->
 	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>			
+	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
 
 	<script>
 		$(document).ready(function() {
 			// data-tables
 			$('#example1').DataTable();
-					
+
 			// counter-up
 			$('.counter').counterUp({
 				delay: 10,
 				time: 600
 			});
-		} );		
+		} );
 	</script>
-	
+
 	<script>
 	var ctx1 = document.getElementById("lineChart").getContext('2d');
 	var lineChart = new Chart(ctx1, {
@@ -878,13 +878,13 @@
 			datasets: [{
 					label: 'Dataset 1',
 					backgroundColor: '#3EB9DC',
-					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9] 
+					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9]
 				}, {
 					label: 'Dataset 2',
 					backgroundColor: '#EBEFF3',
 					data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
 				}]
-				
+
 		},
 		options: {
 						tooltips: {
@@ -931,7 +931,7 @@
 			options: {
 				responsive: true
 			}
-	 
+
 	});
 
 
@@ -962,7 +962,7 @@
 			options: {
 				responsive: true
 			}
-	 
+
 	});
 	</script>
 <!-- END Java Script for this page -->

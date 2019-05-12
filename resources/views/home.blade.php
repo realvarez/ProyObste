@@ -5,16 +5,16 @@
                         <div class="row">
                                     <div class="col-xl-12">
                                             <div class="breadcrumb-holder">
-                                                    <h1 class="main-title float-left">Dashboard</h1>
+                                                    <h1 class="main-title float-left">DashbSADSADSAoard</h1>
                                                     <ol class="breadcrumb float-right">
                                                         <li class="breadcrumb-item">Home</li>
-                                                        <li class="breadcrumb-item active">Dashboard</li>
+                                                        <li class="breadcrumb-item active">Dashboarddsadsadsa</li>
                                                     </ol>
                                                     <div class="clearfix"></div>
                                             </div>
                                     </div>
                         </div>
-                        <!-- end row -->                     
+                        <!-- end row -->
                             <div class="row">
                                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                                             <div class="card-box noradius noborder bg-default">
@@ -55,66 +55,66 @@
                             <!-- end row -->
 
 
-                            
+
                             <div class="row">
-                            
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">						
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                                         <div class="card mb-3">
                                             <div class="card-header">
                                                 <h3><i class="fa fa-line-chart"></i> Items Sold Amount</h3>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
                                             </div>
-                                                
+
                                             <div class="card-body">
                                                 <canvas id="lineChart"></canvas>
-                                            </div>							
+                                            </div>
                                             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                                        </div><!-- end card-->					
+                                        </div><!-- end card-->
                                     </div>
 
-                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
                                         <div class="card mb-3">
                                             <div class="card-header">
                                                 <h3><i class="fa fa-bar-chart-o"></i> Colour Analytics</h3>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
                                             </div>
-                                                
+
                                             <div class="card-body">
                                                 <canvas id="pieChart"></canvas>
                                             </div>
                                             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                                        </div><!-- end card-->					
+                                        </div><!-- end card-->
                                     </div>
-                                    
-                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">
                                         <div class="card mb-3">
                                             <div class="card-header">
                                                 <h3><i class="fa fa-bar-chart-o"></i> Colour Analytics 2</h3>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
                                             </div>
-                                                
+
                                             <div class="card-body">
                                                 <canvas id="doughnutChart"></canvas>
                                             </div>
                                             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                                        </div><!-- end card-->					
+                                        </div><!-- end card-->
                                     </div>
-                                    
+
                             </div>
                             <!-- end row -->
-                            
-                            
+
+
                             <div class="row">
 
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">						
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                                         <div class="card mb-3">
                                             <div class="card-header">
                                                 <h3><i class="fa fa-users"></i> Staff details</h3>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus fermentum ultricies orci sit amet sollicitudin.
                                             </div>
-                                                
+
                                             <div class="card-body">
-                                                
+
                                                 <table id="example1" class="table table-bordered table-responsive-xl table-hover display">
                                                     <thead>
                                                         <tr>
@@ -125,7 +125,7 @@
                                                             <th>Start date</th>
                                                             <th>Salary</th>
                                                         </tr>
-                                                    </thead>													
+                                                    </thead>
                                                     <tbody>
                                                         <tr>
                                                             <td>Tiger Nixon</td>
@@ -222,7 +222,7 @@
                                                             <td>22</td>
                                                             <td>2013/03/03</td>
                                                             <td>$342,000</td>
-                                                        </tr>										
+                                                        </tr>
                                                         <tr>
                                                             <td>Fiona Green</td>
                                                             <td>Chief Operating Officer (COO)</td>
@@ -273,88 +273,88 @@
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                                
-                                            </div>														
-                                        </div><!-- end card-->					
+
+                                            </div>
+                                        </div><!-- end card-->
                                     </div>
 
-                                    
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">						
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
                                         <div class="card mb-3">
                                             <div class="card-header">
                                                 <h3><i class="fa fa-star-o"></i> Tasks progress</h3>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                             </div>
-                                                
+
                                             <div class="card-body">
                                                 <p class="font-600 m-b-5">Task 1 <span class="text-primary pull-right"><b>95%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="95"></div>
                                                 </div>
-                                                
+
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 2 <span class="text-primary pull-right"><b>88%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-primary" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0" aria-valuemax="88"></div>
                                                 </div>
-                                                
+
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 3 <span class="text-info pull-right"><b>75%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-info" role="progressbar" style="width: 78%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75"></div>
                                                 </div>
 
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 4 <span class="text-info pull-right"><b>70%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-info" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="70"></div>
                                                 </div>
 
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 5 <span class="text-warning pull-right"><b>68%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="68"></div>
                                                 </div>
 
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 6 <span class="text-warning pull-right"><b>65%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-warning" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0" aria-valuemax="65"></div>
-                                                </div>	
+                                                </div>
 
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 7 <span class="text-danger pull-right"><b>55%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-danger" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="55"></div>
-                                                </div>	
+                                                </div>
 
                                                 <div class="m-b-20"></div>
-                                                
+
                                                 <p class="font-600 m-b-5">Task 8 <span class="text-danger pull-right"><b>40%</b></span></p>
                                                 <div class="progress">
                                                 <div class="progress-bar progress-bar-striped progress-xs bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
-                                                </div>									
+                                                </div>
                                             </div>
                                             <div class="card-footer small text-muted">Updated today at 11:59 PM</div>
-                                        </div><!-- end card-->					
+                                        </div><!-- end card-->
                                     </div>
-                            
-                            
-                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">						
+
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-3">
                                         <div class="card mb-3">
                                             <div class="card-header">
                                                 <h3><i class="fa fa-envelope-o"></i> Latest messages</h3>
                                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                             </div>
-                                                
+
                                             <div class="card-body">
-                                                
+
                                                 <div class="widget-messages nicescroll" style="height: 400px;">
                                                                 <a href="#">
                                                                     <div class="message-item">
@@ -437,13 +437,13 @@
                                                                     </div>
                                                                 </a>
                                                             </div>
-                                                
+
                                             </div>
                                             <div class="card-footer small text-muted">Updated today at 11:59 PM</div>
-                                        </div><!-- end card-->					
+                                        </div><!-- end card-->
                                     </div>
-                                    
-                            </div>			
+
+                            </div>
 
 
 

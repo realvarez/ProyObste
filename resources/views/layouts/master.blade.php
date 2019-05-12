@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	@include('partials.header')		
+    @include('partials.header')
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body class="adminbody">
 
-<div id="main">
+<div id="app">
 
 	<!-- top bar navigation -->
 	@include('partials.topbar')
 	<!-- End Navigation -->
-	
- 
+
+
 	<!-- Left Sidebar -->
 	@include('partials.leftsidebar')
 	<!-- End Sidebar -->
 
 
     <div class="content-page">
-	
+
 		<!-- Start content -->
       <div class="content">
         @yield('content')
@@ -29,14 +32,13 @@
 
     </div>
 	<!-- END content-page -->
-    
+
 	@include('partials.footer')
 
 </div>
 <!-- END main -->
 
 	@include('partials.scripts')
-
 <!-- App js -->
 <script src="{{asset('js/pikeadmin.js')}}"></script>
 
@@ -47,21 +49,21 @@
 
 	<!-- Counter-Up-->
 	<script src="{{asset('plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
-	<script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>			
+	<script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>
 
 	<script>
 		$(document).ready(function() {
 			// data-tables
 			$('#example1').DataTable();
-					
+
 			// counter-up
 			$('.counter').counterUp({
 				delay: 10,
 				time: 600
 			});
-		} );		
+		} );
 	</script>
-	
+
 	<script>
 	var ctx1 = document.getElementById("lineChart").getContext('2d');
 	var lineChart = new Chart(ctx1, {
@@ -71,13 +73,13 @@
 			datasets: [{
 					label: 'Dataset 1',
 					backgroundColor: '#3EB9DC',
-					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9] 
+					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9]
 				}, {
 					label: 'Dataset 2',
 					backgroundColor: '#EBEFF3',
 					data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
 				}]
-				
+
 		},
 		options: {
 						tooltips: {
@@ -124,7 +126,7 @@
 			options: {
 				responsive: true
 			}
-	 
+
 	});
 
 
@@ -155,7 +157,7 @@
 			options: {
 				responsive: true
 			}
-	 
+
 	});
 	</script>
 <!-- END Java Script for this page -->

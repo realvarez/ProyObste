@@ -3,7 +3,7 @@
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+
 		<title>Pike Admin - Free Bootstrap 4 Admin Template</title>
 		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
 		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
@@ -13,16 +13,16 @@
 
 		<!-- Switchery css -->
 		<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
-		
+
 		<!-- Bootstrap CSS -->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-		
+
 		<!-- Font Awesome CSS -->
 		<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-		
+
 		<!-- Custom CSS -->
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />		
-		
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
 		<script src="assets/js/modernizr.min.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/moment.min.js"></script>
@@ -73,7 +73,7 @@
 
 		</style>
 		<!-- END CSS for this page -->
-				
+
 </head>
 
 <body class="adminbody">
@@ -103,7 +103,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Do you want custom development to integrate this theme?</b>
                                         <span>Contact Us</span>
@@ -111,12 +111,12 @@
                                 </a>
 
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
                                         <span>Try Pike Admin PRO</span>
                                     </p>
-                                </a>                               
+                                </a>
 
                                 <!-- All-->
                                 <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
@@ -125,7 +125,7 @@
 
                             </div>
                         </li>
-						
+
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-envelope-o"></i><span class="notif-bullet"></span>
@@ -137,7 +137,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Jokn Doe</b>
                                         <span>New message received</span>
@@ -146,7 +146,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Michael Jackson</b>
                                         <span>New message received</span>
@@ -155,7 +155,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Foxy Johnes</b>
                                         <span>New message received</span>
@@ -170,7 +170,7 @@
 
                             </div>
                         </li>
-                        
+
 						<li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-bell-o"></i><span class="notif-bullet"></span>
@@ -180,7 +180,7 @@
                                 <div class="dropdown-item noti-title">
                                     <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
                                 </div>
-								
+
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-faded">
@@ -259,22 +259,22 @@
                             <button class="button-menu-mobile open-left">
 								<i class="fa fa-fw fa-bars"></i>
                             </button>
-                        </li>                        
+                        </li>
                     </ul>
 
         </nav>
 
 	</div>
 	<!-- End Navigation -->
-	
- 
+
+
 	<!-- Left Sidebar -->
 	<div class="left main-sidebar">
-	
+
 		<div class="sidebar-inner leftscroll">
 
 			<div id="sidebar-menu">
-        
+
 			<ul>
 
 					<li class="submenu">
@@ -284,7 +284,7 @@
 					<li class="submenu">
                         <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
                     </li>
-					
+
 					<li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">
@@ -292,7 +292,7 @@
 								<li><a href="tables-datatable.html">Data Tables</a></li>
 							</ul>
                     </li>
-										
+
                     <li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-tv"></i> <span> User Interface </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
@@ -319,7 +319,7 @@
 								<li><a href="forms-color-picker.html">Color Picker</a></li>
                             </ul>
                     </li>
-					
+
                     <li class="submenu">
 						<a href="#" class="active"><i class="fa fa-fw fa-th"></i> <span> Plugins </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
@@ -336,22 +336,22 @@
 					<li class="submenu">
                         <a href="#"><i class="fa fa-fw fa-image"></i> <span> Images and Galleries </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">
-								<li><a href="media-fancybox.html"><span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a></li>								
+								<li><a href="media-fancybox.html"><span class="label radius-circle bg-danger float-right">cool</span> Fancybox </a></li>
 								<li><a href="media-masonry.html">Masonry</a></li>
 								<li><a href="media-lightbox.html">Lightbox</a></li>
 								<li><a href="media-owl-carousel.html">Owl Carousel</a></li>
 								<li><a href="media-image-magnifier.html">Image Magnifier</a></li>
-								
+
 							</ul>
                     </li>
-					
+
                     <li class="submenu">
                         <a href="#"><span class="label radius-circle bg-danger float-right">20</span><i class="fa fa-fw fa-copy"></i><span> Example Pages </span></a>
-                            <ul class="list-unstyled">								
+                            <ul class="list-unstyled">
                                 <li><a href="page-pricing-tables.html">Pricing Tables</a></li>
-                                <li><a target="_blank" href="page-coming-soon.html">Countdown</a></li>								
-                                <li><a href="page-invoice.html">Invoice</a></li>                        
-								<li><a href="page-login.html">Login / Register</a></li>								
+                                <li><a target="_blank" href="page-coming-soon.html">Countdown</a></li>
+                                <li><a href="page-invoice.html">Invoice</a></li>
+								<li><a href="page-login.html">Login / Register</a></li>
 								<li><a href="page-blank.html">Blank Page</a></li>
                             </ul>
                     </li>
@@ -368,31 +368,31 @@
                                             <li><a href="#"><span>Third Level Item</span></a></li>
                                             <li><a href="#"><span>Third Level Item</span></a></li>
                                         </ul>
-                                </li>                                
+                                </li>
                             </ul>
                     </li>
 
 					<li class="submenu">
                         <a class="pro" href="#"><i class="fa fa-fw fa-star"></i><span> Pike Admin PRO </span> <span class="menu-arrow"></span></a>
-                            <ul class="list-unstyled">								
+                            <ul class="list-unstyled">
                                 <li><a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro">Admin PRO features</a></li>
 								<li><a href="pro-settings.html">Settings</a></li>
 								<li><a href="pro-profile.html">My Profile</a></li>
                                 <li><a href="pro-users.html">Users</a></li>
                                 <li><a href="pro-articles.html">Articles</a></li>
                                 <li><a href="pro-categories.html">Categories</a></li>
-								<li><a href="pro-pages.html">Pages</a></li>								
+								<li><a href="pro-pages.html">Pages</a></li>
                                 <li><a href="pro-contact-messages.html">Contact Messages</a></li>
 								<li><a href="pro-slider.html">Slider</a></li>
                             </ul>
                     </li>
-					
+
             </ul>
 
             <div class="clearfix"></div>
 
 			</div>
-        
+
 			<div class="clearfix"></div>
 
 		</div>
@@ -402,13 +402,13 @@
 
 
     <div class="content-page">
-	
+
 		<!-- Start content -->
         <div class="content">
-            
+
 			<div class="container-fluid">
 
-					
+
 			<div class="row">
 					<div class="col-xl-12">
 							<div class="breadcrumb-holder">
@@ -423,7 +423,7 @@
 			</div>
             <!-- end row -->
 
-            
+
 			<div class="alert alert-success" role="alert">
 				  <h4 class="alert-heading">Documentation</h4>
 				  <p>gmaps.js allows you to use the potential of Google Maps in a simple way. No more extensive documentation or large amount of code. You can find examples and documentation about GMaps.js here: <a target="_blank" href="http://hpneo.github.io/gmaps/">GMaps.js documentation</a>. Note that you need an <a target="_blank" href="https://developers.google.com/maps/">api key</a> from Google Maps</p>
@@ -433,62 +433,62 @@
 				  <h4 class="alert-heading">Info</h4>
 				  <p>Maps are NOT working on demo because you need an API key from Google Maps. You must add API key in the footer javascript code of this page</p>
 			</div>
-			
+
 			<div class="row">
-			
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">						
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 						<div class="card mb-3">
 							<div class="card-header">
 								<i class="fa fa-map"></i> Simple Map
 							</div>
-								
+
 							<div class="card-body">
 								<div class="maparea" id="map1"></div>
-							</div>							
-						</div><!-- end card-->					
+							</div>
+						</div><!-- end card-->
                     </div>
-					
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">						
+
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 						<div class="card mb-3">
 							<div class="card-header">
 								<i class="fa fa-map"></i> Markers
 							</div>
-								
+
 							<div class="card-body">
 								<div class="maparea" id="map2"></div>
-							</div>							
-						</div><!-- end card-->					
+							</div>
+						</div><!-- end card-->
                     </div>
 
 			</div>
-			
-			
+
+
 			<div class="row">
-			
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">						
+
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 						<div class="card mb-3">
 							<div class="card-header">
 								<i class="fa fa-map"></i> Routes
 							</div>
-								
+
 							<div class="card-body">
 								<div class="maparea" id="map3"></div>
-							</div>							
-						</div><!-- end card-->					
+							</div>
+						</div><!-- end card-->
                     </div>
-					
-					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">						
+
+					<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
 						<div class="card mb-3">
 							<div class="card-header">
 								<i class="fa fa-map"></i> Overlays
 							</div>
-								
+
 							<div class="card-body">
 								<div class="maparea" id="map4"></div>
-							</div>							
-						</div><!-- end card-->					
+							</div>
+						</div><!-- end card-->
                     </div>
-					
+
             </div>
             <!-- end row -->
 
@@ -502,7 +502,7 @@
 
     </div>
 	<!-- END content-page -->
-    
+
 	<footer class="footer">
 		<span class="text-right">
 		Copyright <a target="_blank" href="#">Your Website</a>
@@ -540,14 +540,14 @@ $(document).ready(function(){
         lat: -12.043333,
         lng: -77.028333
     });
-	
 
-	// MAP 2 Example	
+
+	// MAP 2 Example
 	map2 = new GMaps({
         div: '#map2',
         lat: -12.043333,
         lng: -77.028333
-    });  
+    });
 	map2.addMarker({
 		  lat: -12.043333,
 		  lng: -77.028333,
@@ -555,7 +555,7 @@ $(document).ready(function(){
 		  click: function(e) {
 			alert('You clicked in this marker');
 		  }
-	});	
+	});
 	map2.addMarker({
         lat: -12.042,
         lng: -77.038333,
@@ -564,7 +564,7 @@ $(document).ready(function(){
           content: '<p>HTML Content</p>'
         }
     });
-	
+
 	// MAP 3 Eample
 	map3 = new GMaps({
         div: '#map3',
@@ -580,12 +580,12 @@ $(document).ready(function(){
         strokeOpacity: 0.6,
         strokeWeight: 6
     });
-	
+
 	// MAP 4 Example
 	map4 = new GMaps({
         div: '#map4',
         lat: -12.043333,
-        lng: -77.028333, 
+        lng: -77.028333,
 		zoom: 16
      });
      map4.drawOverlay({
@@ -596,7 +596,7 @@ $(document).ready(function(){
         horizontalAlign: 'center'
      });
 });
-</script>			
+</script>
 <!-- END Java Script for this page -->
 
 </body>

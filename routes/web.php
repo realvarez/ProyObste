@@ -23,10 +23,19 @@ Route::get('/tables-basic', function () {
 Route::get('/forms-upload', function () {
     return view('tables-basic');
 });
-
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/register', function () {
+    return view('register');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('files','FileController');
 Route::resource('users','UserController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

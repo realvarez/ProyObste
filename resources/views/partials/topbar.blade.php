@@ -8,7 +8,7 @@
         <nav class="navbar-custom">
 
                     <ul class="list-inline float-right mb-0">
-						
+
 						<li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-question-circle"></i>
@@ -20,7 +20,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Do you want custom development to integrate this theme?</b>
                                         <span>Contact Us</span>
@@ -28,12 +28,12 @@
                                 </a>
 
                                 <!-- item-->
-                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">                                    
+                                <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Do you want PHP version of the theme that save dozens of hours of work?</b>
                                         <span>Try Pike Admin PRO</span>
                                     </p>
-                                </a>                               
+                                </a>
 
                                 <!-- All-->
                                 <a title="Clcik to visit Pike Admin Website" target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item notify-all">
@@ -42,7 +42,7 @@
 
                             </div>
                         </li>
-						
+
                         <li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-envelope-o"></i><span class="notif-bullet"></span>
@@ -54,7 +54,7 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Jokn Doe</b>
                                         <span>New message received</span>
@@ -63,7 +63,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Michael Jackson</b>
                                         <span>New message received</span>
@@ -72,7 +72,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">                                    
+                                <a href="#" class="dropdown-item notify-item">
                                     <p class="notify-details ml-0">
                                         <b>Foxy Johnes</b>
                                         <span>New message received</span>
@@ -87,7 +87,7 @@
 
                             </div>
                         </li>
-                        
+
 						<li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-bell-o"></i><span class="notif-bullet"></span>
@@ -97,7 +97,7 @@
                                 <div class="dropdown-item noti-title">
                                     <h5><small><span class="label label-danger pull-xs-right">5</span>Allerts</small></h5>
                                 </div>
-								
+
                                 <!-- item-->
                                 <a href="#" class="dropdown-item notify-item">
                                     <div class="notify-icon bg-faded">
@@ -153,15 +153,17 @@
                                 </div>
 
                                 <!-- item-->
-                                <a href="pro-profile.html" class="dropdown-item notify-item">
-                                    <i class="fa fa-user"></i> <span>Profile</span>
+                                <a href="{{ route('login') }}" class="dropdown-item notify-item">
+                                    <i class="fa fa-user"></i> <span>Login</span>
+
                                 </a>
 
+
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
-                                    <i class="fa fa-power-off"></i> <span>Logout</span>
+                                <a  href="{{ route('register') }}" class="dropdown-item notify-item">
+                                    <i class="fa fa-power-off"></i> <span>Registrarse</span>
                                 </a>
-								
+
 								<!-- item-->
                                 <a target="_blank" href="https://www.pikeadmin.com" class="dropdown-item notify-item">
                                     <i class="fa fa-external-link"></i> <span>Pike Admin</span>
@@ -176,9 +178,9 @@
                             <button class="button-menu-mobile open-left">
 								<i class="fa fa-fw fa-bars"></i>
                             </button>
-                        </li>                        
+                        </li>
                     </ul>
 
         </nav>
 
-	</div>  
+	</div>

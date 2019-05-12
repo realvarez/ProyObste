@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
 			        [
 			           'role_name' =>'normalUser',
 			        ],
-			  
+
 			     ];
       foreach ($roles as $role) {
            Role::create($role);

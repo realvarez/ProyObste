@@ -9,12 +9,12 @@ class UserController extends Controller
 {
    public function index() {
    	$user = User::all();
-   	
+
    	return $user;
 
    }
 
-   public function show($id) { 
+   public function show($id) {
    	$user= User::find($id);
 
    	return $user;
@@ -23,13 +23,14 @@ class UserController extends Controller
 
 
    public function create() {
-   	
+
    }
 
    public function store(Request $request) {
+       print_r($request);
 
    User::create($request->all());
-   
+
    }
 
    public function edit($id) {
@@ -49,7 +50,7 @@ class UserController extends Controller
 
    public function destroy($id) {
 
-   	//la consideramos? 
+   	//la consideramos?
    }
 }
 
