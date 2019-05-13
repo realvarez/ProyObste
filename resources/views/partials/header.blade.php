@@ -6,7 +6,7 @@
 <meta name="author" content="Pike Web Development - https://www.pikephp.com">
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="assets/images/favicon.ico">
+<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
 
 <!-- Bootstrap CSS -->
 <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
@@ -17,6 +17,16 @@
 <!-- Custom CSS -->
 <link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" />
 
+<!-- Switchery css -->
+<link href="{{asset('plugins/switchery/switchery.min.css')}}" rel="stylesheet" />
+
 <!-- BEGIN CSS for this page -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
+
+<!-- Filter -->
+<link href="{{asset('plugins/jquery.filer/css/jquery.filer.css')}}" rel="stylesheet" />
+
+<!-- Dragdrop -->
+<link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 <!-- END CSS for this page -->

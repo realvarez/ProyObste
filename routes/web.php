@@ -14,14 +14,29 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('home');
 });
 Route::get('/tables-basic', function () {
     return view('tables-basic');
 });
 Route::get('/forms-upload', function () {
-    return view('tables-basic');
+    return view('forms-upload');
+});
+Route::get('/chart', function () {
+    return view('charts');
+});
+Route::get('/form-general', function () {
+    return view('charts');
+});
+Route::get('/form-val', function () {
+    return view('charts');
+});
+Route::get('/form-select', function () {
+    return view('charts');
+});
+Route::get('/form-date', function () {
+    return view('charts');
 });
 Route::get('/login', function () {
     return view('login');
