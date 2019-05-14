@@ -4,6 +4,8 @@
 <head>
 	@include('partials.header')
 
+	@include('partials.scripts')
+
 </head>
 
 <body class="adminbody">
@@ -99,7 +101,8 @@
 	</div>
 	<!-- END main -->
 
-	@include('partials.scripts')
+	<script src="{{asset('js/pikeadmin.js')}}"></script>
+	<script src="{{asset('plugins/jquery.filer/js/jquery.filer.min.js')}}"></script>
 
 </body>
 

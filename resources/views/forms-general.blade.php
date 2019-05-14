@@ -3,11 +3,11 @@
 
 <head>
 	@include('partials.header')
+	@include('partials.scripts')
 
 </head>
 
 <body class="adminbody">
-
 	<div id="main">
 
 		<!-- top bar navigation -->
@@ -448,11 +448,7 @@
 	</div>
 	<!-- END main -->
 
-	@include('partials.scripts')
-
-	<!-- BEGIN Java Script for this page -->
-
-	<!-- END Java Script for this page -->
+	<script src="{{asset('js/pikeadmin.js')}}"></script>
 
 </body>
 

@@ -15,6 +15,6 @@ import registerComponent from './components/Login/register-component.vue'
 
 
 const app = new Vue({
-    el: '#app',
+    el: '#main',
     components: {loginComponent, registerComponent}
 });

@@ -3,8 +3,6 @@
 <head>
     @include('partials.header')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 <body class="adminbody">
@@ -38,7 +36,9 @@
 </div>
 <!-- END main -->
 
-	@include('partials.scripts')
+@include('partials.scripts')
+
+<script src="{{asset('js/pikeadmin.js')}}"></script>
 <!-- App js -->
 
 

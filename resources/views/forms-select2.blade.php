@@ -3,6 +3,8 @@
 
 <head>
 	@include('partials.header')
+
+	@include('partials.scripts')
 </head>
 
 <body class="adminbody">
@@ -25,8 +27,6 @@
 			<div class="content">
 
 				<div class="container-fluid">
-
-
 
 					<div class="row">
 						<div class="col-xl-12">
@@ -309,7 +309,8 @@
 
 	</div>
 	<!-- END main -->
-	@include('partials.scripts')
+
+	<script src="{{asset('js/pikeadmin.js')}}"></script>
 
 	<!-- BEGIN Java Script for this page -->
 	<script src="{{asset('plugins/select2/js/select2.min.js')}}"></script>

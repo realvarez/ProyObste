@@ -23,14 +23,14 @@ Route::get('/tables-basic', function () {
 Route::get('/forms-upload', function () {
     return view('forms-upload');
 });
-Route::get('/chart', function () {
+Route::get('/charts', function () {
     return view('charts');
 });
 Route::get('/forms-general', function () {
     return view('forms-general');
 });
-Route::get('/form-val', function () {
-    return view('charts');
+Route::get('/forms-validation', function () {
+    return view('forms-validation');
 });
 Route::get('/forms-select2', function () {
     return view('forms-select2');
