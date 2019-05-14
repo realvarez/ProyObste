@@ -21,12 +21,16 @@
 <link href="{{asset('plugins/switchery/switchery.min.css')}}" rel="stylesheet" />
 
 <!-- BEGIN CSS for this page -->
+<link href="{{asset('plugins/select2/css/select2.min.css')}}" rel="stylesheet" type="text/css"/>
 
 <!-- Filter -->
 <link href="{{asset('plugins/jquery.filer/css/jquery.filer.css')}}" rel="stylesheet" />
 
 <!-- Dragdrop -->
 <link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" />
+
+<!-- DateRange -->
+<link href="{{asset('plugins/datetimepicker/css/daterangepicker.css')}}" rel="stylesheet" /> 
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 <!-- END CSS for this page -->

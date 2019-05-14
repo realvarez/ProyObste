@@ -26,17 +26,17 @@ Route::get('/forms-upload', function () {
 Route::get('/chart', function () {
     return view('charts');
 });
-Route::get('/form-general', function () {
-    return view('charts');
+Route::get('/forms-general', function () {
+    return view('forms-general');
 });
 Route::get('/form-val', function () {
     return view('charts');
 });
-Route::get('/form-select', function () {
-    return view('charts');
+Route::get('/forms-select2', function () {
+    return view('forms-select2');
 });
-Route::get('/form-date', function () {
-    return view('charts');
+Route::get('/forms-datetime-picker', function () {
+    return view('forms-datetime-picker');
 });
 Route::get('/login', function () {
     return view('login');
@@ -48,8 +48,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('files','FileController');
-Route::resource('users','UserController');
+Route::resource('files', 'FileController');
+Route::resource('users', 'UserController');
 
 Auth::routes();
 

@@ -12,3 +12,6 @@
 <script src="{{asset('plugins/switchery/switchery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery.filer/js/jquery.filer.min.js')}}"></script>
 <script src="{{asset('js/pikeadmin.js')}}"></script>
+<script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
+<script src="{{asset('plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
+<script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>
