@@ -5,6 +5,8 @@ use App\Role;
 use App\User;
 use App\Category;
 use App\File;
+use App\Permission;
+use App\Roles_permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -182,6 +184,51 @@ class DatabaseSeeder extends Seeder
       foreach ($files as $files) {
            file::create($files);
         }
+
+        $permission =[
+			[
+				'name'  => 'Subir',
+			
+			],
+			[
+				'name'  => 'Modificar',
+			
+			],
+			[
+				'name'  => 'Ver',
+			
+			],
+      ];
+      foreach ($permission as $permission) {
+           Permission::create($permission);
+        }
+
+      
+        $permissionrole =[
+			[
+				'role_id'=> 1,
+				'permission_id'=> 2,
+				'value'=> 1,
+			
+			],
+			[
+				'role_id'=> 1,
+				'permission_id'=> 2,
+				'value'=> 1,
+			
+			],
+			[
+				'role_id'=> 1,
+				'permission_id'=> 2,
+				'value'=> 1,
+			
+			],
+			
+      ];
+      foreach ($permissionrole as $permissionrole) {
+           Roles_permission::create($permissionrole);
+        }
+
 
     }
 }
