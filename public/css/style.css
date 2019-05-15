@@ -299,7 +299,7 @@ a {
 
 .main-sidebar {
   top: 50px;
-  width: 250px;
+  width: 220px;
   z-index: 10;
   background: #262D33;
   bottom: 70px;
@@ -309,7 +309,7 @@ a {
   position: absolute; }
 
 .content-page {
-  margin-left: 250px;
+  margin-left: 230px;
   overflow: hidden; }
   
 .content-page .content {
@@ -478,7 +478,7 @@ body.adminbody .main-sidebar.left {
 #main.enlarged #sidebar-menu ul ul {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.08); }
 #main.enlarged .left.main-sidebar {
-  width: 70px;
+  width: 75px;
   z-index: 5; }
   #main.enlarged .left.main-sidebar #sidebar-menu > ul > li > a {
     padding-left: 10px; }

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/dashboard', function () {
-    return view('home');
+    return view('dashboard');
 });
 Route::get('/tables-basic', function () {
     return view('tables-basic');
@@ -38,19 +38,16 @@ Route::get('/forms-select2', function () {
 Route::get('/forms-datetime-picker', function () {
     return view('forms-datetime-picker');
 });
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
+
+Auth::routes(["register" =>false]);
+
+Route::get('/', 'HomeController@index');
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
+// Route::middleware(['auth'])->group(function () {
+    
+// });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

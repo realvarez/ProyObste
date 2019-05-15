@@ -15629,7 +15629,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '#app',
+  el: '#main',
   components: {
     loginComponent: _components_Login_login_component_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     registerComponent: _components_Login_register_component_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
@@ -15830,8 +15830,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Proyectos\Pingeso\ProyObste\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Proyectos\Pingeso\ProyObste\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

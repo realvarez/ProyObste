@@ -13,9 +13,11 @@
 	@include('partials.topbar')
 	<!-- End Navigation -->
 
-
+	
 	<!-- Left Sidebar -->
-	@include('partials.leftsidebar')
+	@if(\Request::route()->getName() != 'login')
+		@include('partials.leftsidebar')
+	@endif
 	<!-- End Sidebar -->
 
 
