@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $category = new Category();
-        $data['categories'] = $category -> getCategoriesForLevel();
+        $data['categories'] = $category -> recursiveGet();
         return view('welcome', $data);
     }
 }

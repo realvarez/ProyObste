@@ -1801,16 +1801,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
@@ -3232,7 +3222,7 @@ var render = function() {
                   _c(
                     "label",
                     { staticClass: "col-md-4 col-form-label text-md-right" },
-                    [_vm._v("Contrasena")]
+                    [_vm._v("Contraseña")]
                   ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6" }, [
