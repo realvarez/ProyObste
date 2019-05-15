@@ -19,42 +19,81 @@ class DatabaseSeeder extends Seeder
 
 
         $roles = [
-			        [
-			           'role_name' =>'normalUser',
-			        ],
+			[
+				'role_name' =>'normalUser',
+			],
 
-			     ];
-      foreach ($roles as $role) {
-           Role::create($role);
+		];
+      	foreach ($roles as $role) {
+			Role::create($role);
         }
 
 
         $usuario =[
-     		 [
-           'role_id' => 1,
-           'name'  => 'juanito',
-           'email'  => 'mail@mail.es',
-           'email_verified_at'=> $faker->dateTime($max = 'now', $timezone = null),
-           'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
-           'avatar_image_path' => 'imagen',
-           'status' =>1,
-           'elimination_date' => $faker->dateTime($max = 'now', $timezone = null),
-        	 ],
-        	  ];
-      foreach ($usuario as $usuario) {
-           User::create($usuario);
+			[
+				'role_id' => 1,
+				'name'  => 'ricardo',
+				'email'  => 'ricardo@mail.es',
+				'email_verified_at'=> $faker->dateTime($max = 'now', $timezone = null),
+				'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
+				'avatar_image_path' => 'imagen',
+				'status' =>1,
+        	],
+		];
+      	foreach ($usuario as $usuario) {
+			User::create($usuario);
         }
 
 
         $category =[
-     		 [
-           'category_name'  => 'licencias',
-           'category_level'  => 1,
-           'superior_category_id'=> 2,
-           'state' => 1,
-           'elimination_date' => $faker->dateTime($max = 'now', $timezone = null),
-        	 ],
-        	  ];
+			[
+				'category_name'  => 'historia de la unidad',
+				'category_level'  => 1,
+				'state' => 1,
+			],
+         	[
+				'category_name'  => 'reglamentos',
+				'category_level'  => 1,
+				'state' => 1,
+			],
+			[
+			   'category_name'  => 'planes de estudio',
+			   'category_level'  => 1,
+			   'state' => 1,
+		   	],
+		   	[
+				'category_name'  => 'correspondencia',
+			  	'category_level'  => 1,
+			  	'state' => 1,
+		  	],
+		  	[
+			 	'category_name'  => 'enviada',
+				'category_level'  => 2,
+				'superior_category_id' => 4, 
+			 	'state' => 1,
+		 	],
+		 	[
+				'category_name'  => 'recibida',
+				'category_level'  => 2,
+				'superior_category_id' => 4, 
+				'state' => 1,
+			],
+			[
+				'category_name'  => 'presupuesto anual',
+			  	'category_level'  => 1,
+			  	'state' => 1,
+			],
+			[
+				'category_name'  => 'contratos',
+			  	'category_level'  => 1,
+			  	'state' => 1
+			],
+			[
+				'category_name'  => 'convenios docentes',
+			  	'category_level'  => 1,
+			  	'state' => 1,
+		  	],   
+      ];
       foreach ($category as $category) {
            Category::create($category);
         }

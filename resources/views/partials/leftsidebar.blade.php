@@ -9,21 +9,23 @@
 						<i class="fa fa-arrow-right" aria-hidden="true"></i>
 					</a>
 				</li>
-
-				<li class="submenu">
-					<a href="dashboard"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
-				</li>
-
-				<li class="submenu">
-					<a href="charts"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
-				</li>
-
-				<li class="submenu">
-					<a href="#"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
-					<ul class="list-unstyled">
-						<li><a href="tables-basic">Basic Tables</a></li>
-					</ul>
-				</li>
+				@foreach ($categories as $category)
+					@if(!isset($category->sons))
+						<li class="submenu">
+							<a href="{{ ucfirst($category->category_name) }}"><i class="fa fa-fw fa-bars"></i><span> {{ ucfirst($category->category_name) }} </span> </a>
+						</li>
+					@else
+						<li class="submenu">
+							<a href="{{ ucfirst($category->category_name) }}"><i class="fa fa-fw fa-table"></i> <span> {{ ucfirst($category->category_name) }} </span> <span class="menu-arrow"></span></a>
+							
+							<ul class="list-unstyled">
+								@foreach ($category->sons as $subCategory)									
+									<li><a href="{{$subCategory->category_name}}">{{$subCategory->category_name}}</a></li>
+								@endforeach
+							</ul>
+						</li>
+					@endif
+				@endforeach
 				<li class="submenu">
 					<a href="#"><i class="fa fa-fw fa-file-text-o"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
 					<ul class="list-unstyled">
@@ -34,11 +36,8 @@
 			</ul>
 
 			<div class="clearfix"></div>
-
 		</div>
-
 		<div class="clearfix"></div>
-
 	</div>
 
 </div>
