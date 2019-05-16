@@ -20,7 +20,7 @@
    <h3 align="center">Simple Login System in Laravel</h3><br />
 
    @if(isset(Auth::user()->email))
-    <script>window.location="/login/successlogin";</script>
+    <script>window.location="/main/successlogin";</script>
    @endif
 
    @if ($message = Session::get('error'))
@@ -40,7 +40,7 @@
     </div>
    @endif
 
-   <form method="post" action="{{ url('/login/checklogin') }}">
+   <form method="post" action="{{ url('/main/checklogin') }}">
     {{ csrf_field() }}
     <div class="form-group">
      <label>Enter Email</label>

@@ -47,7 +47,7 @@ Route::get('/', 'HomeController@index');
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
 
-Route::get('/login', 'Auth\LoginController@index');
+Route::get('/main', 'Auth\LoginController@index');
 Route::post('/login/checklogin', 'Auth\LoginController@checklogin');
 Route::get('login/successlogin', 'Auth\LoginController@successlogin');
 Route::get('login/logout', 'Auth\LoginController@logout');

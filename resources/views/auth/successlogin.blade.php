@@ -28,7 +28,7 @@
         </div>
         @else
         <script>
-            window.location = "/login";
+            window.location = "/main";
         </script>
         @endif
 
