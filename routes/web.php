@@ -46,13 +46,20 @@ Route::get('/forms-datetime-picker', function () {
 
 Auth::routes(["register" =>false]);
 
-Route::get('/', 'HomeController@index');
+Route::get('/dash', 'HomeController@index');
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
 Route::resource('roles', 'roleController');
 
+Route::get('login', '\App\Http\Controllers\Auth\LoginController@index');
+Route::post('checklogin', '\App\Http\Controllers\Auth\LoginController@checklogin');
+Route::get('successlogin', '\App\Http\Controllers\Auth\LoginController@successlogin');
+
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 Route::middleware(['auth'])->group(function () {
-    
+
 });
 
 

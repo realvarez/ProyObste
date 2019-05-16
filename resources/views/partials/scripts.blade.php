@@ -17,7 +17,6 @@
 <script src="{{asset('plugins/switchery/switchery.min.js')}}"></script>
 <script src="{{asset('plugins/jquery.filer/js/jquery.filer.min.js')}}"></script>
 
-
 <script src="{{asset('js/pikeadmin.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>

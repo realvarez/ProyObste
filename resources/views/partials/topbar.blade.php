@@ -9,11 +9,11 @@
                 <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                     <img src="{{asset('images/avatars/'.Auth::user()->id.'.png')}}" alt="Profile image" class="avatar-rounded">
                 </a>
-
+                <a href="{{ url('/logout') }}"> logout </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <div class="dropdown-item noti-title">
                     <h5 class="text-overflow"><small>Bienvenid@, {{Auth::user()->name}}</small> </h5>
-                    </div>  
+                    </div>
                 </div>
             </li>
             @endauth

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -35,5 +37,37 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+    function index()
+    {
+        return view('auth.login');
+    }
+    function checklogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password'  => 'required|alphaNum|min:3'
+        ]);
+
+        $user_data = array(
+            'email'  => $request->get('email'),
+            'password' => $request->get('password')
+        );
+
+        if (Auth::attempt($user_data)) {
+            return redirect('/dash');
+        } else {
+            return back()->with('error', 'Wrong Login Details');
+        }
+    }
+
+    function successlogin()
+    {
+        return view('successlogin');
+    }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect('login');
     }
 }
