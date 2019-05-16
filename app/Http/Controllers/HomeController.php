@@ -25,11 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        /*$category = new Category();
+        $category = new Category();
         $data['categories'] = $category -> recursiveGet();
-        */
-
-        $users = User::all();
-         return view('auth.login')->with('users',$users);
+        return view('welcome', $data);
     }
 }

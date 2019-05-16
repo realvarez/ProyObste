@@ -24,7 +24,7 @@
         <div class="alert alert-danger success-block">
             <strong>Welcome {{ Auth::user()->email }}</strong>
             <br />
-            <a href="{{ url('/main/logout') }}">Logout</a>
+            <a href="{{ url('/login/logout') }}">Logout</a>
         </div>
         @else
         <script>
