@@ -47,7 +47,7 @@ Route::get('/', 'HomeController@index');
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
 // Route::middleware(['auth'])->group(function () {
-    
+
 // });
 
 

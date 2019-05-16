@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\User;
+
 class HomeController extends Controller
 {
     /**
@@ -23,8 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $category = new Category();
+        /*$category = new Category();
         $data['categories'] = $category -> recursiveGet();
-        return view('welcome', $data);
+        */
+
+        $users = User::all();
+         return view('auth.login')->with('users',$users);
     }
 }
