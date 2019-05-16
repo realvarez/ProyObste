@@ -10,7 +10,9 @@
 				@include('partials.leftsidebar')
 			@endif
 			<div class="content-page">
-				<div class="content">@yield('content')</div>
+				<div class="content">
+					@yield('content')
+				</div>
 			</div>
 			@include('partials.footer')
         </div>
