@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -47,6 +45,8 @@ Route::get('/forms-datetime-picker', function () {
 Auth::routes(["register" =>false]);
 
 Route::get('/dash', 'HomeController@index');
+Route::get('/', '\App\Http\Controllers\Auth\LoginController@index');
+
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
 Route::resource('roles', 'roleController');
