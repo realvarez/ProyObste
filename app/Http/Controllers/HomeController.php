@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\User;
 
 class HomeController extends Controller
 {
@@ -15,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     /**
@@ -25,8 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $category = new Category();
-        $data['categories'] = $category -> recursiveGet();
-        return view('welcome', $data);
+        return view('home');
     }
 }
