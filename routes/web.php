@@ -46,6 +46,11 @@ Auth::routes(["register" =>false]);
 Route::get('/', 'HomeController@index');
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
+
+Route::get('/main', 'Auth\LoginController@index');
+Route::post('/login/checklogin', 'Auth\LoginController@checklogin');
+Route::get('login/successlogin', 'Auth\LoginController@successlogin');
+Route::get('login/logout', 'Auth\LoginController@logout');
 // Route::middleware(['auth'])->group(function () {
 
 // });
