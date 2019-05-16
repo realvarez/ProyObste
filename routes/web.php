@@ -38,9 +38,9 @@ Auth::routes(["register" =>false]);
 // Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 
+Route::resource('files', 'FileController');
 Route::middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@index');
-    Route::resource('files', 'FileController');
     Route::resource('users', 'UserController');
     Route::resource('roles', 'roleController');
 });
