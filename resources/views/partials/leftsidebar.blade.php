@@ -3,12 +3,6 @@
 	<div class="sidebar-inner leftscroll">
 		<div id="sidebar-menu">
 			<ul>
-				<li class="submenu">
-					<a class="button-menu-mobile open-left" style="padding:15px 0px; text-align: center;">
-						<i class="fa fa-arrow-left" aria-hidden="true"></i>
-						<i class="fa fa-arrow-right" aria-hidden="true"></i>
-					</a>
-				</li>
 				@foreach ($categories as $category)
 					@if(!isset($category->sons))
 						<li class="submenu">
@@ -25,8 +19,9 @@
 							</ul>
 						</li>
 					@endif
-                @endforeach
-                <li class="submenu">
+				@endforeach
+				
+                	<li class="submenu">
                         <a href="dashboard"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
 

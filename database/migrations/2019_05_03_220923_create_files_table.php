@@ -17,9 +17,10 @@ class CreateFilesTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
-
             $table->string('file_name');
+            $table->string('file_real_name');
             $table->string('file_path');
+            $table->bigInteger('file_size');
             $table->year('file_year');
             $table->boolean('state');
             $table->smallInteger('storage_type');

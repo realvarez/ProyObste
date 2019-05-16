@@ -55,9 +55,9 @@ class LoginController extends Controller
         );
 
         if (Auth::attempt($user_data)) {
-            return redirect('/dash');
+            return redirect('/');
         } else {
-            return back()->with('error', 'Wrong Login Details');
+            return back()->with('error', 'Error en el login');
         }
     }
 
