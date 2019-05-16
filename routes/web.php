@@ -20,6 +20,9 @@ Route::get('/dashboard', function () {
 Route::get('/tables-basic', function () {
     return view('tables-basic');
 });
+Route::get('/tables-datatables', function () {
+    return view('tables-datatable');
+});
 Route::get('/forms-upload', function () {
     return view('forms-upload');
 });
@@ -46,8 +49,10 @@ Auth::routes(["register" =>false]);
 Route::get('/', 'HomeController@index');
 Route::resource('files', 'FileController');
 Route::resource('users', 'UserController');
-// Route::middleware(['auth'])->group(function () {
+Route::resource('roles', 'roleController');
+
+Route::middleware(['auth'])->group(function () {
     
-// });
+});
 
 

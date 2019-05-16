@@ -33,7 +33,6 @@ class DatabaseSeeder extends Seeder
 			Role::create($role);
         }
 
-
         $usuario =[
 			[
 				'role_id' => 1,

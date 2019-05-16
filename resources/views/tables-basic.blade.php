@@ -15,7 +15,6 @@
 	
  
 	<!-- Left Sidebar -->
-	@include('partials.leftsidebar')
 	<!-- End Sidebar -->
 
 
