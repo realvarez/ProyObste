@@ -1,32 +1,17 @@
+@extends('layouts.master')
 
-<!DOCTYPE html>
-<html>
- <head>
-  <title>Simple Login System in Laravel</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
-   .box{
-    width:600px;
-    margin:0 auto;
-    border:1px solid #ccc;
-   }
-  </style>
- </head>
+@section('content')
+  
  <body>
   <br />
   <div class="container box">
+      
    <h3 align="center">Obtetricia Logueo Simple</h3><br />
-
-   @if(isset(Auth::user()->email))
-    <script>window.location="/successlogin";</script>
-   @endif
 
    @if ($message = Session::get('error'))
    <div class="alert alert-danger alert-block">
     <button type="button" class="close" data-dismiss="alert">×</button>
-    <strong>{{ $message }}</strong>
+    <strong>{{$message }}</strong>
    </div>
    @endif
 
@@ -55,5 +40,12 @@
     </div>
    </form>
   </div>
- </body>
-</html>
+
+  <style type="text/css">
+    .box{
+     width:600px;
+     margin:0 auto;
+     border:1px solid #ccc;
+    }
+   </style>
+@endsection

@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
@@ -40,26 +28,21 @@ Route::get('/forms-datetime-picker', function () {
     return view('forms-datetime-picker');
 });
 
-
-
 Auth::routes(["register" =>false]);
 
-Route::get('/dash', 'HomeController@index');
-Route::get('/', '\App\Http\Controllers\Auth\LoginController@index');
-
-Route::resource('files', 'FileController');
-Route::resource('users', 'UserController');
-Route::resource('roles', 'roleController');
-
-Route::get('login', '\App\Http\Controllers\Auth\LoginController@index');
-Route::post('checklogin', '\App\Http\Controllers\Auth\LoginController@checklogin');
-Route::get('successlogin', '\App\Http\Controllers\Auth\LoginController@successlogin');
 
 
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+// Route::get('login', '\App\Http\Controllers\Auth\LoginController@index')->name('login');
+// Route::post('checklogin', '\App\Http\Controllers\Auth\LoginController@checklogin');
+// Route::get('successlogin', '\App\Http\Controllers\Auth\LoginController@successlogin');
+// Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 
 Route::middleware(['auth'])->group(function () {
-
+    Route::get('/', 'HomeController@index');
+    Route::resource('files', 'FileController');
+    Route::resource('users', 'UserController');
+    Route::resource('roles', 'roleController');
 });
 
 
