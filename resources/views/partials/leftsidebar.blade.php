@@ -6,7 +6,7 @@
 				@foreach ($categories as $category)
 					@if(!isset($category->sons))
 						<li class="submenu">
-							<a href="#"><i class="fa fa-fw fa-bars"></i><span>{{ucfirst($category->category_name)}}</span> </a>
+							<a href="category/{{$subCategory->id}}"><i class="fa fa-fw fa-bars"></i><span>{{ucfirst($category->category_name)}}</span> </a>
 						</li>
 					@else
 						<li class="submenu">
@@ -14,7 +14,7 @@
 
 							<ul class="list-unstyled">
 								@foreach ($category->sons as $subCategory)
-									<li><a href="category/{{$category->category_name.'/'.$subCategory->category_name}}">{{$subCategory->category_name}}</a></li>
+									<li><a href="category/{{$subCategory->id}}">{{$subCategory->category_name}}</a></li>
 								@endforeach
 							</ul>
 						</li>

@@ -45,8 +45,7 @@ class FileController extends Controller
             $route = $category->category_name . '/' . $route;
          }
       }
-
-
+      
       $path = $request->file('file')->store($route);
       File::create($request->all());
    }

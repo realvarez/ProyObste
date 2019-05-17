@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Permission;
+use App\File;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,10 @@ class CategoryController extends Controller
     }
  
     public function show($id) { 
-        $Category= Category::find($id);
-        return $Category;
+        $data['category']   = Category::find($id);
+        $data['files']      = File::where('category_id', $id)->where('state',1)->get();
+        dd($data);       
+        // return view('',$data);
     }
  
     public function create() {

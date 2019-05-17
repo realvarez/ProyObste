@@ -11,7 +11,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <div class="dropdown-item noti-title">
-                        <h5 class="text-overflow"><small>Bienvenid@, {{Auth::user()->name}}</small> </h5>
+                        <p class="text-overflow"><small>Bienvenid@, {{Auth::user()->name}}</small> </p>
                     </div>
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">@csrf</form>

@@ -14,8 +14,6 @@ class RoleController extends Controller
     }
 
     public function index() {
-        $category = new Category();
-        $data['categories'] = $category -> recursiveGet();
         $data['roles'] = Role::all();
         foreach($data['roles'] as $rol){
             $rol->cantUsers = Roles_permission::where('role_id', $rol->id)->where('value',1)->count();
