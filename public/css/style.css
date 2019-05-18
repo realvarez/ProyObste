@@ -12,8 +12,9 @@ body {
   padding-bottom: 50px; }
 
 a {
-    color: #0ca4ca;
+    color: white;
     text-decoration: none; }
+
 
 .small {
 	font-size: 0.7rem;
@@ -1203,4 +1204,12 @@ a.btn:focus {
 
 .label-info {
     background-color: #5bc0de;
+}
+
+#category_id,#categoryselect{
+  margin-top: 20px;
+}
+
+a .button{
+  margin-left: 15px !important;
 }

@@ -18,6 +18,7 @@
 
 
 		<!-- Left Sidebar -->
+		@include('partials.leftsidebar')
 		<!-- End Sidebar -->
 
 
@@ -33,10 +34,10 @@
 						<div class="row">
 							<div class="col-xl-12">
 								<div class="breadcrumb-holder">
-									<h1 class="main-title float-left">Multiple file upload</h1>
+									<h1 class="main-title float-left"> Subida de documentos</h1>
 									<ol class="breadcrumb float-right">
 										<li class="breadcrumb-item">Home</li>
-										<li class="breadcrumb-item active">Multiple file upload</li>
+										<li class="breadcrumb-item active">Subida de documentos</li>
 									</ol>
 									<div class="clearfix"></div>
 								</div>
@@ -57,13 +58,17 @@
 									<div class="card-body">
 
 										<input type="file" name="file" id="file">
-
-										<div class="form-group">
+										
+											<div class="form-group">
+												<p>Seleccione una categoría</p>
+			
 											<select id="category_id" class="form-control form-control-sm">
 												@foreach ($categories as $category)
 													<option value="{{$category->category_id}}">{{$category->category_name}}</option>
 												@endforeach
 											</select>
+											<label> Fecha del documento:</label>
+  											<input type="date" class="form-control">
 										</div>
 
 									</div>
@@ -72,7 +77,7 @@
 									</div>
 									@if (count($errors) > 0)
 									<div class="alert alert-danger">
-										<strong>Whoops!</strong> There were some problems with your input.<br><br>
+										<strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
 										<ul>
 											@foreach ($errors->all() as $error)
 											<li>{{ $error }}</li>

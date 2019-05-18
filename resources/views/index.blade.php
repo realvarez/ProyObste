@@ -33,10 +33,7 @@
 	<!-- top bar navigation -->
 	<div class="headerbar">
 
-		<!-- LOGO -->
-        <div class="headerbar-left">
-			<a href="index.html" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Admin</span></a>
-        </div>
+		
 
         <nav class="navbar-custom">
 
