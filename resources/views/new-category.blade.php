@@ -29,15 +29,15 @@
 
 				<div class="container-fluid">
 
-					<form action="{{route('files.store')}}" method="post" enctype="multipart/form-data">
+					<form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
 						@csrf
 						<div class="row">
 							<div class="col-xl-12">
 								<div class="breadcrumb-holder">
-									<h1 class="main-title float-left"> Subida de documentos</h1>
+									<h1 class="main-title float-left"> Nueva Categoría</h1>
 									<ol class="breadcrumb float-right">
 										<li class="breadcrumb-item">Home</li>
-										<li class="breadcrumb-item active">Subida de documentos</li>
+										<li class="breadcrumb-item active">Nueva Categoría</li>
 									</ol>
 									<div class="clearfix"></div>
 								</div>
@@ -52,34 +52,26 @@
 							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="margin: auto auto;">
 								<div class="card mb-3">
 									<div class="card-header">
-										<h3><i class="fas fa-file-upload"></i> Subir Documento</h3>
+										<h3><i class="fas fa-folder-plus"></i></i> Añadir Categoría</h3>
 									</div>
 
 									<div class="card-body container col-md-12 col-lg-12 col-xl-12">
 											<div class="form-group row">
-												<input class="col-md-6 col-lg-6 col-xl-6" type="file" name="file" id="file">
-												<div style="margin-top: 20px;" class="col-md-8 col-lg-8 col-xl-8">
-													<label>Seleccione una categoría:</label>
-													<select name="category_id" class="form-control form-control-sm ">
-												@foreach ($categories as $category)
-													<option  id="category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
-												@endforeach
-													</select>
+												<div class="col-md-6 col-lg-6 col-xl-6">
+													<label for="name"> Nombre de la categoría</label>
+    											<input  type="text" class="form-control " id="name" placeholder="Ingrese el nombre">
 												</div>
-												<div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
-													<label> Fecha del documento:</label>
-  													<input   name="date"  type="date" class="form-control form-control-sm">
-												</div>
+												
 
 						
 										    </div>
 
 									</div>
 									<div class="card-footer">
-										<button type="submit" class="btn btn-primary pull-right"><i class="fas fa-long-arrow-alt-up"></i> Subir</button>
+										<button type="submit" class="btn btn-primary pull-right"><i class="fas fa-long-arrow-alt-up"></i> Guardar</button>
 									</div>
 									@if (count($errors) > 0)
-									<div class="alert alert-danger" >
+									<div class="alert alert-danger"  lang="es">
 										<strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
 										<ul>
 											@foreach ($errors->all() as $error)

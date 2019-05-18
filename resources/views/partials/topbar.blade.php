@@ -1,16 +1,17 @@
 <div class="headerbar">
     <div class="headerbar-left">
-        <a href="/" class="logo"><img alt="Logo" src="{{asset('images/logo.png')}}" /> <span>ADMIN</span></a>
+        <a href="/" ><img alt="Logo" src="{{asset('images/Escudo_USACH.svg')}}" style="height: 50px; margin-left: 10px;" /> <span>ESCUELA DE OBSTETRICIA Y PUERICULTURA</span></a>
     </div>
     <nav class="navbar-custom">
         <ul class="list-inline float-right mb-0">
                 @auth
                 <a href="/forms-upload" id="subirarchivo" class="button"><i class="fas fa-upload"></i> Subir Archivo</a>
-                <a href="/forms-upload" id="subirarchivo" class="button"><i class="fas fa-folder-plus"></i> Nueva categoría</a>
+                
                 
             <li class="list-inline-item dropdown notif">
                 <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    <img src="{{asset('images/avatars/'.Auth::user()->id.'.png')}}" alt="Profile image" class="avatar-rounded">
+                    <!-- <img src="{{asset('images/avatars/'.Auth::user()->id.'.png')}}" alt="Profile image" class="avatar-rounded"> -->
+                    <i class="fas fa-user" style="margin-left: 20px;"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <div class="dropdown-item noti-title">

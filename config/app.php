@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Obstetricia'),
+    'name' => env('APP_NAME', 'Plataforma de gestión de archivos'),
 
     /*
     |--------------------------------------------------------------------------
