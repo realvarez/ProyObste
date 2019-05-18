@@ -58,17 +58,17 @@
 									<div class="card-body">
 
 										<input type="file" name="file" id="file">
-										
+
 											<div class="form-group">
 												<p>Seleccione una categoría</p>
-			
-											<select id="category_id" class="form-control form-control-sm">
+
+											<select name="category_id" class="form-control form-control-sm">
 												@foreach ($categories as $category)
-													<option value="{{$category->category_id}}">{{$category->category_name}}</option>
+													<option  id="category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
 												@endforeach
 											</select>
 											<label> Fecha del documento:</label>
-  											<input type="date" class="form-control">
+  											<input  name="date"  type="date" class="form-control">
 										</div>
 
 									</div>

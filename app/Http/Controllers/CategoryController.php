@@ -14,21 +14,21 @@ class CategoryController extends Controller
         $Categories = Category::all();
         return $Categories;
     }
- 
-    public function show($id) { 
+
+    public function show($id) {
         $data['category']   = Category::find($id);
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
-        dd($data);       
-        // return view('',$data);
+        dd($data);
+        // return view('tables-datatable',$data);
     }
- 
+
     public function create() {
-        
+
     }
- 
+
     public function store(Request $request) {
         $category = Category::create($request->all());
-        
+
         $path = $category->category_name;
         if ($category->category_level !=1){
             while($category->category_level != 1){
@@ -46,17 +46,17 @@ class CategoryController extends Controller
         $PermisssionView -> save();
         $PermissionAdmin -> save();
     }
- 
+
     public function edit($id) {
         $Category= Category::find($id);
         return $Category;
     }
- 
+
     public function update(Request $request, $id) {
         $Category= Category::find($id);
         $Category->update($request->all());
     }
- 
+
     public function destroy($id) {
         $Category = Category::find($id);
         $Category->destroy();

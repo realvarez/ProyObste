@@ -18,9 +18,9 @@ class CreateFilesTable extends Migration
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             $table->string('file_name');
-            $table->string('file_real_name');
+            $table->string('file_real_name')->default('1');
             $table->string('file_path');
-            $table->bigInteger('file_size');
+            $table->bigInteger('file_size')->default(1);
             $table->year('file_year');
             $table->boolean('state');
             $table->smallInteger('storage_type');
@@ -29,7 +29,7 @@ class CreateFilesTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            
+
         });
     }
 

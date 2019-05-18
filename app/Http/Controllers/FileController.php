@@ -26,8 +26,6 @@ class FileController extends Controller
    }
 
 
-   public function create()
-   { }
 
    public function store(Request $request)
    {
@@ -35,18 +33,19 @@ class FileController extends Controller
          'file'   => 'required|file|mimes:pdf,doc,ppt,pptx|max:2048'
       ]);
       //$user_id = Auth::user()->id;
-
       $category = Category::find($request->category_id);
 
+      dd($request);
       $route = $category->category_name;
+
       if ($category->category_level != 1) {
          while ($category->category_level != 1) {
             $category = Category::find($category->superior_category_id);
             $route = $category->category_name . '/' . $route;
          }
       }
-      
       $path = $request->file('file')->store($route);
+
       File::create($request->all());
    }
 
@@ -66,6 +65,6 @@ class FileController extends Controller
    public function destroy($id)
    {
 
-      //la consideramos? 
+      //la consideramos?
    }
 }
