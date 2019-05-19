@@ -45,7 +45,7 @@
 						</div>
 						<!-- end row -->
 
-
+	
 
 						<div class="row">
 
@@ -68,7 +68,7 @@
 												</div>
 												<div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
 													<label> Fecha del documento:</label>
-  													<input   name="date"  type="date" class="form-control form-control-sm">
+  													<input   name="file_year"  type="text" class="form-control form-control-sm" id="datetimepicker">
 												</div>
 
 						
@@ -112,6 +112,7 @@
 
 	<script src="{{asset('js/pikeadmin.js')}}"></script>
 	<script src="{{asset('plugins/jquery.filer/js/jquery.filer.min.js')}}"></script>
+
 
 </body>
 

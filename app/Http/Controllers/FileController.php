@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\File;
 use App\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Contracts\Auth\Guard;
 class FileController extends Controller
 {
+
+   public function __construct(Guard $auth){
+        $this->auth=$auth;
+    }
+
    public function index()
    {
       $file = File::all();
@@ -34,8 +39,6 @@ class FileController extends Controller
       ]);
       //$user_id = Auth::user()->id;
       $category = Category::find($request->category_id);
-
-      dd($request);
       $route = $category->category_name;
 
       if ($category->category_level != 1) {
@@ -45,8 +48,9 @@ class FileController extends Controller
          }
       }
       $path = $request->file('file')->store($route);
-
-      File::create($request->all());
+      $file= new File($request->all());
+      $file->user_id=$this->auth->user()->id;
+      $file->save();
    }
 
    public function edit($id)
