@@ -27,8 +27,10 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request) {
-        $category = Category::create($request->all());
-
+        $category = new Category($request->all());
+        //por ahora solo categorias y no subcategorias :C
+        $category->category_level=1;
+        $category->state=1;
         $path = $category->category_name;
         if ($category->category_level !=1){
             while($category->category_level != 1){
@@ -36,8 +38,8 @@ class CategoryController extends Controller
                 $path = $category->category_name.'/'.$route;
             }
         }
-
-        File::makeDirectory(public_path().'/'.$path, $mode = 0777, true, true);
+        //se cae con esto 
+        //File::makeDirectory(public_path().'/'.$path, $mode = 0777, true, true);
 
         $PermisssionView = new Permission;
         $PermissionAdmin = new Permission;
@@ -45,6 +47,8 @@ class CategoryController extends Controller
         $PermissionAdmin -> name = $request->name ."_admin";
         $PermisssionView -> save();
         $PermissionAdmin -> save();
+        
+        $category->save();
     }
 
     public function edit($id) {

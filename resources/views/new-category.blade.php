@@ -58,8 +58,8 @@
 									<div class="card-body container col-md-12 col-lg-12 col-xl-12">
 											<div class="form-group row">
 												<div class="col-md-6 col-lg-6 col-xl-6">
-													<label for="name"> Nombre de la categoría</label>
-    											<input  type="text" class="form-control " id="name" placeholder="Ingrese el nombre">
+													<label for="category_name"> Nombre de la categoría</label>
+    											<input  type="text" name="category_name"class="form-control " id="category_name" placeholder="Ingrese el nombre">
 												</div>
 												
 
