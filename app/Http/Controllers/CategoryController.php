@@ -18,8 +18,7 @@ class CategoryController extends Controller
     public function show($id) {
         $data['category']   = Category::find($id);
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
-        dd($data);
-        // return view('tables-datatable',$data);
+        return view('tables-datatable',$data);
     }
 
     public function create() {
@@ -38,17 +37,14 @@ class CategoryController extends Controller
                 $path = $category->category_name.'/'.$route;
             }
         }
-        //se cae con esto 
-        //File::makeDirectory(public_path().'/'.$path, $mode = 0777, true, true);
-
         $PermisssionView = new Permission;
         $PermissionAdmin = new Permission;
         $PermisssionView -> name = $request->name ."_view";
         $PermissionAdmin -> name = $request->name ."_admin";
         $PermisssionView -> save();
         $PermissionAdmin -> save();
-        
         $category->save();
+        
     }
 
     public function edit($id) {

@@ -3,10 +3,11 @@
 	<div class="sidebar-inner leftscroll">
 		<div id="sidebar-menu">
 			<ul>
+				
 				@foreach ($categories as $category)
 					@if(!isset($category->sons))
 						<li class="submenu">
-							<a href="category/{{$subCategory->id}}"><i class="fa fa-fw fa-bars"></i><span>{{ucfirst($category->category_name)}}</span> </a>
+							<a href="category/{{$category->id}}"><i class="fa fa-fw fa-bars"></i><span>{{ucfirst($category->category_name)}}</span> </a>
 						</li>
 					@else
 						<li class="submenu">

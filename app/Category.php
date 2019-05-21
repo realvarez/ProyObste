@@ -18,7 +18,9 @@ class Category extends Model
         if(!$category_id){
             $categories = Category::where('category_level',"=", 1)->where('state',1)->get();
             foreach($categories as $category){
-                $category->sons = $this->recursiveGet($category->id);
+                $_category      = $this->recursiveGet($category->id);
+                if($_category->isNotEmpty()) 
+                    $category->sons = $_category;
             }
         }
         else{

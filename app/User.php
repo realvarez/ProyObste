@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Role;
 
 class User extends Authenticatable
 {
@@ -44,7 +45,7 @@ class User extends Authenticatable
     ];
 
     public function has_role(){
-        return $this -> belongsTo('App\Role');
+        return $this -> belongsTo(Role::class, 'role_id');
     }
 
     public function files_uploaded(){
