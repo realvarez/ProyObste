@@ -18,17 +18,12 @@ class FileController extends Controller
    public function index()
    {
       $file = File::all();
-
-      return $file;
-      $category = new Category();
-      $data['categories'] = $category->recursiveGet();
       return view('forms-upload', $data);
    }
 
    public function show($id)
    {
       $file = File::find($id);
-
       return $file;
    }
 
@@ -49,8 +44,6 @@ class FileController extends Controller
             $route            =  $category->category_name . '/' . $route;
          }
       }
-      $file = $request->file('file'); 
-      
       $file                   =  new File($request->all());
       $file->user_id          =  Auth::user()->id;
       $file->file_real_name   =  $request->file('file')->getClientOriginalName();
@@ -58,11 +51,15 @@ class FileController extends Controller
       $file->file_extension   =  $request->file('file')->getClientOriginalExtension();
       $file->file_name        =  $category->category_name.'_'.$request->file_year.'.'.$file->file_extension;
       
-      $path = Storage::putFileAs($route, $request->file('file'), $file->file_name);
+      $file->file_size        =  $request->file('file')->getClientSize();
+
+      $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
       $file->file_path        =  $path;
       $file->state            =  1;
       $file->user_id          =  $this->auth->user()->id;
       $file->save();
+
+      return redirect()->action('CategoryController@show', ['id' => $request->category_id]);
    }
 
    public function edit($id)
