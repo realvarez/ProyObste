@@ -61,6 +61,14 @@ class User extends Authenticatable
             if($permission->name == $permission_name)
                 return true;
         }
+        return false;
+    }
+    
+    public function has_permission_redirect($permission_name){
+        foreach ($this->has_role->has_permissions as $permission) {
+            if($permission->name == $permission_name)
+                return true;
+        }
         return \redirect('HomeController@index');
     }
 }
