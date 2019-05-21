@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use Auth;
+use App\Role;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        dd(auth()->user()->has_role->has_permissions);
         return view('welcome');
     }
 }

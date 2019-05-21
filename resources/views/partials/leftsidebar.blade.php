@@ -11,7 +11,7 @@
 						</li>
 					@else
 						<li class="submenu">
-							<a href="#"><i class="fas fa-folder-open"></i> <span>{{ucfirst($category->category_name)}}</span><span class="menu-arrow"></span></a>
+							<a href="category/{{$category->id}}"><i class="fas fa-folder-open"></i> <span>{{ucfirst($category->category_name)}}</span><span class="menu-arrow"></span></a>
 
 							<ul class="list-unstyled">
 								@foreach ($category->sons as $subCategory)
@@ -41,9 +41,9 @@
                         </li>
                    <li><a href="/new-category" id="subirarchivo" class="button"><i class="fas fa-folder-plus"></i> Nueva categoría</a></li>
                    <li>
-                   	
+
                    </li>
-				
+
 			</ul>
 			<div class="clearfix"></div>
 		</div>
