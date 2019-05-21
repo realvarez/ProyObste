@@ -55,4 +55,12 @@ class User extends Authenticatable
     public function category_order(){
         return $this -> hasMany('App\Category');
     }
+
+    public function has_permission($permission_name){
+        foreach ($this->has_role->has_permissions as $permission) {
+            if($permission->name == $permission_name)
+                return true;
+        }
+        return \redirect('HomeController@index');
+    }
 }

@@ -18,4 +18,5 @@ class Role extends Model
     public function belong_users(){
         return $this -> hasMany('App\User');
     }
+
 }

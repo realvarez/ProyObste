@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // $this->middleware('auth');
+
     }
 
     /**
@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd(auth()->user()->has_role->has_permissions);
+        Auth::user()->has_permission('Modificar');
         return view('welcome');
     }
 }
