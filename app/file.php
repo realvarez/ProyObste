@@ -12,6 +12,7 @@ class File extends Model
         'file_name',
         'file_real_name',
         'file_path',
+        'file_extension',
         'file_size',
         'file_year',
         'state',

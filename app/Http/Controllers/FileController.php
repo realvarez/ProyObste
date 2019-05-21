@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\File;
+use Auth;
+use Illuminate\Support\Facades\Storage;
 use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
@@ -37,19 +39,29 @@ class FileController extends Controller
       $this->validate($request, [
          'file'   => 'required|file|mimes:pdf,doc,ppt,pptx|max:2048'
       ]);
-      //$user_id = Auth::user()->id;
-      $category = Category::find($request->category_id);
-      $route = $category->category_name;
-
+      
+      $category               =  Category::find($request->category_id);
+      $route                  =  $category->category_name;
+      
       if ($category->category_level != 1) {
          while ($category->category_level != 1) {
-            $category = Category::find($category->superior_category_id);
-            $route = $category->category_name . '/' . $route;
+            $category         =  Category::find($category->superior_category_id);
+            $route            =  $category->category_name . '/' . $route;
          }
       }
-      $path = $request->file('file')->store($route);
-      $file= new File($request->all());
-      $file->user_id=$this->auth->user()->id;
+      $file = $request->file('file'); 
+      
+      $file                   =  new File($request->all());
+      $file->user_id          =  Auth::user()->id;
+      $file->file_real_name   =  $request->file('file')->getClientOriginalName();
+      $file->storage_type     =  1;  
+      $file->file_extension   =  $request->file('file')->getClientOriginalExtension();
+      $file->file_name        =  $category->category_name.'_'.$request->file_year.'.'.$file->file_extension;
+      
+      $path = Storage::putFileAs($route, $request->file('file'), $file->file_name);
+      $file->file_path        =  $path;
+      $file->state            =  1;
+      $file->user_id          =  $this->auth->user()->id;
       $file->save();
    }
 

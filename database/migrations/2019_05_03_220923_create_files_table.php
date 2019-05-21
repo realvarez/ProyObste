@@ -20,10 +20,11 @@ class CreateFilesTable extends Migration
             $table->string('file_name');
             $table->string('file_real_name')->default('1');
             $table->string('file_path');
+            $table->string('file_extension');
             $table->bigInteger('file_size')->default(1);
             $table->year('file_year');
-            $table->boolean('state');
-            $table->smallInteger('storage_type');
+            $table->boolean('state')->default(1);
+            $table->smallInteger('storage_type')->default(1);
             $table->dateTime('elimination_date')->nullable($value = true)->default(null);
             $table->timestamps();
 
