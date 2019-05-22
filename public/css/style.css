@@ -1218,3 +1218,14 @@ a.btn:focus {
 a .button{
   margin-left: 15px !important;
 }
+
+@media only screen and (min-width: 1000px) {
+  .titulo {
+    visibility: visible;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .titulo {
+    visibility: hidden;
+  }
+}
