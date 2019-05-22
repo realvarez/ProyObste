@@ -1,5 +1,6 @@
 <?php
 use App\File;
+use PDF;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -30,7 +31,7 @@ Route::get('/forms-datetime-picker', function () {
 });
 
 
-Auth::routes(["register" =>false]);
+Auth::routes(["register" => false]);
 
 Route::get('storage/{archivo}', function ($archivo) {
     $file = File::find($archivo);
@@ -40,15 +41,13 @@ Route::get('storage/{archivo}', function ($archivo) {
 
 
     $public_path =  '/var/www/storage/app/';
-    $url = $public_path.$file->file_path;
+    $url = $public_path . $file->file_path;
     //verificamos si el archivo existe y lo retornamos
-    if (Storage::exists($file->file_path))
-    {
-      return response()->download($url);
+    if (Storage::exists($file->file_path)) {
+        return response()->download($url);
     }
     //si no se encuentra lanzamos un error 404.
     abort(404);
-
 });
 Route::get('stream/{archivo}', function ($archivo) {
     $file = File::find($archivo);
@@ -58,15 +57,23 @@ Route::get('stream/{archivo}', function ($archivo) {
 
 
     $public_path =  '/var/www/storage/app/';
-    $url = $public_path.$file->file_path;
+    $url = $public_path . $file->file_path;
     //verificamos si el archivo existe y lo retornamos
-    if (Storage::exists($file->file_path))
-    {
-      return response()->file($url);
+    if (Storage::exists($file->file_path)) {
+        if ($file->file_extension == 'doc' || $file->file_extension == 'docx') {
+            $phpWord = new \PhpOffice\PhpWord\PhpWord();
+            $phpWord = \PhpOffice\PhpWord\IOFactory::load($url);
+            $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
+            try {
+                $objWriter->save(storage_path('temp.html'));
+            } catch (Exception $e) { }
+            return PDF::loadFile(storage_path('temp.html'))->save(storage_path('tempPdf.html'))->stream('temporalview.pdf');
+        } else {
+            return response()->file($url);
+        }
     }
     //si no se encuentra lanzamos un error 404.
     abort(404);
-
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -74,8 +81,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
     Route::resource('category', 'CategoryController');
-    Route::resource('files','FileController');
+    Route::resource('files', 'FileController');
 });
-
-
-
