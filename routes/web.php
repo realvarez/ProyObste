@@ -35,7 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@index');
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
-    Route::resource('category.subcategory', 'CategoryController');
+    Route::resource('category', 'CategoryController');
     Route::resource('files','FileController');
 });
 
