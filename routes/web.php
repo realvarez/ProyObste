@@ -27,9 +27,7 @@ Route::get('/forms-select2', function () {
 Route::get('/forms-datetime-picker', function () {
     return view('forms-datetime-picker');
 });
-Route::get('/new-category', function () {
-    return view('new-category');
-});
+
 
 Auth::routes(["register" =>false]);
 
