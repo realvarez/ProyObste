@@ -198,19 +198,19 @@ class DatabaseSeeder extends Seeder
 			[
 				'role_id'=> 1,
 				'permission_id'=> 2,
-				'value'=> 1,
+				
 			
 			],
 			[
 				'role_id'=> 1,
 				'permission_id'=> 2,
-				'value'=> 1,
+				
 			
 			],
 			[
 				'role_id'=> 1,
 				'permission_id'=> 2,
-				'value'=> 1,
+				
 			
 			],
 			

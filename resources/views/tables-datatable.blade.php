@@ -13,8 +13,8 @@
 
 
 
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-							<div class="card mb-3" style="width: 80em">
+			<div class="">
+							<div class="card" style="">
 
 
 								<div class="card-body">
@@ -53,7 +53,7 @@
 									</div>
 
 								</div>
-							</div><!-- end card-->
+							
 						</div>
 
 
@@ -118,7 +118,7 @@
 		$(document).ready(function() {
 			// Setup - add a text input to each footer cell
 				var title = $(this).text();
-				$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+				$(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
 
 			// DataTable
 			var table = $('#example4').DataTable();

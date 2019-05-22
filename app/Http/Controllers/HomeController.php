@@ -26,6 +26,6 @@ class HomeController extends Controller
     public function index()
     {
         Auth::user()->has_permission('Modificar');
-        return view('welcome');
+        return view('index');
     }
 }
