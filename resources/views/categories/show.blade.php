@@ -7,8 +7,13 @@
 				<h1 class="main-title float-left"><i class="fas fa-folder" style="font-size: 20px;"></i>  Documentos /
 					{{ucfirst($category->category_name)}}</h1>
 				<ol class="breadcrumb float-right">
-					<li class="breadcrumb-item">Home</li>
-					<li class="breadcrumb-item active">{{ucfirst($category->category_name)}}</li>
+                    <li>
+                        <a href="/category/create" id="subirarchivo" style="color:black">
+                            <i class="fas fa-folder-plus"></i><li class="breadcrumb-item">Nueva sub-categoría</li>
+                        </a>
+                    </li>
+					<!--<li class="breadcrumb-item">Home</li>
+					<li class="breadcrumb-item active">{{ucfirst($category->category_name)}}</li>-->
 				</ol>
 				<div class="clearfix"></div>
 			</div>
@@ -17,7 +22,41 @@
 	<div class="card" style="">
 		<div class="card-body">
 			<div class="table-responsive">
-				<table id="table-documents" class="table table-bordered table-hover display">
+                <!--TABLA SUB CATEGORIAS DE LA CATEGORIA
+                Deberia haber un if en caso que exista o no una sub catwgoria para mostrar esta tabla-->
+                    <table id="table-documents" class="table table-bordered table-hover display">
+                            <thead>
+                                <tr>
+                                    <th>Nombre Sub-categoría</th>
+                                    <th>Ultima modificación</th>
+                                    <th>Año de creación</th>
+                                    <th style="text-align: center">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--for each sub category
+                                    <tr>
+                                        <td>$subcategory->category_name</td>
+                                        <td>$subcategory->category_level</td>
+                                        <td>$subcategory->category_state</td>
+                                        <td>$subcategory->category_path</td>
+                                        <td style="text-align: center">
+
+
+
+                                        <a href="#" style="color:black">
+                                            <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="#" style="color:black">
+                                            <i class="fa fa-download bigfonts fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        </td>
+                                    </tr>
+                                endforeach-->
+                            </tbody>
+                        </table>
+                <!--Fin tabla sub categoria-->
+                <table id="table-documents" class="table table-bordered table-hover display">
 					<thead>
 						<tr>
                             <th>Nombre</th>
