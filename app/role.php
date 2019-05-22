@@ -12,6 +12,11 @@ class Role extends Model
     ];
 
     public function has_permissions(){
-        return $this -> hasMany('App\Permission');
+        return $this -> belongsToMany('App\Permission','roles_permissions');
     }
+
+    public function belong_users(){
+        return $this -> hasMany('App\User');
+    }
+
 }

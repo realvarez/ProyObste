@@ -27,8 +27,6 @@ class FileController extends Controller
       return $file;
    }
 
-
-
    public function store(Request $request)
    {
       $this->validate($request, [

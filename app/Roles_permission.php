@@ -12,7 +12,5 @@ class Roles_permission extends Model
         'value'
     ];
 
-    public function has_permissions(){
-        return $this -> hasMany('App\Permission');
-    }
+    
 }

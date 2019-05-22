@@ -7,30 +7,43 @@
 				<div class="content">
 
 
-					<div class="container-fluid">
-
-							<div class="row">
-									<div class="col-xl-12">
-										<div class="breadcrumb-holder">
-										<h1 class="main-title float-left"> {{$category->category_name}}</h1>
-											<ol class="breadcrumb float-right">
-												<li class="breadcrumb-item">Home</li>
-												<li class="breadcrumb-item active">{{$category->category_name}}</li>
-											</ol>
-											<div class="clearfix"></div>
-										</div>
-									</div>
-								</div>
-							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
 
 
-								<div class="row">
 
+			<div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="breadcrumb-holder">
+                                    <h1 class="main-title float-left"><i class="fas fa-folder" style="font-size: 20px;"></i>  Documentos /
+                                    	{{ucfirst($category->category_name)}}</h1>
+                                    <ol class="breadcrumb float-right">
+                                        <li class="breadcrumb-item">Home</li>
+                                    	<li class="breadcrumb-item active">{{ucfirst($category->category_name)}}</li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+			<div class="">
+							<div class="card" style="">
 
 										<div class="card mb-3" >
 
 
-												<div class="card-body">
+									<div class="table-responsive">
+									<table id="example4" class="table table-bordered table-hover display">
+									<thead>
+										<tr>
+											<th>Nombre</th>
+											<th>Tipo</th>
+											<th>Año</th>
+											<th>Opciones</th>
+										</tr>
+                                    </thead>
+                                    <tbody>
 
 													<div class="table-responsive">
 													<table id="example4" class="table table-bordered table-hover display">
@@ -71,6 +84,8 @@
 
 								</div>
 
+						</div>
+
 					  </div>
 
 
@@ -81,6 +96,8 @@
 				</div>
 
 			</div>
+
+
 
 
 
@@ -137,7 +154,7 @@
 		$(document).ready(function() {
 			// Setup - add a text input to each footer cell
 				var title = $(this).text();
-				$(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+				$(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
 
 			// DataTable
 			var table = $('#example4').DataTable();
