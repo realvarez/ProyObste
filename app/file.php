@@ -25,6 +25,6 @@ class File extends Model
     }
 
     public function category(){
-        return $this -> belongsTo('App\Categorie');
+        return $this -> belongsTo('App\Category');
     }
 }

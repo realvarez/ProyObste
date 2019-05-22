@@ -10,7 +10,20 @@
         <div class="content">
 
 			<div class="container-fluid">
-
+			
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="breadcrumb-holder">
+                                    <h1 class="main-title float-left"><i class="fas fa-folder" style="font-size: 20px;"></i>  Documentos /
+                                    	{{ucfirst($category->category_name)}}</h1>
+                                    <ol class="breadcrumb float-right">
+                                        <li class="breadcrumb-item">Home</li>
+                                    
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
 
 
 			<div class="">
@@ -25,7 +38,7 @@
 										<tr>
 											<th>Nombre</th>
 											<th>Tipo</th>
-											<th>Ultima modificacion</th>
+											<th>Año</th>
 											<th>Opciones</th>
 										</tr>
                                     </thead>
