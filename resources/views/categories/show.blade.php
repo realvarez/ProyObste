@@ -1,5 +1,3 @@
-{{-- DEPRECADA -> MOVIDA A Categories/Show --}}
-{{-- 
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
@@ -34,7 +32,9 @@
 								<td>{{$file->file_name}}</td>
 								<td>{{$file->state}}</td>
 								<td>{{$file->file_year}}</td>
-								<td><i class="fa fa-search bigfonts fa-x5" aria-hidden="true"></i><i class="fa fa-download bigfonts fa-x5" aria-hidden="true"></i>
+                                <td>
+                                    <i class="fa fa-search bigfonts fa-lg" aria-hidden="true"></i>
+                                    <i class="fa fa-download bigfonts fa-lg" aria-hidden="true"></i>
 								</td>
 							</tr>
 						@endforeach
@@ -91,4 +91,4 @@
 	} );
 </script>
 
-@endsection --}}
+@endsection

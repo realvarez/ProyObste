@@ -17,13 +17,12 @@ class CategoryController extends Controller
 
     public function show($id) {
         $data['category']   = Category::find($id);
-
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
-        return view('tables-datatable',$data);
+        return view('categories.show',$data);
     }
 
     public function create() {
-
+        return view('categories.create');
     }
 
     public function store(Request $request) {
