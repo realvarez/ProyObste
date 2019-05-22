@@ -15,6 +15,11 @@ a {
     color: white;
     text-decoration: none; }
 
+.tarjetacategoria :hover{
+text-shadow: 1px 1px 6px #000000 !important; 
+
+}
+
 
 .small {
 	font-size: 0.7rem;
