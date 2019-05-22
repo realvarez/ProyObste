@@ -17,11 +17,8 @@ class CategoryController extends Controller
 
     public function show($id) {
         $data['category']   = Category::find($id);
-
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
-        //dd($data);
-       // dd($data);
-         return view('tables-datatable',$data);
+        return view('tables-datatable',$data);
     }
 
     public function create() {

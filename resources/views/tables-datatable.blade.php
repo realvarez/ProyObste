@@ -1,71 +1,90 @@
 @extends('layouts.master')
 @section('content')
 
-<div id="main">
+
+		<div class="content-page">
+
+				<div class="content">
 
 
+					<div class="container-fluid">
 
-    <div class="content-page">
-
-        <div class="content">
-
-			<div class="container-fluid">
-
-
-
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-							<div class="card mb-3" style="width: 80em">
-
-
-								<div class="card-body">
-
-									<div class="table-responsive">
-									<table id="example4" class="table table-bordered table-hover display">
-									<thead>
-										<tr>
-											<th>Nombre</th>
-											<th>Tipo</th>
-											<th>Ultima modificacion</th>
-											<th>Opciones</th>
-										</tr>
-                                    </thead>
-                                    <tbody>
-
-                                        @foreach ($files as $file)
-                                            <tr>
-                                                <td>{{$file->file_name}}</td>
-                                                <td>{{$file->state}}</td>
-                                                <td>{{$file->file_year}}</td>
-                                                <td><i class="fa fa-search bigfonts fa-x5" aria-hidden="true"></i>
-                                                    <i class="fa fa-download bigfonts fa-x5" aria-hidden="true"></i>
-
-                                                </td>
-                                            </tr>
-                                        @endforeach
-
-
-
-
-
-                                    </tbody>
-
-									</table>
+							<div class="row">
+									<div class="col-xl-12">
+										<div class="breadcrumb-holder">
+										<h1 class="main-title float-left"> {{$category->category_name}}</h1>
+											<ol class="breadcrumb float-right">
+												<li class="breadcrumb-item">Home</li>
+												<li class="breadcrumb-item active">{{$category->category_name}}</li>
+											</ol>
+											<div class="clearfix"></div>
+										</div>
 									</div>
+								</div>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+
+
+								<div class="row">
+
+
+										<div class="card mb-3" >
+
+
+												<div class="card-body">
+
+													<div class="table-responsive">
+													<table id="example4" class="table table-bordered table-hover display">
+													<thead>
+														<tr>
+															<th>Nombre</th>
+															<th>Tipo</th>
+															<th>Ultima modificacion</th>
+															<th>Opciones</th>
+														</tr>
+													</thead>
+													<tbody>
+
+														@foreach ($files as $file)
+															<tr>
+																<td>{{$file->file_name}}</td>
+																<td>{{$file->file_extension}}</td>
+																<td>{{$file->created_at}}</td>
+																<td><i class="fa fa-search bigfonts fa-x5" aria-hidden="true"></i>
+																	<i class="fa fa-download bigfonts fa-x5" aria-hidden="true"></i>
+																</td>
+															</tr>
+														@endforeach
+
+
+
+
+
+													</tbody>
+
+													</table>
+													</div>
+
+												</div>
+											</div><!-- end card-->
+
+
 
 								</div>
-							</div><!-- end card-->
-						</div>
+
+					  </div>
 
 
 
 
-            </div>
+					</div>
 
-		</div>
+				</div>
 
-    </div>
+			</div>
 
-</div>
+
+
+
 <!-- END main -->
 
 <script src="{{asset('js/modernizr.min.js')}}"></script>
