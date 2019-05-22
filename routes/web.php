@@ -62,7 +62,7 @@ Route::get('stream/{archivo}', function ($archivo) {
     //verificamos si el archivo existe y lo retornamos
     if (Storage::exists($file->file_path))
     {
-      return response()->download($url);
+      return response()->file($url);
     }
     //si no se encuentra lanzamos un error 404.
     abort(404);
