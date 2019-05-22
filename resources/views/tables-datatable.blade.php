@@ -18,7 +18,7 @@
                                     	{{ucfirst($category->category_name)}}</h1>
                                     <ol class="breadcrumb float-right">
                                         <li class="breadcrumb-item">Home</li>
-                                    
+                                    	<li class="breadcrumb-item active">{{ucfirst($category->category_name)}}</li>
                                     </ol>
                                     <div class="clearfix"></div>
                                 </div>
