@@ -50,24 +50,7 @@ Route::get('storage/{archivo}', function ($archivo) {
     abort(404);
 
 });
-Route::get('stream/{archivo}', function ($archivo) {
-    $file = File::find($archivo);
 
-    //TODO: Por definir la direccion de storage
-    //Variable global de storage
-
-
-    $public_path =  '/var/www/storage/app/';
-    $url = $public_path.$file->file_path;
-    //verificamos si el archivo existe y lo retornamos
-    if (Storage::exists($file->file_path))
-    {
-      return response()->file($url);
-    }
-    //si no se encuentra lanzamos un error 404.
-    abort(404);
-
-});
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@index');
