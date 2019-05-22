@@ -38,7 +38,7 @@
 
 
 
-                                <a href="/#" style="color:black">
+                                <a href="/stream/{{$file->id}}"" style="color:black">
                                     <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
                                 </a>
                                 <a href="/storage/{{$file->id}}" style="color:black">

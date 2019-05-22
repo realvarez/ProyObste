@@ -30,12 +30,12 @@ class FileController extends Controller
    public function store(Request $request)
    {
       $this->validate($request, [
-         'file'   => 'required|file|mimes:pdf,doc,ppt,pptx|max:2048'
+         'file'   => 'required|file|mimes:pdf,doc,docx,ppt,pptx|max:2048'
       ]);
-      
+
       $category               =  Category::find($request->category_id);
       $route                  =  $category->category_name;
-      
+
       if ($category->category_level != 1) {
          while ($category->category_level != 1) {
             $category         =  Category::find($category->superior_category_id);
@@ -45,10 +45,10 @@ class FileController extends Controller
       $file                   =  new File($request->all());
       $file->user_id          =  Auth::user()->id;
       $file->file_real_name   =  $request->file('file')->getClientOriginalName();
-      $file->storage_type     =  1;  
+      $file->storage_type     =  1;
       $file->file_extension   =  $request->file('file')->getClientOriginalExtension();
       $file->file_name        =  $category->category_name.'_'.$request->file_year.'.'.$file->file_extension;
-      
+
       $file->file_size        =  $request->file('file')->getClientSize();
 
       $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
