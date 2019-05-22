@@ -2,7 +2,7 @@ var resizefunc = [];
 
 
 $( document ).ready(function() {
-    $(function() {  
+    $(function() {
     $(".nicescroll").niceScroll({cursorcolor:"#858586"});
 	});
 });
@@ -10,7 +10,7 @@ $( document ).ready(function() {
 
 !function($) {
     "use strict";
-	
+
     var Sidemenu = function() {
         this.$body = $("body"),
         this.$openLeftBtn = $(".open-left"),
@@ -50,7 +50,9 @@ $( document ).ready(function() {
           $(this).addClass("subdrop");
           $(".pull-right i",$(this).parents(".submenu:last")).removeClass("md-add").addClass("md-remove");
           $(".pull-right i",$(this).siblings("ul")).removeClass("md-remove").addClass("md-add");
-        }else if($(this).hasClass("subdrop")) {
+
+        }
+        else if($(this).hasClass("subdrop")) {
           $(this).removeClass("subdrop");
           $(this).next("ul").slideUp(350);
           $(".pull-right i",$(this).parent()).removeClass("md-remove").addClass("md-add");
@@ -88,7 +90,7 @@ $( document ).ready(function() {
  function($) {
     "use strict";
 
-    var App = function() {        
+    var App = function() {
         this.pageScrollElement = "html, body",
         this.$body = $("body")
     };
@@ -168,7 +170,7 @@ var changeptype = function(){
       }
 
   }
-  
+
 }
 
 

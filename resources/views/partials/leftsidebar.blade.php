@@ -3,6 +3,7 @@
 	<div class="sidebar-inner leftscroll">
 		<div id="sidebar-menu">
 			<ul>
+				
 				@foreach ($categories as $category)
 					@if(!isset($category->sons))
 						<li class="submenu">
