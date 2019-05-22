@@ -1,13 +1,12 @@
 @extends('layouts.master')
 @section('content')
 
-<div id="main">
 
 
 
-    <div class="content-page">
 
-        <div class="content">
+
+    
 
 			<div class="container-fluid">
 			
@@ -76,9 +75,9 @@
 
 		</div>
 
-    </div>
 
-</div>
+
+
 <!-- END main -->
 
 <script src="{{asset('js/modernizr.min.js')}}"></script>
