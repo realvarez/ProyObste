@@ -20,21 +20,30 @@
 				<table id="table-documents" class="table table-bordered table-hover display">
 					<thead>
 						<tr>
-							<th>Nombre</th>
+                            <th>Nombre</th>
+                            <th>Nombre Real</th>
 							<th>Tipo</th>
 							<th>Año</th>
-							<th>Opciones</th>
+							<th style="text-align: center">Opciones</th>
 						</tr>
 					</thead>
 					<tbody>
 						@foreach ($files as $file)
 							<tr>
-								<td>{{$file->file_name}}</td>
-								<td>{{$file->state}}</td>
+                                <td>{{$file->file_name}}</td>
+                                <td>{{$file->file_real_name}}</td>
+								<td>{{$file->file_extension}}</td>
 								<td>{{$file->file_year}}</td>
-                                <td>
-                                    <i class="fa fa-search bigfonts fa-lg" aria-hidden="true"></i>
-                                    <i class="fa fa-download bigfonts fa-lg" aria-hidden="true"></i>
+                                <td style="text-align: center">
+
+
+
+                                <a href="/#" style="color:black">
+                                    <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
+                                </a>
+                                <a href="/storage/{{$file->id}}" style="color:black">
+                                    <i class="fa fa-download bigfonts fa-2x" aria-hidden="true"></i>
+                                </a>
 								</td>
 							</tr>
 						@endforeach
