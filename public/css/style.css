@@ -64,10 +64,10 @@ img {
   background-color: #1bb99a !important; }
 
 .bg-info {
-  background-color: #3db9dc !important; }
+  background-color: rgba(0,47,108,0.9) !important; }
 
 .bg-warning {
-  background-color: #f1b53d !important; }
+  background-color: rgba(221,121,0,0.9) !important; }
 
 .bg-danger {
   background-color: #ff5d48 !important; }
@@ -257,7 +257,7 @@ a {
   z-index: 999; }
 
 .headerbar .headerbar-left {
-    background: #4980b5;
+    background: #002F6C;
     float: left;
     text-align: center;
     height: 50px;
@@ -273,7 +273,7 @@ a {
 }
 	  
 .navbar-custom {
-  background-color: #4980b5 ;
+  background-color: #002F6C ;
   border-radius: 0;
   margin-bottom: 0;
   padding: 0 10px;
@@ -1217,6 +1217,9 @@ a.btn:focus {
 
 a .button{
   margin-left: 15px !important;
+}
+a .titulo :hover{
+  color:#EA7600 !important;
 }
 
 @media only screen and (min-width: 1000px) {
