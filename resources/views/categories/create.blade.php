@@ -29,6 +29,15 @@
 								<label for="category_name">Nombre de la categoría</label>
 								<input  type="text" name="category_name"class="form-control " id="category_name" placeholder="Ingrese el nombre">
 							</div>
+							<div class="col-md-12" style="margin-top: 10px;">
+								<label>Seleccione a la categoría a la que pertenecerá:</label>
+									<select name="superior_category_id" class="form-control form-control-md ">
+									<option value="0" selected>Nueva Categoría Principal</option>
+								@foreach ($categories as $category)
+									<option  id="superior_category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
+								@endforeach
+									</select>
+							</div>
 						</div>
 					</div>
 				</form>

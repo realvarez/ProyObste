@@ -20,9 +20,9 @@
 							</li>
 						@endif
 					@endforeach
-					<li>
-						<a href="/category/create" id="subirarchivo" class="button">
-							<i class="fas fa-folder-plus"></i>Nueva categoría
+					<li class="submenu">
+						<a href="/category/create">
+							<i class="fas fa-folder-plus"></i><span>Nueva categoría</span><span class="menu-arrow"></span></a>
 						</a>
 					</li>
 				</ul>

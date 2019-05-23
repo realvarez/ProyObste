@@ -7,13 +7,13 @@
 				<h1 class="main-title float-left"><i class="fas fa-folder" style="font-size: 20px;"></i>  Documentos /
 					{{ucfirst($category->category_name)}}</h1>
 				<ol class="breadcrumb float-right">
-                    <li>
-                        <a href="/category/create" id="subirarchivo" style="color:black">
-                            <i class="fas fa-folder-plus"></i><li class="breadcrumb-item">Nueva sub-categoría</li>
+                    <li >
+                        <a href="/category/create" style="color:black; margin-right: 15px; padding: 2px !important;">
+                            <i class="fas fa-folder-plus"></i> Nueva sub-categoría
                         </a>
                     </li>
-					<!--<li class="breadcrumb-item">Home</li>
-					<li class="breadcrumb-item active">{{ucfirst($category->category_name)}}</li>-->
+					<li class="breadcrumb-item">Home</li>
+					<li class="breadcrumb-item active">{{ucfirst($category->category_name)}}</li>
 				</ol>
 				<div class="clearfix"></div>
 			</div>
