@@ -22,7 +22,7 @@
 					@endforeach
 					<li class="submenu">
 						<a href="/category/create">
-							<i class="fas fa-folder-plus"></i><span>Nueva categoría</span><span class="menu-arrow"></span></a>
+							<i class="fas fa-folder-plus"></i><span>Nueva categoría</span></a>
 						</a>
 					</li>
 				</ul>

@@ -27,26 +27,28 @@ class CategoryController extends Controller
 
     public function store(Request $request) {
         $category = new Category($request->all());
+        if($category->superior_category_id != 0){
+            $category->category_level=2;
+        }
+        else{
+            $category->category_level=1;
+
+        }
         //por ahora solo categorias y no subcategorias :C
-        $category->category_level=1;
         $category->state=1;
         $path = $category->category_name;
-        if ($category->category_level !=1){
-            while($category->category_level != 1){
-                $category = Category::find($category -> superior_category_id);
-                $path = $category->category_name.'/'.$route;
-            }
-        }
+        
+        
         //se cae con esto
         //File::makeDirectory(public_path().'/'.$path, $mode = 0777, true, true);
-
+/*
         $PermisssionView = new Permission;
         $PermissionAdmin = new Permission;
         $PermisssionView -> name = $request->name ."_view";
         $PermissionAdmin -> name = $request->name ."_admin";
         $PermisssionView -> save();
         $PermissionAdmin -> save();
-
+*/
         $category->save();
         return redirect()->action('CategoryController@create');
 
