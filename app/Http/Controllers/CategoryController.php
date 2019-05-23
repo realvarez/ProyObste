@@ -27,7 +27,6 @@ class CategoryController extends Controller
 
     public function store(Request $request) {
         $category = new Category($request->all());
-        dd($category);
         //por ahora solo categorias y no subcategorias :C
         $category->category_level=1;
         $category->state=1;
@@ -49,6 +48,7 @@ class CategoryController extends Controller
         $PermissionAdmin -> save();
 
         $category->save();
+        return redirect()->action('CategoryController@create');
 
     }
 
@@ -67,3 +67,4 @@ class CategoryController extends Controller
         $Category->destroy();
     }
 }
+
