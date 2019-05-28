@@ -56,7 +56,7 @@ Route::get('stream/{archivo}', function ($archivo) {
     //Variable global de storage
 
 
-    $public_path =  '/home/vagrant/code/ProyObste/storage/app';
+    $public_path =  '/home/vagrant/code/ProyObste/storage/app/';
     $url = $public_path . $file->file_path;
     //verificamos si el archivo existe y lo retornamos
     if (Storage::exists($file->file_path)) {

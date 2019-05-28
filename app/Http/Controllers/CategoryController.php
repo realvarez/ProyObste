@@ -50,7 +50,7 @@ class CategoryController extends Controller
         $PermissionAdmin -> save();
 */
         $category->save();
-        return redirect()->action('CategoryController@create');
+        return redirect('/');
 
     }
 

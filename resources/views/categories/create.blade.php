@@ -9,7 +9,9 @@
 	<div class="row">
             <div class="col-xl-12">
                 <div class="breadcrumb-holder">
-                    <h1 class="main-title float-left"> Nueva Categoría</h1>
+                    <a href="#" class="btn btn-primary pull-left" role="button" style="margin-right: 20px; margin-bottom: 20px;"><i class="fas fa-arrow-left"></i> Atrás </a>
+                                
+                                    <h1 class="main-title float-left" style="margin-top: 5px;"> Nueva Categoría</h1>
                     <ol class="breadcrumb float-right">
                         <li class="breadcrumb-item">Home</li>
                         <li class="breadcrumb-item active">Nueva Categoría</li>
@@ -61,6 +63,7 @@
                 </div>
             </div>
         </div>
+        
 
 
  </form>
