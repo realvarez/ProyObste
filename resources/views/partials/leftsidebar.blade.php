@@ -31,10 +31,6 @@
 		</div>
 	</div>
 
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoryModal">
-  Launch demo modal
-</button>
-
 <!-- Modal CATEGORIA -->
 <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

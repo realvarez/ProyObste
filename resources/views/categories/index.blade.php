@@ -29,7 +29,7 @@
                 </div>
             </a>
         @endforeach
-        <a href="/new-category" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3">
+        <a data-toggle="modal" data-target="#categoryModal" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3" style="cursor: pointer;">
             <div class="card-box noradius noborder bg-warning" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                 
                 <h6 class="text-white text-uppercase m-b-20 text-center" style="text-shadow: 1px 1px 6px #a87e2a;">
