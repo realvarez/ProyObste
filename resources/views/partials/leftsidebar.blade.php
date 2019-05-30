@@ -11,12 +11,13 @@
 							</li>
 						@else
 							<li class="submenu">
-								<a><i class="fas fa-folder-open"></i><span>{{ucfirst($category->category_name)}}</span><span class="menu-arrow"></span></a>
-								<ul class="list-unstyled">
+								<a href="/category/{{$category->id}}"><i class="fas fa-folder-open"></i><span>{{ucfirst($category->category_name)}}</span></a>
+								<!--<span class="menu-arrow"></span>
+								 <ul class="list-unstyled">
 									@foreach ($category->sons as $subCategory)
 										<li><a href="/category/{{$subCategory->id}}">{{$subCategory->category_name}}</a></li>
 									@endforeach
-								</ul>
+								</ul> -->
 							</li>
 						@endif
 					@endforeach

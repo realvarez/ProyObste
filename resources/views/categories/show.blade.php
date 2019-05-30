@@ -24,7 +24,7 @@
 	<div class="row">
         @foreach ($allCategories as $categoria)
          @if($categoria->superior_category_id == $category->id)
-            <a href="category/{{$categoria->id}}" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3">
+            <a href="/category/{{$categoria->id}}" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3">
                 <div class="card-box noradius noborder bg-info" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     
                     <h6 class="text-white text-uppercase m-b-20 text-center" style="text-shadow: 1px 1px 6px #185b6b;">
@@ -38,7 +38,7 @@
 	<div class="card" style="">
 		<div class="card-body">
 			<div class="table-responsive">
-                
+                 
                 <table id="table-documents" class="table table-bordered table-hover display">
 					<thead>
 						<tr>
