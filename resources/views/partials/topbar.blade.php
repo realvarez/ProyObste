@@ -5,8 +5,8 @@
     <nav class="navbar-custom">
         <ul class="list-inline float-right mb-0">
                 @auth
-                <a data-toggle="modal" data-target="#fileModal" style="cursor: pointer; color: white !important;" class="button"><i class="fas fa-upload"></i> Subir Archivo</a>
-                <a style="cursor: pointer; color: white !important;" class="button"><i class="fas fa-upload"></i>Ayuda</a>
+                <a data-toggle="tooltip" data-placement="right" title="Ayuda" data-toggle="modal" data-target="#fileModal" style="cursor: pointer; color: white !important; margin-right: 15px;" class="button"><i class="fas fa-upload"></i> Subir Archivo</a>
+                <a style="cursor: pointer; color: white !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
                 
             <li class="list-inline-item dropdown notif">
                 <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="/" role="button" aria-haspopup="false" aria-expanded="false">
