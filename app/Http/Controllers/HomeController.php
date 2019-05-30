@@ -26,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         Auth::user()->has_permission('Modificar');
-        return view('categories.index');
+        $allCategories= Category::all();
+        return view('categories.index')->with('allCategories',$allCategories);
     }
 }
