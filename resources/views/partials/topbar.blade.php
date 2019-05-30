@@ -5,8 +5,8 @@
     <nav class="navbar-custom">
         <ul class="list-inline float-right mb-0">
                 @auth
-                <a href="/forms-upload" id="subirarchivo" class="button"><i class="fas fa-upload"></i> Subir Archivo</a>
-                
+                <a data-toggle="modal" data-target="#fileModal" style="cursor: pointer; color: white !important;" class="button"><i class="fas fa-upload"></i> Subir Archivo</a>
+                <a style="cursor: pointer; color: white !important;" class="button"><i class="fas fa-upload"></i>Ayuda</a>
                 
             <li class="list-inline-item dropdown notif">
                 <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="/" role="button" aria-haspopup="false" aria-expanded="false">

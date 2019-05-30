@@ -16,9 +16,10 @@ class CategoryController extends Controller
     }
 
     public function show($id) {
+        $allCategories      = Category::all();
         $data['category']   = Category::find($id);
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
-        return view('categories.show',$data);
+        return view('categories.show')->with($data)->with('allCategories',$allCategories);
     }
 
     public function create() {
