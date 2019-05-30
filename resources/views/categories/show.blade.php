@@ -15,9 +15,11 @@
                         </a>
                     </li>
 					<li class="breadcrumb-item"><a href="/" style="color:#212529;">Inicio</a></li>
+					@foreach ($allCategories as $categoria)
+					@if($categoria->id==$category->superior_category_id)
 					<li class="breadcrumb-item">
-						@foreach ($allCategories as $categoria)
-						@if($categoria->id==$category->superior_category_id)
+						
+						
 						<a href="/category/{{$categoria->id}}" style="color:#212529;">{{ucfirst($categoria->category_name)}}</a>
 						@endif
 						@endforeach</li>
@@ -30,7 +32,7 @@
 	</div>
 	<div class="row">
         @foreach ($allCategories as $categoria)
-         @if($categoria->c == $category->id)
+         @if($categoria->superior_category_id == $category->id)
             <a href="/category/{{$categoria->id}}" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3">
                 <div class="card-box noradius noborder bg-info" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
                     
