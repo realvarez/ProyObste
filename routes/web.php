@@ -56,7 +56,7 @@ Route::get('stream/{archivo}', function ($archivo) {
     //Variable global de storage
 
 
-    $public_path =  '/home/vagrant/code/ProyObste/storage/app/';
+    $public_path =  '/var/www/storage/app/';
     $url = $public_path . $file->file_path;
     //verificamos si el archivo existe y lo retornamos
     if (Storage::exists($file->file_path)) {
@@ -69,8 +69,22 @@ Route::get('stream/{archivo}', function ($archivo) {
             } catch (Exception $e) { }
             return PDF::loadFile(storage_path('temp.html'))->save(storage_path('tempPdf.html'))->stream('temporalview.pdf');
         } else {
+
+            //es un video de youtube
+            //dd($file->file_path);
+            /*
+                Probar proprs
+            $headers =[
+                'width'=>"100px",
+                'height'=>"100px",
+            ];*/
             return response()->file($url);
         }
+    }
+    else{
+        //es un video de youtube
+
+
     }
     //si no se encuentra lanzamos un error 404.
     abort(404);
@@ -86,17 +100,3 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-/*
-
-    //Sub seleccion de categorias
- <div class="col-md-12" style="margin-top: 10px;">
-                                    <label>Seleccione a la categoría a la que pertenecerá:</label>
-                                        <select name="superior_category_id" class="form-control form-control-md ">
-                                        <option value="0" selected>Nueva Categoría Principal</option>
-                                    @foreach ($categories as $category)
-                                        <option  id="superior_category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
-                                    @endforeach
-                                        </select>
-                                </div>
-
-*/
