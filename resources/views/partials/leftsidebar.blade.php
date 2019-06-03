@@ -3,27 +3,24 @@
 		<div class="sidebar-inner leftscroll">
 			<div id="sidebar-menu">
 				<ul>
-					
-					@foreach ($categories as $category)
-						@if(!isset($category->sons))
-							<li class="submenu">
-								<a href="/category/{{$category->id}}"><i class="fa fa-fw fa-bars"></i><span>{{ucfirst($category->category_name)}}</span> </a>
-							</li>
-						@else
-							<li class="submenu">
-								<a href="/category/{{$category->id}}"><i class="fas fa-folder-open"></i><span>{{ucfirst($category->category_name)}}</span></a>
-								<!--<span class="menu-arrow"></span>
-								 <ul class="list-unstyled">
-									@foreach ($category->sons as $subCategory)
-										<li><a href="/category/{{$subCategory->id}}">{{$subCategory->category_name}}</a></li>
-									@endforeach
-								</ul> -->
-							</li>
-						@endif
-					@endforeach
+					<li class="submenu">
+						<a class="subdrop" href="javascript:;"><i class="fas fa-folder-open"></i><span>Favoritos</span><span class="menu-arrow"></span></a>
+						<ul class="list-unstyled" style="display: block;">
+							@foreach (Auth::user()->favorite_categories as $category)
+								<li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
+							@endforeach
+						</ul> 
+					</li>
+					<li class="submenu">
+						<a class="subdrop" href="javascript:;"><i class="fas fa-folder-open"></i><span>Ultimas Visitadas</span></a>
+						<ul class="list-unstyled" style="display: block;">
+							@foreach (Auth::user()->recorded_categories_tolist() as $category)
+								<li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
+							@endforeach
+						</ul> 
+					</li>
 					<li class="submenu">
 						<a data-toggle="modal" data-target="#categoryModal" style="cursor: pointer;"><i class="fas fa-folder-plus"></i><span>Nueva categoría</span></a>
-						
 					</li>
 				</ul>
 				<div class="clearfix"></div>

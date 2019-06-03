@@ -15,9 +15,6 @@
             </div>
         </div>
     </div>
-                        <!-- end row -->
-
-
     <div class="row">
         @for ($i = 0; $i <= count($categories)-1; $i++)
             @foreach($allCategories as $categoria)

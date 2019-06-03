@@ -1,13 +1,11 @@
 @extends('layouts.master')
 @section('content')
 <div class="container-fluid">
-
-
 	<div class="row">
 		<div class="col-xl-12">
 			<div class="breadcrumb-holder">
-				<h1 class="main-title float-left"><i class="fas fa-folder" style="font-size: 20px;"></i>  Documentos /
-					{{ucfirst($category->category_name)}}</h1>
+				<h1 class="main-title float-left">
+					<i class="fas fa-folder" style="font-size: 20px;"></i> Categorias / {{ucfirst($category->category_name)}}</h1>
 				<ol class="breadcrumb float-right">
                     <li >
                         <a href="/category/create" style="color:black; margin-right: 15px; padding: 2px !important;">

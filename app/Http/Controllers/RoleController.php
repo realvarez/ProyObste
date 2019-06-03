@@ -14,15 +14,17 @@ class RoleController extends Controller
     }
 
     public function index() {
-        $data['roles'] = Role::all();
+        $data['roles']      = Role::all();
         foreach($data['roles'] as $rol){
-            $rol->cantUsers = Roles_permission::where('role_id', $rol->id)->where('value',1)->count();
+            $rol->cantUsers = Roles_permission::where('role_id', $rol->id)->count();
         }
         return view('admin.roles.index', $data);
     }
  
     public function show($id) { 
-        
+        $data['rol']        = Role::find($id);
+        $data['permissions'] = $data['rol']->has_permissions;
+        return view('admin.roles.show', $data);
     }
  
     public function create() {

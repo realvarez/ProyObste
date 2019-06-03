@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Category extends Model
 {
@@ -14,9 +15,21 @@ class Category extends Model
         'elimination_date'
     ];
 
-    public function recursiveGet($category_id = false){
+    public function fav(){
+        return $this->belongsToMany(User::class, 'categories_users');
+    }
+
+    public function visited_by(){
+        return $this->belongsToMany(User::class, 'user_record');
+    }
+
+
+    
+
+
+    public function recursiveGet($category_id = false, $categories_list = false){
         if(!$category_id){
-            $categories = Category::where('category_level',"=", 1)->where('state',1)->get();
+            $categories = ($categories_list ?: Category::where('category_level',"=", 1)->where('state',1)->get());
             foreach($categories as $category){
                 $_category      = $this->recursiveGet($category->id);
                 if($_category->isNotEmpty())

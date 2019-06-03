@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use App\Category;
 use App\Permission;
 use App\File;
@@ -16,6 +16,7 @@ class CategoryController extends Controller
     }
 
     public function show($id) {
+        Auth::user()->record_categories()->attach($id);
         $allCategories      = Category::all();
         $data['category']   = Category::find($id);
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
