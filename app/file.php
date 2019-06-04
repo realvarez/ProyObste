@@ -7,6 +7,8 @@ use PDF;
 
 class File extends Model
 {
+    use \Spatie\Tags\HasTags;
+
     protected $fillable = [
         'user_id',
         'category_id',

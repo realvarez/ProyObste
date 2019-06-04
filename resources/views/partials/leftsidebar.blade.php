@@ -9,7 +9,7 @@
 							@foreach (Auth::user()->favorite_categories as $category)
 								<li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
 							@endforeach
-						</ul> 
+						</ul>
 					</li>
 					<li class="submenu">
 						<a class="subdrop" href="javascript:;"><i class="fas fa-folder-open"></i><span>Ultimas Visitadas</span></a>
@@ -17,7 +17,7 @@
 							@foreach (Auth::user()->recorded_categories_tolist() as $category)
 								<li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
 							@endforeach
-						</ul> 
+						</ul>
 					</li>
 					<li class="submenu">
 						<a data-toggle="modal" data-target="#categoryModal" style="cursor: pointer;"><i class="fas fa-folder-plus"></i><span>Nueva categoría</span></a>
@@ -46,7 +46,7 @@
 
 	<div class="row container">
     @csrf
-                       
+
     <div class="form-group row">
         <div class="col-md-12">
             <label for="category_name">Nombre de la categoría</label>
@@ -76,7 +76,7 @@
     @endif
 
         </div>
-        
+
 
 
 
@@ -105,7 +105,7 @@
 
       	<form action="{{route('files.store')}}" method="post" enctype="multipart/form-data">
 						@csrf
-					
+
 
 	<div class="row container">
 
@@ -123,20 +123,25 @@
 				<label>Año</label>
 					<input type="number" min="2016" max="2030" step="1"  name="file_year" data-toggle="tooltip" data-placement="right" title="Ingrese el año del documento" class="form-control form-control-sm">
 			</div>
-
-				@if (count($errors) > 0)
-				<div class="alert alert-danger" >
-					<strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
-					<ul>
-						@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-						@endforeach
-					</ul>
-				</div>
+            <div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
+				<label>Tags</label>
+					<input type="text" name="file_tags" data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput">
+			</div>
+                @if (count($errors) > 0)
+                <div style="margin-top: 20px">
+                    <div class="alert alert-danger" >
+                        <strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
 				@endif
-			
+
 	</div>
-				
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

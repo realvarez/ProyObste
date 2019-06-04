@@ -18,8 +18,11 @@
 <link href="{{asset('plugins/jquery.filer/css/jquery.filer.css')}}" rel="stylesheet" />
 <!-- Dragdrop -->
 <link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" />
+<!-- Tags-->
+<link href="{{asset('css\bootstrap-tagsinput.css')}}" rel="stylesheet" type="text/css"/>
+
 <!-- DateRange -->
-<link href="{{asset('plugins/datetimepicker/css/daterangepicker.css')}}" rel="stylesheet" /> 
+<link href="{{asset('plugins/datetimepicker/css/daterangepicker.css')}}" rel="stylesheet" />
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 

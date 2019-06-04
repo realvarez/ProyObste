@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Category;
 use Illuminate\Http\Request;
 use PDF;
+use Spatie\Tags\Tag;
 use Illuminate\Contracts\Auth\Guard;
 
 class FileController extends Controller
@@ -58,6 +59,8 @@ class FileController extends Controller
         $file->file_path        =  $path;
         $file->state            =  1;
         $file->user_id          =  $this->auth->user()->id;
+
+        //$file->attachTag('tag 2345');
         $file->save();
 
         return redirect()->action('CategoryController@show', ['id' => $request->category_id]);

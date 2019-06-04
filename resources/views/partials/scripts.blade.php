@@ -11,6 +11,9 @@
 
 <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
 
+<script src="{{asset('js/typeahead.bundle.js')}}"></script>
+<script src="{{asset('js/bootstrap-tagsinput.min.js')}}"></script>
+
 <script src="{{asset('plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
 <script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>
 <script src="{{asset('plugins/switchery/switchery.min.js')}}"></script>
@@ -22,3 +25,5 @@
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{asset('plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
 <script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>
+
+
