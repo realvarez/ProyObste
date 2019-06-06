@@ -53,7 +53,10 @@
             <input  data-toggle="tooltip" data-placement="right" title="Ingrese el nombreque tendrá la categoría o subcategoría" type="text" name="category_name"class="form-control " id="category_name" placeholder="Ingrese el nombre">
         </div>
         <div class="col-md-12" style="margin-top: 10px;">
-        	<label>Seleccione una categoría padre:</label>
+        	<label>Seleccione una categoría padre:</label> <a data-toggle="popover" title="Categoría padre" 
+        data-content="Cada categoría, puede contener subcategorías. Si desea crear una subcategoría, seleccione la categoría que la contendrá. Si no desea crear una subcategoría, seleccione &quot; Nueva Categoría&quot"
+
+        style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
 							<select data-toggle="tooltip" data-placement="right" title="Seleccione a la categoría a la que pertenece o seleccione nueva categoría" name="superior_category_id" class="form-control form-control-sm ">
 							<option id ="superior_category_id" value = 0 selected >Categoría Nueva</option>
 						@foreach ($categories as $category)
@@ -120,12 +123,16 @@
 				</select>
 			</div>
 			<div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
-				<label>Año</label>
+				<label>Año</label> <a data-toggle="popover" title="Año" 
+        data-content="Ingrese el año al que pertenece el documento.s" 
+        style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
 					<input type="number" min="2016" max="2030" step="1"  name="file_year" data-toggle="tooltip" data-placement="right" title="Ingrese el año del documento" class="form-control form-control-sm">
 			</div>
             <div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
-				<label>Tags</label>
-					<input type="text" name="file_tags" data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput">
+				<label>Tags</label>  <a data-toggle="popover" title="Tags" 
+        data-content="Añada palabras que permitan encontrar rápidamente su documento. Cada tag, debe ir separado por comas ( , ). Ejemplo: 2019,reglamento,complementario,copia" 
+        style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
+					<input type="text" name="file_tags" data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput"> 
 			</div>
                 @if (count($errors) > 0)
                 <div style="margin-top: 20px">
