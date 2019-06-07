@@ -14,7 +14,8 @@
         </div>
     </div>
 
-    <form method="POST" action="{{ route('roles.store') }}">@csrf
+    <form method="POST" action="{{ route('roles.update',['id'=>$rol->id]) }}">
+        @csrf @method('PUT')
         <div class="col-12">						
             <div class="card mb-3">
                 <div class="card-header">
@@ -25,8 +26,8 @@
                         <div class="row">
                             @foreach ($permissions as $permission) 
                                 <div class="offset-md-1 col-md-2">
-                                <input type="checkbox" name="permission_{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
-                                    <label style="font-size:17px;" for="permission_{{$permission->name}}">{{$permission->name}}</label>
+                                <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
+                                    <label style="font-size:17px;" for="{{$permission->name}}">{{$permission->name}}</label>
                                 </div>
                             @endforeach
                         </div>
@@ -34,7 +35,7 @@
                     <div class="card-footer">
                         <div class="pull-right">
                             <button class="btn btn-primary"><span class="btn-label"><i class="fa fa-check"></i></span>Guardar cambios</button>
-                            <button class="btn btn-danger"><span class="btn-label"><i class="fa fa-exclamation"></i></span>Volver</a>
+                            <a href="{{route('roles.index')}}" class="btn btn-danger"><span class="btn-label"><i class="fa fa-exclamation"></i></span>Volver</a>
                         </div>
                     </div>
                 </div>

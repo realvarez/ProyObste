@@ -50,7 +50,23 @@ class RoleController extends Controller
     }
  
     public function update(Request $request, $id) {
- 
+        $rol                = Role::find($id);
+        $rol_permissions    = $rol->has_permissions;
+        $permissions_given  = $request->request->all();
+        array_forget($permissions_given, '_token');
+        array_forget($permissions_given, '_method');
+        foreach ($rol_permissions as $key => $value) {
+            if (!array_has($permissions_given, $value->name)){
+                $rol->has_permissions()->detach($value->id);
+                array_forget($permissions_given, $value->id);
+            }
+        }
+        $permissions = Permission::all(); 
+        foreach ($permissions_given as $key => $value) {
+            $rol->has_permissions()->attach($permissions->firstWhere('name',$key)->id);
+        }
+        
+        return redirect()->action('RoleController@show', ['id' => $id]);
     }
  
     public function destroy($id) {
