@@ -83,20 +83,3 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('category', 'CategoryController');
     Route::resource('files', 'FileController');
 });
-
-
-
-/*
-
-    //Sub seleccion de categorias
- <div class="col-md-12" style="margin-top: 10px;">
-                                    <label>Seleccione a la categoría a la que pertenecerá:</label>
-                                        <select name="superior_category_id" class="form-control form-control-md ">
-                                        <option value="0" selected>Nueva Categoría Principal</option>
-                                    @foreach ($categories as $category)
-                                        <option  id="superior_category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
-                                    @endforeach
-                                        </select>
-                                </div>
-
-*/

@@ -131,7 +131,7 @@ class DatabaseSeeder extends Seeder
 
         $permission =[
 					[
-						'name'  => 'Subir',
+						'name'  => 'Administrar',
 					
 					],
 					[

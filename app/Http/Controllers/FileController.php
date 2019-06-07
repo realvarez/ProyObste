@@ -21,8 +21,7 @@ class FileController extends Controller
 
     public function index()
     {
-        $file = File::all();
-        return view('forms-upload', $data);
+      
     }
 
     public function show($id)
@@ -60,7 +59,7 @@ class FileController extends Controller
         $file->state            =  1;
         $file->user_id          =  $this->auth->user()->id;
 
-        //$file->attachTag('tag 2345');
+        $file->attachTag('tag 2345');
         $file->save();
 
         return redirect()->action('CategoryController@show', ['id' => $request->category_id]);
