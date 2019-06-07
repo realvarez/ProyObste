@@ -32,3 +32,9 @@
 
 {{-- Jquery --}}
 <script src="{{asset('js/jquery.min.js')}}"></script>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover(); 
+});
+</script>
