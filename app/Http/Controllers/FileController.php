@@ -68,9 +68,8 @@ class FileController extends Controller
                 'tags'	      => ['foo', 'bar', 'baz'],
                 'category_id' => 10
             ]);
-            $file = $this->show(Auth::user()->id);
             $file->file_path = 'hhttps://www.youtube.com/embed/'.$video->getVideoId();
-            $file->state = 2;
+            $file->storage_type  = 2;
             $file->save();
             // Eliminar
         }

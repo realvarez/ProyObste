@@ -67,7 +67,7 @@
 								<td>{{$file->file_year}}</td>
                                 <td style="text-align: center">
 
-                                    @if($file->file_extension == 'mp4')
+                                    @if($file->storage_type  == 2)
                                         <a data-toggle="modal" data-target="#videoModal" style="color:black">
                                             <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
                                         </a>
@@ -87,7 +87,7 @@
 													<div class="modal-body">
 														{{-- {{dd($file->file_path)}} --}}
 
-														<iframe id="videoModal"  src="https://www.youtube.com/embed/Sr936U0JzeM"></iframe>
+														<iframe id="videoModal"  src= "{{$file->path}}"></iframe>
 													</div>
 													<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
