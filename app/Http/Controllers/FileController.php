@@ -59,10 +59,12 @@ class FileController extends Controller
 
         $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
 
-        //dd(file_exists('/var/www/storage/app/'.$path));
+
+        $globalPath_ = "/var/www/storage/app/";
+        $globalPath_Rick = "C:/Proyectos/Pingeso/ProyObste/storage/app/";
 
         if($file->file_extension == 'mp4'){
-            $video = Youtube::upload('/var/www/storage/app/'.$path, [
+            $video = Youtube::upload($globalPath_.$path, [
                 'title'       => $file->file_real_name ,
                 'description' => 'You can also specify your video description here.',
                 'tags'	      => ['foo', 'bar', 'baz'],
@@ -71,7 +73,7 @@ class FileController extends Controller
             $file->file_path = 'https://www.youtube.com/embed/'.$video->getVideoId();
             $file->storage_type  = 2;
             $file->save();
-            // Eliminar
+            Storage::delete($route.'/'.$file->file_real_name);
         }
         else{
             $file->file_path        =  $path;
@@ -79,7 +81,6 @@ class FileController extends Controller
             $file->user_id          =  $this->auth->user()->id;
             $file->save();
         }
-
         return redirect()->action('CategoryController@show', ['id' => $request->category_id]);
     }
 
