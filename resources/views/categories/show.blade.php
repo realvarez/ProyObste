@@ -68,6 +68,8 @@
                                 <td style="text-align: center">
 
                                     @if($file->storage_type  == 2)
+
+
                                         <a data-toggle="modal" data-target="#videoModal" style="color:black">
                                             <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
                                         </a>
@@ -75,7 +77,7 @@
                                             <i class="fa fa-download bigfonts fa-2x" aria-hidden="true"></i>
 										</a>
 
-										<div class="modal" id="videoModal" tabindex="-1" role="dialog">
+										<div class="modal"  id="videoModal" tabindex="-1" role="dialog" >
 											<div class="modal-dialog" role="document" >
 												<div class="modal-content">
 													<div class="modal-header">
@@ -87,7 +89,7 @@
 													<div class="modal-body">
 														{{-- {{dd($file->file_path)}} --}}
 
-														<iframe id="videoModal"  src= "{{$file->path}}"></iframe>
+														<iframe id="videoModal"  src= "{{$file->file_path}}"></iframe>
 													</div>
 													<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -119,7 +121,7 @@
 
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
+<script src="https://www.pikeadmin.com/demo-pro/assets/plugins/lightbox/ekko-lightbox.min.js"></script>
 <script>
 	$(document).ready(function() {
 		var table = $('#table-documents').DataTable({

@@ -19,7 +19,7 @@
 <!-- Dragdrop -->
 <link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" />
 <!-- DateRange -->
-<link href="{{asset('plugins/datetimepicker/css/daterangepicker.css')}}" rel="stylesheet" /> 
+<link href="{{asset('plugins/datetimepicker/css/daterangepicker.css')}}" rel="stylesheet" />
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" />
 
@@ -29,3 +29,5 @@
 
 {{-- Jquery --}}
 <script src="{{asset('js/jquery.min.js')}}"></script>
+
+<link href="https://www.pikeadmin.com/demo-pro/assets/plugins/lightbox/ekko-lightbox.css" rel="stylesheet">
