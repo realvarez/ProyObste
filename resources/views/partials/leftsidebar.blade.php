@@ -109,7 +109,6 @@
       	<form action="{{route('files.store')}}" method="post" enctype="multipart/form-data">
 						@csrf
 
-
 	<div class="row container">
 
 		<div class="form-group row">
@@ -123,32 +122,23 @@
 				</select>
 			</div>
 			<div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
-				<label>Año</label> <a data-toggle="popover" title="Año" 
-        data-content="Ingrese el año al que pertenece el documento.s" 
-        style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
+				<label>Año</label>
 					<input type="number" min="2016" max="2030" step="1"  name="file_year" data-toggle="tooltip" data-placement="right" title="Ingrese el año del documento" class="form-control form-control-sm">
 			</div>
-            <div style="margin-top: 20px; "class="col-md-4 col-lg-4 col-xl-4">
-				<label>Tags</label>  <a data-toggle="popover" title="Tags" 
-        data-content="Añada palabras que permitan encontrar rápidamente su documento. Cada tag, debe ir separado por comas ( , ). Ejemplo: 2019,reglamento,complementario,copia" 
-        style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
-					<input type="text" name="file_tags" data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput"> 
-			</div>
-                @if (count($errors) > 0)
-                <div style="margin-top: 20px">
-                    <div class="alert alert-danger" >
-                        <strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
+
+				@if (count($errors) > 0)
+				<div class="alert alert-danger" >
+					<strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
+					<ul>
+						@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+						@endforeach
+					</ul>
+				</div>
 				@endif
-
+			
 	</div>
-
+				
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

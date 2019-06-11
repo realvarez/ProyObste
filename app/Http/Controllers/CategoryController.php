@@ -39,8 +39,8 @@ class CategoryController extends Controller
         //por ahora solo categorias y no subcategorias :C
         $category->state=1;
         $path = $category->category_name;
-        
-        
+
+
         //se cae con esto
         //File::makeDirectory(public_path().'/'.$path, $mode = 0777, true, true);
 /*

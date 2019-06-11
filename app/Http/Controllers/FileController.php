@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use PDF;
 use Spatie\Tags\Tag;
 use Illuminate\Contracts\Auth\Guard;
+use Youtube;
 
 class FileController extends Controller
 {
@@ -33,7 +34,7 @@ class FileController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'file'   => 'required|file|mimes:pdf,doc,docx,ppt,pptx|max:2048'
+            'file'   => 'required|file|mimes:pdf,doc,docx,ppt,pptx,mp4|max:9000'
         ]);
 
         $category               =  Category::find($request->category_id);
@@ -50,18 +51,37 @@ class FileController extends Controller
         $file->file_real_name   =  $request->file('file')->getClientOriginalName();
         $file->storage_type     =  1;
         $file->file_extension   =  $request->file('file')->getClientOriginalExtension();
+
         $file->file_name        =  $category->category_name . '_' . $request->file_year . '.' . $file->file_extension;
 
         $file->file_size        =  $request->file('file')->getClientSize();
-
-        $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
-        $file->file_path        =  $path;
-        $file->state            =  1;
         $file->user_id          =  $this->auth->user()->id;
 
+        $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
         $file->attachTag('tag 2345');
-        $file->save();
 
+
+        $globalPath_ = "/var/www/storage/app/";
+        $globalPath_Rick = "C:/Proyectos/Pingeso/ProyObste/storage/app/";
+
+        if($file->file_extension == 'mp4'){
+            $video = Youtube::upload($globalPath_.$path, [
+                'title'       => $file->file_real_name ,
+                'description' => 'You can also specify your video description here.',
+                'tags'	      => ['foo', 'bar', 'baz'],
+                'category_id' => 10
+            ]);
+            $file->file_path = 'https://www.youtube.com/embed/'.$video->getVideoId();
+            $file->storage_type  = 2;
+            $file->save();
+            Storage::delete($route.'/'.$file->file_real_name);
+        }
+        else{
+            $file->file_path        =  $path;
+            $file->state            =  1;
+            $file->user_id          =  $this->auth->user()->id;
+            $file->save();
+        }
         return redirect()->action('CategoryController@show', ['id' => $request->category_id]);
     }
 

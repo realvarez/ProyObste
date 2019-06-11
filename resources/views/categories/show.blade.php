@@ -16,8 +16,8 @@
 					@foreach ($allCategories as $categoria)
 					@if($categoria->id==$category->superior_category_id)
 					<li class="breadcrumb-item">
-						
-						
+
+
 						<a href="/category/{{$categoria->id}}" style="color:#212529;">{{ucfirst($categoria->category_name)}}</a>
 						@endif
 						@endforeach</li>
@@ -33,10 +33,10 @@
          @if($categoria->superior_category_id == $category->id)
             <a href="/category/{{$categoria->id}}" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3">
                 <div class="card-box noradius noborder bg-info" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    
+
                     <h6 class="text-white text-uppercase m-b-20 text-center" style="text-shadow: 1px 1px 6px #185b6b;">
                     <i class="fas fa-folder" style="font-size: 20px;"></i>&nbsp&nbsp{{ucfirst($categoria->category_name)}}</h6>
-                
+
                 </div>
             </a>
             @endif
@@ -45,7 +45,7 @@
 	<div class="card" style="">
 		<div class="card-body">
 			<div class="table-responsive">
-                 
+
                 <table id="table-documents" class="table table-bordered table-hover display">
 					<thead>
 						<tr>
@@ -65,14 +65,49 @@
 								<td>{{$file->file_year}}</td>
                                 <td style="text-align: center">
 
+                                    @if($file->storage_type  == 2)
 
 
-                                <a href="/stream/{{$file->id}}"" style="color:black">
-                                    <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
-                                </a>
-                                <a href="/storage/{{$file->id}}" style="color:black">
-                                    <i class="fa fa-download bigfonts fa-2x" aria-hidden="true"></i>
-                                </a>
+                                        <a data-toggle="modal" data-target="#videoModal" style="color:black">
+                                            <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="/storage/{{$file->id}}" style="color:black">
+                                            <i class="fa fa-download bigfonts fa-2x" aria-hidden="true"></i>
+										</a>
+
+										<div class="modal fade"  id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-lg" role="document" >
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title">{{$file->file_name}}</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+															<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body mb-0 p-0">
+														{{-- {{dd($file->file_path)}} --}}
+                                                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                                                                <iframe class="embed-responsive-item" id="videoModal"  src= "{{$file->file_path}}" allowfullscreen></iframe>
+
+                                                        </div>
+
+													</div>
+													<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+
+                                    @else
+
+                                        <a href="/stream/{{$file->id}}"" style="color:black">
+                                            <i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                        <a href="/storage/{{$file->id}}" style="color:black">
+                                            <i class="fa fa-download bigfonts fa-2x" aria-hidden="true"></i>
+                                        </a>
+                                    @endif
 								</td>
 							</tr>
 						@endforeach
@@ -81,11 +116,13 @@
 			</div>
 		</div>
 	</div>
+
+
 </div>
 
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
+<script src="https://www.pikeadmin.com/demo-pro/assets/plugins/lightbox/ekko-lightbox.min.js"></script>
 <script>
 	$(document).ready(function() {
 		var table = $('#table-documents').DataTable({
