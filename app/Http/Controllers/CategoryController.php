@@ -40,19 +40,12 @@ class CategoryController extends Controller
         $category->state=1;
         $path = $category->category_name;
 
-
-        //se cae con esto
-        //File::makeDirectory(public_path().'/'.$path, $mode = 0777, true, true);
-/*
-        $PermisssionView = new Permission;
-        $PermissionAdmin = new Permission;
-        $PermisssionView -> name = $request->name ."_view";
-        $PermissionAdmin -> name = $request->name ."_admin";
+        $PermisssionView = new Permission(['name'=>'ver_'.$request->category_name]);
+        $PermissionAdmin = new Permission(['name'=>'administrar_'.$request->category_name]);
         $PermisssionView -> save();
         $PermissionAdmin -> save();
-*/
         $category->save();
-        return redirect('/');
+        return redirect()->action('CategoryController@show', ['id' => $category->id]);;
 
     }
 
