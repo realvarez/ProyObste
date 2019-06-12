@@ -33,8 +33,13 @@
 {{-- Jquery --}}
 <script src="{{asset('js/jquery.min.js')}}"></script>
 
-<script>
-$(document).ready(function(){
-  $('[data-toggle="popover"]').popover(); 
-});
-</script>
+@switch(explode ('.',\Route::currentRouteName())[0])
+    @case('category')
+        @break
+    @case('')
+        <link href="{{asset('css/categories/show.css')}}" rel="stylesheet" type="text/css"></link>
+        @break
+    @default
+@endswitch
+
+

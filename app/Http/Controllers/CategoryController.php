@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use App\Category;
+use App\User;
 use App\Permission;
 use App\File;
 use App\Http\Controllers\Controller;
@@ -11,7 +12,13 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index() {
+        $fav_categories = Auth::user()->favorite_categories;
         $Categories = Category::all();
+        foreach ($Categories as $categorie) {
+            if($fav_categories->contains($categorie)){
+                $categorie->favorite = true;
+            }
+        }
         return $Categories;
     }
 
@@ -34,7 +41,6 @@ class CategoryController extends Controller
         }
         else{
             $category->category_level=1;
-
         }
         //por ahora solo categorias y no subcategorias :C
         $category->state=1;
@@ -46,7 +52,6 @@ class CategoryController extends Controller
         $PermissionAdmin -> save();
         $category->save();
         return redirect()->action('CategoryController@show', ['id' => $category->id]);;
-
     }
 
     public function edit($id) {
@@ -62,6 +67,18 @@ class CategoryController extends Controller
     public function destroy($id) {
         $Category = Category::find($id);
         $Category->destroy();
+    }
+
+    public function addToFavorite(Request $request){
+        $usuario = User::find($request->id);
+        $usuario->favorite_categories()->attach($request->cat);
+        echo "ok";
+    }
+
+    public function removeFromFavorite(Request $request){
+        $usuario = User::find($request->id);
+        $usuario->favorite_categories()->detach($request->cat);
+        echo "ok";
     }
 }
 

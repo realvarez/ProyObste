@@ -18,15 +18,16 @@ class HomeController extends Controller
 
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        Auth::user()->has_permission('Modificar');
-        $allCategories= Category::all();
-        return view('categories.index')->with('allCategories',$allCategories);
+        $category = new Category();
+        $data['categories'] = $category -> recursiveGet();
+        $fav_categories = Auth::user()->favorite_categories;
+        foreach ($data['categories'] as $categorie) {
+            if($fav_categories->contains($categorie)){
+                $categorie->favorite = true;
+            }
+        }
+        return view('categories.index',$data);
     }
 }

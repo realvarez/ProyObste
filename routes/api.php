@@ -14,6 +14,5 @@ use Illuminate\Http\Request;
 */
 
 
-Route::get('users', 'UserController@index');
-Route::post('users', 'UserController@store');
-
+Route::post('addfavorite', 'CategoryController@addToFavorite');
+Route::post('removefavorite', 'CategoryController@removeFromFavorite');
