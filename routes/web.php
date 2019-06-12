@@ -13,10 +13,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('roles', 'RoleController');
     Route::resource('category', 'CategoryController');
     Route::resource('files', 'FileController');
-
+    Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
+    Route::get('/tag_saves',function(){
+        $tag_db=Tag::find('tag1');
+        return response($tag_db);
+    });
     Route::get('storage/{archivo}', function ($archivo) {
         $file = File::find($archivo);
-    
+
         //TODO: Por definir la direccion de storage
         //Variable global de storage
         $public_path =  '/home/vagrant/code/ProyObste/storage/app/';
@@ -28,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
         //si no se encuentra lanzamos un error 404.
         abort(404);
     });
-    
+
     Route::get('stream/{archivo}', function ($archivo) {
         $file = File::find($archivo);
         //TODO: Por definir la direccion de storage

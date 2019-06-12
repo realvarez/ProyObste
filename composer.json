@@ -13,6 +13,7 @@
         "dawson/youtube": "^4.3",
         "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.8",
+        "google/apiclient-services": "~0.13",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
         "phpoffice/phpword": "^0.16.0",

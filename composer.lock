@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "208cc5fecc95131ad2e7a3f0b4b7614e",
+    "content-hash": "fadcb3758fdd64d294764456a20b6f62",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -703,16 +703,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.100",
+            "version": "v0.102",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "bd43c24a828a9f6325abba173c7aec1cd8ed7c10"
+                "reference": "82274e12b08c6828ebcc45a6bc01adbac63de8e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/bd43c24a828a9f6325abba173c7aec1cd8ed7c10",
-                "reference": "bd43c24a828a9f6325abba173c7aec1cd8ed7c10",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/82274e12b08c6828ebcc45a6bc01adbac63de8e9",
+                "reference": "82274e12b08c6828ebcc45a6bc01adbac63de8e9",
                 "shasum": ""
             },
             "require": {
@@ -736,7 +736,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2019-05-27T00:23:13+00:00"
+            "time": "2019-06-09T00:23:19+00:00"
         },
         {
             "name": "google/auth",

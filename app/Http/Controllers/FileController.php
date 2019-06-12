@@ -55,7 +55,8 @@ class FileController extends Controller
         $file->user_id          =  $this->auth->user()->id;
 
         $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
-        $file->attachTag('tag 2345');
+        $tags_in=explode(",",$request->file_tags);
+        $file->attachTags($tags_in);
 
         if($file->file_extension == 'mp4'){
             $video = Youtube::upload(storage_path('app/'.$path), [
@@ -82,7 +83,7 @@ class FileController extends Controller
         $file = File::find($id);
         return $file;
     }
-    
+
     public function vieWord($url)
     {
         $phpWord = new \PhpOffice\PhpWord\PhpWord();
