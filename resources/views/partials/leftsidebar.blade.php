@@ -123,7 +123,7 @@
                             </div>
                             <div style="margin-top: 20px; " class="col-md-4 col-lg-4 col-xl-4">
                                 <label>Tags</label>
-                                <input type="text" name="file_tags" id='tags' data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput">
+                                <input type="text" name="file_tags" id='file_tags' data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput">
                             </div>
                             @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -148,6 +148,7 @@
         </div>
     </div>
 </div>
+
 <script>
     $(function() {
         var tags = new Bloodhound({
@@ -158,9 +159,10 @@
             }
         });
         tags.initialize();
-        $('[name=file_tags]').tagsinput({
+        console.log(tags);
+        $('#file_tags').tagsinput({
             typeaheadjs: {
-                name: 'name=file_tags',
+                name: 'tags',
                 source: tags.ttAdapter()
             }
         });

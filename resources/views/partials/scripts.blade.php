@@ -20,7 +20,10 @@
 
 <script src="{{asset('js/jquery.scrollTo.min.js')}}"></script>
 
+
+<!--script autocomplete-->
 <script src="{{asset('js/typeahead.bundle.js')}}"></script>
+<!--Tag input-->
 <script src="{{asset('js/bootstrap-tagsinput.min.js')}}"></script>
 
 <script src="{{asset('plugins/waypoints/lib/jquery.waypoints.min.js')}}"></script>
@@ -69,22 +72,4 @@
         }
 
     });
-</script>
-<script>
-    $(function() {
-        var tags = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.whitespace,
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            prefetch: {
-                url: "/tag_saves"
-            }
-        });
-        tags.initialize();
-        $('#tags').tagsinput({
-            typeaheadjs: {
-                name: 'name=file_tags',
-                source: tags.ttAdapter()
-            }
-        });
-    })
 </script>

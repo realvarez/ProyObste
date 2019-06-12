@@ -18,6 +18,7 @@
 <link href="{{asset('plugins/jquery.filer/css/jquery.filer.css')}}" rel="stylesheet" />
 <!-- Dragdrop -->
 <link href="{{asset('plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css')}}" rel="stylesheet" />
+
 <!-- Tags-->
 <link href="{{asset('css\bootstrap-tagsinput.css')}}" rel="stylesheet" type="text/css"/>
 

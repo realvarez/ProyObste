@@ -1,7 +1,8 @@
 <?php
 use App\File;
 use PDF as PDF;
-
+use \Spatie\Tags\Tag;
+ 
 
 Auth::routes(["register" => false]);
 
@@ -20,7 +21,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
     Route::get('/tag_saves',function(){
         $tag_db=Tag::all()->pluck('name')->toArray();
-        return response($tag_db);
+        return respone($tag_db);
     });
     Route::get('storage/{archivo}', function ($archivo) {
         $file = File::find($archivo);
