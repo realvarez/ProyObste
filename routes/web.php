@@ -8,6 +8,7 @@ Auth::routes(["register" => false]);
 
 
 Route::middleware(['auth'])->group(function () {
+
     Route::get('/', 'HomeController@index');
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
