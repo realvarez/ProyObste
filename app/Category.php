@@ -4,8 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
-class Category extends Model
+class Category extends Model implements Searchable
 {
     protected $fillable = [
         'category_name',
@@ -23,10 +25,6 @@ class Category extends Model
         return $this->belongsToMany(User::class, 'user_record');
     }
 
-
-    
-
-
     public function recursiveGet($category_id = false, $categories_list = false){
         if(!$category_id){
             $categories = ($categories_list ?: Category::where('category_level',"=", 1)->where('state',1)->get());
@@ -43,5 +41,16 @@ class Category extends Model
             }
         }
         return $categories;
+    }
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('category.show', $this->id);
+        $name=$this->category_name;
+
+        return new SearchResult(
+            $this,
+            $name,
+            $url
+         );
     }
 }

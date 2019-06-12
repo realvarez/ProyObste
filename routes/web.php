@@ -14,9 +14,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('roles', 'RoleController');
     Route::resource('category', 'CategoryController');
     Route::resource('files', 'FileController');
+
+    Route::post('/search', 'SearchController@search')->name('search');
+
     Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
     Route::get('/tag_saves',function(){
-        $tag_db=Tag::find('tag1');
+        $tag_db=Tag::all()->pluck('name')->toArray();
         return response($tag_db);
     });
     Route::get('storage/{archivo}', function ($archivo) {

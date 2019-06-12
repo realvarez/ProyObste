@@ -87,6 +87,7 @@
         </div>
     </div>
 </div>
+<!-- Modal Busqueda totalmente primario-->
 
 <!-- Modal SUBIR ARCHIVO -->
 <div class="modal fade" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
