@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     {
     	$faker = Faker\Factory::create();
         $roles = [
-			['role_name' =>'Admin'],
-			['role_name' =>'admin'],
+			['role_name' =>'Administrador'],
+			['role_name' =>'Mantenedor'],
 		];
       	foreach ($roles as $role) {
 			Role::create($role);
@@ -114,27 +114,27 @@ class DatabaseSeeder extends Seeder
            Category::create($category);
         }
         $permission =[
-			['name'  => 'administrar_Permisos'],
+			['name'  => 'administrar'],
 			['name'  => 'administrar_Roles'],
 			['name'  => 'administrar_Usuario'],
-			['name'  => 'administrar_historia de la unidad'],
-			['name'  => 'ver_historia de la unidad'],
+			['name'  => 'administrar_historia_de_la_unidad'],
+			['name'  => 'ver_historia_de_la_unidad'],
 			['name'  => 'administrar_reglamentos'],
 			['name'  => 'ver_reglamentos'],
-			['name'  => 'administrar_planes de estudio'],
-			['name'  => 'ver_planes de estudio'],
+			['name'  => 'administrar_planes_de_estudio'],
+			['name'  => 'ver_planes_de_estudio'],
 			['name'  => 'administrar_correspondencia'],
 			['name'  => 'ver_correspondencia'],
 			['name'  => 'administrar_enviada'],
 			['name'  => 'ver_enviada'],
 			['name'  => 'administrar_recibida'],
 			['name'  => 'ver_recibida'],
-			['name'  => 'administrar_presupuesto anual'],
-			['name'  => 'ver_presupuesto anual'],
+			['name'  => 'administrar_presupuesto_anual'],
+			['name'  => 'ver_presupuesto_anual'],
 			['name'  => 'administrar_contratos'],
 			['name'  => 'ver_contratos'],
-			['name'  => 'administrar_convenios docentes'],
-			['name'  => 'ver_convenios docentes'],
+			['name'  => 'administrar_convenios_docentes'],
+			['name'  => 'ver_convenios_docentes'],
 		];
       	foreach ($permission as $permission) {
 			Permission::create($permission);
@@ -142,7 +142,7 @@ class DatabaseSeeder extends Seeder
         $permissionrole =[
 			[
 				'role_id'=> 1,
-				'permission_id'=> 2
+				'permission_id'=> 1
 			],
 			[
 				'role_id'=> 1,
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
 			],
 			[
 				'role_id'=> 1,
-				'permission_id'=> 2,
+				'permission_id'=> 3,
 			],
       	];
 		foreach ($permissionrole as $permissionrole) {

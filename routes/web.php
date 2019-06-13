@@ -18,6 +18,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/search', 'SearchController@search')->name('search');
 
+
+
     Route::get('autocomplete',array('as'=>'autocomplete','uses'=>'SearchController@autocomplete'));
     Route::get('/tag_saves',function(){
         $tag_db=Tag::all()->pluck('name')->toArray();

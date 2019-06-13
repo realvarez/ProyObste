@@ -17,7 +17,7 @@
     <form method="POST" action="{{ route('roles.update',['id'=>$rol->id]) }}">
         @csrf @method('PUT')
         <div class="col-12">						
-            <div class="card mb-3">
+            <div class="card mb-4">
                 <div class="card-header">
                     <h3><i class="fa fa-table mr-2"></i>Permisos {{$rol->role_name}}</h3>
                     Se encuentran listados los distintos permisos con los que cuenta el rol {{$rol->role_name}}
@@ -25,7 +25,7 @@
                     <div class="card-body">
                         <div class="row">
                             @foreach ($permissions as $permission) 
-                                <div class="offset-md-1 col-md-2">
+                                <div class="col-md-3">
                                 <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
                                     <label style="font-size:17px;" for="{{$permission->name}}">{{$permission->name}}</label>
                                 </div>

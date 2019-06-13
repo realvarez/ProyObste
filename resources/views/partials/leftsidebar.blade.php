@@ -2,22 +2,33 @@
     <div class="sidebar-inner leftscroll">
         <div id="sidebar-menu">
             <ul>
+                @if(Auth::user()->has_permission('administrar'))
                 <li class="submenu">
-                    <a class="subdrop" href="javascript:;"><i class="fas fa-folder-open"></i><span>Favoritos</span><span class="menu-arrow"></span></a>
-                    <ul class="list-unstyled" style="display: block;">
+                    <a href="javascript:;"><i class="fas fa-cogs"></i><span>Administración</span><span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="/roles"><i class="fas fa-user-tag"></i></i>Roles</a></li>
+                        {{-- <li><a href="/users"><i class="fas fa-user-cog"></i>Usuarios</a></li> --}}
+                    </ul>
+                </li>
+                @endif
+
+                <li class="submenu">
+                    <a  href="javascript:;"><i class="fas fa-folder-open"></i><span>Favoritos</span><span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled" id="favorite_list">
                         @foreach (Auth::user()->favorite_categories as $category)
-                        <li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
+                            <li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
                         @endforeach
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a class="subdrop" href="javascript:;"><i class="fas fa-folder-open"></i><span>Ultimas Visitadas</span></a>
-                    <ul class="list-unstyled" style="display: block;">
+                    <a  href="javascript:;"><i class="fas fa-folder-open"></i><span>Ultimas Visitadas</span><span class="menu-arrow"></span></a>
+                    <ul class="list-unstyled">
                         @foreach (Auth::user()->recorded_categories_tolist() as $category)
                         <li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>
                         @endforeach
                     </ul>
                 </li>
+
                 <li class="submenu">
                     <a data-toggle="modal" data-target="#categoryModal" style="cursor: pointer;"><i class="fas fa-folder-plus"></i><span>Nueva categoría</span></a>
                 </li>
