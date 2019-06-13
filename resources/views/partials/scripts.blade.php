@@ -1,10 +1,6 @@
 @auth
 <script>
-    var user = {
-        {
-            Auth::user() - > id
-        }
-    };
+    var user = {{Auth::user()-> id}};
 </script>
 @endauth
 <script src="{{asset('js/modernizr.min.js')}}"></script>
@@ -40,12 +36,12 @@
 
 {{-- Para carga de script segun la ruta, usar! --}}
 @switch(explode ('.',\Route::currentRouteName())[0])
-@case('category')
-@break
-@case('')
-<script src="{{asset('js/categories/show.js')}}"></script>
-@break
-@default
+    @case('category')
+        @break
+    @case('')
+        <script src="{{asset('js/categories/show.js')}}"></script>
+        @break
+    @default
 @endswitch
 
 <script>
