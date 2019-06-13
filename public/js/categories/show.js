@@ -6,7 +6,7 @@ Array.from(buttonFavs).forEach(val=>{
         id_cat = val.getAttribute('cat_id')
         if(val.classList.contains('selected')){
             $('.toast.remove.'+id_cat).toast('show');
-            url= "http://127.0.0.1:8000/api/removefavorite";
+            url= "http://localhost/api/removefavorite";
             $.ajax({
                 method:'POST',
                 url: url,
@@ -22,7 +22,7 @@ Array.from(buttonFavs).forEach(val=>{
             });
         }else{
             $('.toast.add.'+id_cat).toast('show');
-            url= "http://127.0.0.1:8000/api/addfavorite";
+            url= "http://localhost/api/addfavorite";
             $.ajax({
                 method:'POST',
                 url: url,
@@ -37,7 +37,7 @@ Array.from(buttonFavs).forEach(val=>{
                 console.log(e);
             })
         }
-        
+
 
     });
 })
