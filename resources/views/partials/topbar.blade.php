@@ -5,19 +5,20 @@
     <nav class="navbar-custom">
          <form action="{{route('search')}}" method="post">
                     @csrf
-        
-           
+
+
         <ul class="list-inline float-right mb-0">
 
-                     <input type="text" name="query" />
-                    <input style="margin-right: 200px" type="submit" class="btn btn-sm btn-primary" value="Buscar" />
-               
-               
+
             @auth
+
+            <input type="text" name="query" />
+            <input style="margin-right: 200px" type="submit" class="btn btn-sm btn-primary" value="Buscar" />
+
                 <a data-toggle="modal" data-target="#fileModal" style="cursor: pointer; color: white !important; margin-right: 15px;" class="button"><i class="fas fa-upload"></i> Subir Archivo</a>
-          
+
                 <li class="list-inline-item dropdown notif">
-             
+
                     <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                         {{-- <img src="{{asset('images/avatars/'.Auth::user()->id.'.png')}}" alt="Profile image" class="avatar-rounded"> --}}
                         <i class="fas fa-user" style="margin-left: 20px;"></i>

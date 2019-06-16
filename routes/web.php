@@ -2,7 +2,7 @@
 use App\File;
 use PDF as PDF;
 use \Spatie\Tags\Tag;
- 
+
 
 Auth::routes(["register" => false]);
 
@@ -30,7 +30,10 @@ Route::middleware(['auth'])->group(function () {
 
         //TODO: Por definir la direccion de storage
         //Variable global de storage
-        $public_path =  '/home/vagrant/code/ProyObste/storage/app/';
+
+        //$public_path =  '/home/vagrant/code/ProyObste/storage/app/';
+
+        $public_path =  storage_path().'/app/';
         $url = $public_path . $file->file_path;
         //verificamos si el archivo existe y lo retornamos
         if (Storage::exists($file->file_path)) {
@@ -44,7 +47,8 @@ Route::middleware(['auth'])->group(function () {
         $file = File::find($archivo);
         //TODO: Por definir la direccion de storage
         //Variable global de storage
-        $public_path =  '/var/www/storage/app/';
+       // $public_path =  '/var/www/storage/app/';
+        $public_path =  storage_path().'/app/';
         $url = $public_path . $file->file_path;
         //verificamos si el archivo existe y lo retornamos
         if (Storage::exists($file->file_path)) {
