@@ -3,23 +3,20 @@
 
 <div class="container-fluid">
 
-
-
  <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
-	<div class="row">
-            <div class="col-xl-12">
-                <div class="breadcrumb-holder">
-                    <a href="#" class="btn btn-primary pull-left" role="button" style="margin-right: 20px; margin-bottom: 20px;"><i class="fas fa-arrow-left"></i> Atrás </a>
-                                
-                                    <h1 class="main-title float-left" style="margin-top: 5px;"> Nueva Categoría</h1>
-                    <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item">Home</li>
-                        <li class="breadcrumb-item active">Nueva Categoría</li>
-                    </ol>
-                    <div class="clearfix"></div>
-                </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="breadcrumb-holder">
+                <a href="#" class="btn btn-primary pull-left" role="button" style="margin-right: 20px; margin-bottom: 20px;"><i class="fas fa-arrow-left"></i> Atrás </a>
+                    <h1 class="main-title float-left" style="margin-top: 5px;"> Nueva Categoría</h1>
+                <ol class="breadcrumb float-right">
+                    <li class="breadcrumb-item">Home</li>
+                    <li class="breadcrumb-item active">Nueva Categoría</li>
+                </ol>
+                <div class="clearfix"></div>
             </div>
         </div>
+    </div>
 
 	<div class="row">
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6" style="margin: auto auto;">
@@ -36,14 +33,13 @@
                                 </div>
                                 <div class="col-md-12" style="margin-top: 10px;">
                                 	<label>Seleccione una categoría padre:</label>
-													<select name="superior_category_id" class="form-control form-control-sm ">
-													<option id ="superior_category_id" value = 0 selected >Categoría Nueva</option>
-												@foreach ($categories as $category)
-													<option  id="superior_category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
-												@endforeach
-													</select>
+                                    <select name="superior_category_id" class="form-control form-control-sm ">
+                                        <option id ="superior_category_id" value = 0 selected >Categoría Nueva</option>
+                                        @foreach ($categories as $category)
+                                        <option id="superior_category_id"  value="{{$category->id}}">{{$category->category_name}}  </option>
+                                        @endforeach
+                                    </select>
                                 </div>
-
                             </div>
                         </div>
                     <div class="card-footer">

@@ -24,19 +24,36 @@ class RoleController extends Controller
     public function show($id) { 
         $data['rol']                = Role::find($id);
         $data['permissions']        = Permission::all();
-        $data['permissions_users']  = $data['rol']->has_permissions;
+        $data['permissions_system'] = array();
+        $data['permissions_resumes'] = array();
+        $data['permissions_categories'] = array();
+        
+        $permissions_user = $data['rol']->has_permissions;
+
         foreach ($data['permissions'] as $permission){
-            foreach ($data['permissions_users'] as $key => $_permission) {
+            foreach ($permissions_user as $key => $_permission) {
                 if ($permission->name == $_permission->name) {                    
                     $permission->has_permission = true;
-                    unset($data['permissions_users'][$key]);
+                    unset($permissions_user[$key]);
                     break;
                 }
+            }
+            switch($permission->type){
+                case 1:
+                    array_push($data['permissions_system'],$permission);
+                    break;
+                case 2:
+                    array_push($data['permissions_categories'],$permission);
+                    break;
+                case 3:
+                    array_push($data['permissions_resumes'],$permission);
+                    break;
+                default;
             }
         }
         return view('admin.roles.show', $data);
     }
- 
+
     public function create() {
         
     }

@@ -2,30 +2,16 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-12">
-            <div class="breadcrumb-holder">
-                <h1 class="main-title float-left">Tables</h1>
-                <ol class="breadcrumb float-right">
-                    <li class="breadcrumb-item">Home</li>
-                    <li class="breadcrumb-item active">Tables</li>
-                </ol>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-
-<div class="col-12">						
     <div class="card mb-3">
         <div class="card-header">
             <div class="row">
-                <div class="col-md-11">    
+                <div class="col-md-10">    
                     <h3><i class="fa fa-table"></i> Roles del sistema</h3>
                     Se encuentran listados los distintos roles que pueden tener los usuarios en el sistema,
                     para asignar permisos entrar a configurar.
                 </div>
-                <div class="col-md-1">
-                    <button class="pull-right">Crear</button>
+                <div class="col-md-2" style="display: flex; align-items: center; justify-content: center;">
+                    <a href="#custom-modal" class="btn btn-primary" data-target="#newRolModal" data-toggle="modal">Crear Rol</a>			
                 </div>
             </div>
         </div>
@@ -37,7 +23,6 @@
                         <th scope="col">Descripción</th>
                         <th scope="col">Numero de Usuarios</th>
                         <th scope="col">Opciónes</th>
-                        
                     </tr>
                 </thead>
                 <tbody>
@@ -56,4 +41,39 @@
             </table>
         </div>							
     </div>
+</div>
+
+
+<div class="modal fade custom-modal" id="newRolModal" tabindex="-1" role="dialog" aria-labelledby="newRolModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel2">Crear Rol</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="nameRol">Ingrese nombre de rol</label>
+                    <input type="text" class="form-control" id="nameRol" aria-describedby="nameRol" placeholder="Nombre de rol" required="">
+                    <small id="nameRol" class="form-text text-muted ml-3">El nombre que tendra el rol a crear</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="nameRol">Descripción para el rol</label>
+                    <input type="text" class="form-control" id="descriptionRol" aria-describedby="descriptionRol" placeholder="Descripción del rol" required="">
+                    <small id="descriptionRol" class="form-text text-muted ml-3">Pequeña descripción para el rol</small>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+    </div>
+</div>
 @endsection
