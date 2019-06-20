@@ -7,7 +7,9 @@ use App\Category;
 use App\File;
 use App\Permission;
 use App\Roles_permission;
-
+use App\Hierarchy;
+use App\Teacher_category;
+use App\Academic_type;
 class DatabaseSeeder extends Seeder
 {
     public function run()
@@ -15,7 +17,7 @@ class DatabaseSeeder extends Seeder
     	$faker = Faker\Factory::create();
         $roles = [
 			['role_name' =>'Administrador'],
-			['role_name' =>'Mantenedor'],
+			['role_name' =>'Director de escuela'],
 		];
       	foreach ($roles as $role) {
 			Role::create($role);
@@ -23,38 +25,10 @@ class DatabaseSeeder extends Seeder
         $usuario =[
 			[
 				'role_id' => 1,
-				'name'  => 'ricardo',
-				'email'  => 'ricardo@mail.es',
-				'email_verified_at'=> $faker->dateTime($max = 'now', $timezone = null),
+				'name'  => 'administrador',
+				'email'  => 'administrador@mail.es',
 				'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
-				'avatar_image_path' => 'imagen',
-				'status' =>1,
-        	],
-         	[
-				'role_id' => 1,
-				'name'  => 'barbara',
-				'email'  => 'barbara@mail.es',
-				'email_verified_at'=> $faker->dateTime($max = 'now', $timezone = null),
-				'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
-				'avatar_image_path' => 'imagen',
-				'status' =>1,
-        	],
-        	[
-				'role_id' => 1,
-				'name'  => 'leiser',
-				'email'  => 'leiser@mail.es',
-				'email_verified_at'=> $faker->dateTime($max = 'now', $timezone = null),
-				'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
-				'avatar_image_path' => 'imagen',
-				'status' =>1,
-        	],
-        	[
-				'role_id' => 1,
-				'name'  => 'eduardo',
-				'email'  => 'eduardo@mail.es',
-				'email_verified_at'=> $faker->dateTime($max = 'now', $timezone = null),
-				'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
-				'avatar_image_path' => 'imagen',
+				'avatar_image_path' => 'images/avatars/avatar.png',
 				'status' =>1,
         	],
 		];
@@ -156,5 +130,65 @@ class DatabaseSeeder extends Seeder
 		foreach ($permissionrole as $permissionrole) {
 			Roles_permission::create($permissionrole);
 		}
+
+		$hierarchies = [
+			[
+				'name'=>'Titular'
+			],
+			[
+				'name'=>'Asociado'
+			],
+			[
+				'name'=>'Asistente'
+			],
+			[
+				'name'=>'Instructor'
+			],
+			[
+				'name'=>'Ayudante'
+			]
+		];
+
+		foreach($hierarchies as $hierarchy){
+			Hierarchy::create($hierarchy);
+		}
+
+		$teacher_categories = [
+			[
+				'name'=>'Ayudante de profesor',
+			],
+			[
+				'name'=>'Profesor adjunto categoría I',
+			],
+			[
+				'name'=>'Profesor adjunto categoría II',
+			],
+			[
+				'name'=>'Profesor instructor categoría I',
+			],
+			[
+				'name'=>'Profesor instructor categoría II',
+			]
+		];
+
+		foreach($teacher_categories as $teacher_category){
+			Teacher_category::create($teacher_category);
+		}
+
+		$academic_types = [
+			[
+				'name'=>'Regular'
+			],
+			[
+				'name'=>'Por horas'
+			],
+			[
+				'name'=>'Honorarios'
+			],
+		];
+		foreach($academic_types as $academic_type){
+			Academic_type::create($academic_type);
+		}
+
     }
 }

@@ -54,6 +54,10 @@ class User extends Authenticatable
         return $this -> hasMany('App\File');
     }
 
+    public function is_academic(){
+        return $this -> hasOne('App\Academic');
+    }
+
     public function favorite_categories(){
         return $this -> belongsToMany(Category::class, 'categories_users');
     }

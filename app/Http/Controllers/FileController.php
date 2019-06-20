@@ -64,7 +64,7 @@ class FileController extends Controller
                 'description' => 'You can also specify your video description here.',
                 'tags'	      => ['foo', 'bar', 'baz'],
                 'category_id' => 10
-            ]);
+            ],'private');
             $file->file_path = 'https://www.youtube.com/embed/'.$video->getVideoId();
             $file->storage_type  = 2;
             $file->save();
