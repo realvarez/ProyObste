@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
 			['name'  => 'administrar', 'type' => 1],
 			['name'  => 'administrar_Roles','type' => 1],
 			['name'  => 'administrar_Usuario','type' => 1],
-			['name'  => 'administrar_historia_de_la_unidad','type' => 1],
+			['name'  => 'administrar_historia_de_la_unidad','type' => 2],
 			['name'  => 'ver_historia_de_la_unidad','type' => 2],
 			['name'  => 'administrar_reglamentos','type' => 2],
 			['name'  => 'ver_reglamentos','type' => 2],

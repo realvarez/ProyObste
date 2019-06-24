@@ -1,19 +1,6 @@
 @extends('layouts.master')
-
 @section('content')
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-12">
-            <div class="breadcrumb-holder">
-                <h1 class="main-title float-left"> {{$rol->role_name}}</h1>
-                <ol class="breadcrumb float-right">
-                    <li class="breadcrumb-item">Administrador</li><li class="breadcrumb-item active">Roles</li>
-                </ol>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-
     <form method="POST" action="{{ route('roles.update',['id'=>$rol->id]) }}">
         @csrf @method('PUT')
             <div class="card mb-4">
@@ -27,7 +14,7 @@
                         @foreach ($permissions_system as $permission) 
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
-                                <label style="font-size:17px;" for="{{$permission->name}}">{{$permission->name}}</label>
+                                <label style="font-size:17px;" for="{{$permission->name}}">{{ucfirst($permission->name)}}</label>
                             </div>
                         @endforeach
                     </div>
@@ -37,7 +24,7 @@
                         @foreach ($permissions_resumes as $permission) 
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
-                                <label style="font-size:17px;" for="{{$permission->name}}">{{$permission->name}}</label>
+                                <label style="font-size:17px;" for="{{$permission->name}}">{{ucfirst($permission->name)}}</label>
                             </div>
                         @endforeach
                     </div>
@@ -46,9 +33,9 @@
                     <h5 class="card-title mt-4">Permisos categorias</h5>
                     <div class="row">
                         @foreach ($permissions_categories as $permission)
-                            <div class="col-sm-12 col-md-6 col-lg-4">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
                                 <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
-                                <label style="font-size:17px;" for="{{$permission->name}}">{{$permission->name}}</label>
+                                <label style="font-size:17px;" for="{{$permission->name}}">{{ucfirst($permission->name)}}</label>
                             </div>
                         @endforeach
                     </div>

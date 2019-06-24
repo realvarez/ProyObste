@@ -2,18 +2,6 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xl-12">
-            <div class="breadcrumb-holder">
-                <h1 class="main-title float-left"> Categorías</h1>
-                <ol class="breadcrumb float-right">
-                    <li class="breadcrumb-item">Home</li>
-                
-                </ol>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
         @foreach ($categories as $category)
             @if ($category->sons)
                 <div class="card-box bg-success col-xs-12 col-md-6 col-lg-6 col-xl-4" style="position: relative; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
@@ -78,7 +66,7 @@
         @endforeach
         <div class="card-box bg-warning col-xs-12 col-md-6 col-lg-6 col-xl-4" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
             <a data-toggle="modal" data-target="#categoryModal" class="" style="cursor: pointer;">
-                <h6 class="text-white text-uppercase m-b-20 text-center" style="text-shadow: 1px 1px 6px #a87e2a;">
+                <h6 class="text-white text-uppercase m-b-20 text-center" style="text-shadow: 1px 1px 6px #a87e2a;margin-top:23px;">
                 <i class="fas fa-folder-plus" style="font-size: 20px;"></i>&nbsp&nbsp Nueva Categoría</h6>
             </a>
         </div>

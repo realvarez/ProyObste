@@ -34,13 +34,14 @@
 {{-- Jquery --}}
 <script src="{{asset('js/jquery.min.js')}}"></script>
 
-@switch(explode ('.',\Route::currentRouteName())[0])
-    @case('category')
+@switch(\Route::currentRouteName())
+    @case('category.show')
+        <link href="{{asset('css/categories/show.css')}}" rel="stylesheet" type="text/css"></link>
+
         @break
     @case('')
         <link href="{{asset('css/categories/show.css')}}" rel="stylesheet" type="text/css"></link>
         @break
     @default
 @endswitch
-
 

@@ -2,50 +2,70 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-xl-12">
-			<div class="breadcrumb-holder">
-				<h1 class="main-title float-left">
-					<i class="fas fa-folder" style="font-size: 20px;"></i> Categorias / {{ucfirst($category->category_name)}}</h1>
-				<ol class="breadcrumb float-right">
-                    <li >
-                        <a href="/category/create" style="color:black; margin-right: 15px; padding: 2px !important;">
-                            <i class="fas fa-folder-plus"></i> Nueva sub-categoría
-                        </a>
-                    </li>
-					<li class="breadcrumb-item"><a href="/" style="color:#212529;">Inicio</a></li>
-					@foreach ($allCategories as $categoria)
-					@if($categoria->id==$category->superior_category_id)
-					<li class="breadcrumb-item">
-
-
-						<a href="/category/{{$categoria->id}}" style="color:#212529;">{{ucfirst($categoria->category_name)}}</a>
-						@endif
-						@endforeach</li>
-					<li class="breadcrumb-item active">
-						{{ucfirst($category->category_name)}}</li>
-				</ol>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-        @foreach ($allCategories as $categoria)
-         @if($categoria->superior_category_id == $category->id)
-            <a href="/category/{{$categoria->id}}" class="tarjetacategoria col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                <div class="card-box noradius noborder bg-info" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-
-                    <h6 class="text-white text-uppercase m-b-20 text-center" style="text-shadow: 1px 1px 6px #185b6b;">
-                    <i class="fas fa-folder" style="font-size: 20px;"></i>&nbsp&nbsp{{ucfirst($categoria->category_name)}}</h6>
-
-                </div>
-            </a>
-            @endif
-        @endforeach
+		@foreach ($categories as $category)
+			@if ($category->sons)
+				<div class="card-box bg-success col-xs-12 col-md-6 col-lg-6 col-xl-4" style="position: relative; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+					<a href="javascript:;" cat_id="{{$category->id}}" class="button-favorite {{($category->favorite)?'selected':''}}" style=""><i class="fa fa-star" style="font-size: 20px;" aria-hidden="true"></i></a>
+					<div class="toast {{$category->id}} add" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Agregando a favoritos
+						</div>
+					</div>
+					<div class="toast {{$category->id}} adddone" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Agregado
+						</div>
+					</div>
+					<div class="toast {{$category->id}} remove" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Quitando de favoritos
+						</div>
+					</div>
+					<div class="toast {{$category->id}} removedone" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Quitado
+						</div>
+					</div>
+					<a href="/category/{{$category->id}}" style="justify-content: center;">
+						<h6 class="text-white text-uppercase m-b-20 text-center"  style="text-shadow: 1px 1px 6px #185b6b;">
+							<i class="fas fa-folder" style="font-size: 20px;"></i>&nbsp&nbsp{{ucfirst($category->category_name)}}
+						</h6>
+					</a>
+				</div>
+			@else
+				<div class="card-box bg-info col-xs-12 col-md-6 col-lg-6 col-xl-4" style="position: relative; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+					<a href="javascript:;" cat_id="{{$category->id}}" class="button-favorite {{($category->favorite)?'selected':''}}"><i class="fa fa-star" style="font-size: 20px;" aria-hidden="true"></i></a>
+					<div class="toast {{$category->id}} add" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Agregando a favoritos
+						</div>
+					</div>
+					<div class="toast {{$category->id}} adddone" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Agregado
+						</div>
+					</div>
+					<div class="toast {{$category->id}} remove" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Quitando de favoritos
+						</div>
+					</div>
+					<div class="toast {{$category->id}} removedone" style="position: absolute; top: 0; right: 0;">
+						<div class="toast-body">
+							Quitado
+						</div>
+					</div>
+					<a href="/category/{{$category->id}}" class="" >
+						<h6 class="text-white text-uppercase text-center" style="text-shadow: 1px 1px 6px #185b6b;">
+						<i class="fas fa-folder" style="font-size: 20px;"></i>&nbsp&nbsp{{ucfirst($category->category_name)}}</h6>
+					</a>
+				</div>
+			@endif
+		@endforeach
     </div>
 	<div class="card" style="">
 		<div class="card-body">
 			<div class="table-responsive">
-
                 <table id="table-documents" class="table table-bordered table-hover display">
 					<thead>
 						<tr>
@@ -116,54 +136,99 @@
 			</div>
 		</div>
 	</div>
-
-
 </div>
 
-<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<script src="https://www.pikeadmin.com/demo-pro/assets/plugins/lightbox/ekko-lightbox.min.js"></script>
-<script>
-	$(document).ready(function() {
-		var table = $('#table-documents').DataTable({
-			"language": {
-				"sProcessing":     "Procesando...",
-				"sLengthMenu":     "Mostrando _MENU_ registros",
-				"sZeroRecords":    "No se encontraron resultados",
-				"sEmptyTable":     "Ningún dato disponible en esta tabla",
-				"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-				"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-				"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-				"sInfoPostFix":    "",
-				"sSearch":         "Buscar:",
-				"sUrl":            "",
-				"sInfoThousands":  ",",
-				"sLoadingRecords": "Cargando...",
-				"oPaginate": {
-					"sFirst":    "Primero",
-					"sLast":     "Último",
-					"sNext":     "Siguiente",
-					"sPrevious": "Anterior"
-				},
-				"oAria": {
-					"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
-				}
-			}
-    	});
+	<div class="modal fade custom-modal" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nueva Categoría</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">@csrf
+                        <div class="form-group">
+                            <label>Seleccione una categoría padre:</label> 
+                            <a data-toggle="popover" title="Categoría padre" data-content="Cada categoría, puede contener subcategorías. Si desea crear una subcategoría, seleccione la categoría que la contendrá. Si no desea crear una subcategoría, seleccione &quot; Nueva Categoría&quot" style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
+                            <select data-toggle="tooltip" data-placement="right" title="Seleccione a la categoría a la que pertenece o seleccione nueva categoría" name="superior_category_id" class="form-control form-control-sm ">
+                                <option id="superior_category_id" value="0">Categoría Nueva</option>
+                                @foreach ($all_categories as $category)
+                                <option id="superior_category_id" {{(isset($_category) && $category->id == $_category->id)?'selected':''}}  value="{{$category->id}}">{{ucfirst($category->category_name)}} </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="category_name">Nombre de la categoría</label>
+                            <input data-toggle="tooltip" data-placement="right" title="Ingrese el nombre que tendrá la categoría" type="text" name="category_name" class="form-control " id="category_name" placeholder="Ingrese el nombre">
+                        </div>
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger" lang="es">
+                                <strong>Ups!</strong> Ha ocurrido un error al crear la categoria
+                            </div>
+                        @endif
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary "><i class="fas fa-long-arrow-alt-up"></i> Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</div>
 
-		table.columns().every( function () {
-			var that = this;
-
-			$( 'input', this.header() ).on( 'keyup change', function () {
-				if ( that.search() !== this.value ) {
-					that
-						.search( this.value )
-						.draw();
-				}
-			} );
-		} );
-	} );
-</script>
-
+<!-- Modal SUBIR ARCHIVO -->
+<div class="modal fade custom-modal" id="fileModal" tabindex="-1" role="dialog" aria-labelledby="fileModal" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Subir archivo</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="{{route('files.store')}}" method="post" enctype="multipart/form-data">
+					@csrf
+					<div class="row container">
+						<div class="form-group row">
+							<input class="col-md-8 col-lg-8 col-xl-8" type="file" name="file" id="file">
+							<div style="margin-top: 20px;" class="col-md-8 col-lg-8 col-xl-8">
+								<label>Seleccione una categoría:</label>
+								<select data-toggle="tooltip" data-placement="right" title="Ingrese la categoría a la que pertenece el documento" name="category_id" class="form-control form-control-sm ">
+									@foreach ($categories as $category)
+									<option id="category_id" value="{{$category->id}}">{{$category->category_name}} </option>
+									@endforeach
+								</select>
+							</div>
+							<div style="margin-top: 20px; " class="col-md-4 col-lg-4 col-xl-4">
+								<label>Año</label>
+								<input type="number" min="2016" max="2030" step="1" name="file_year" data-toggle="tooltip" data-placement="right" title="Ingrese el año del documento" class="form-control form-control-sm">
+							</div>
+							<div style="margin-top: 20px; " class="col-md-4 col-lg-4 col-xl-4">
+								<label>Tags</label>
+								<input type="text" name="file_tags" id='file_tags' data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput">
+							</div>
+							@if (count($errors) > 0)
+								<div class="alert alert-danger">
+									<strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
+									<ul>
+										@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+										@endforeach
+									</ul>
+								</div>
+							@endif
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+						<button type="submit" class="btn btn-primary pull-right"><i class="fas fa-long-arrow-alt-up"></i> Subir</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection

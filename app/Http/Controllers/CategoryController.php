@@ -12,22 +12,27 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index() {
-        $fav_categories = Auth::user()->favorite_categories;
-        $Categories = Category::all();
-        foreach ($Categories as $categorie) {
-            if($fav_categories->contains($categorie)){
-                $categorie->favorite = true;
-            }
-        }
-        return $Categories;
+
     }
 
     public function show($id) {
         Auth::user()->record_categories()->attach($id);
-        $allCategories      = Category::all();
-        $data['category']   = Category::find($id);
+        $category = new Category();
+        $data['categories'] = $category -> recursiveGet($id);
+        $fav_categories = Auth::user()->favorite_categories;
+        foreach ($data['categories'] as $categorie) {
+            if($fav_categories->contains($categorie)){
+                $categorie->favorite = true;
+            }
+        }
+        
+        // $allCategories      = Category::all();
+        $data['_category']  = Category::find($id);
+        if($data['_category']->category_level!=1)
+            $data['_category_father']  = Category::find($data['_category']->superior_category_id);
+        
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
-        return view('categories.show')->with($data)->with('allCategories',$allCategories);
+        return view('categories.show')->with($data);
     }
 
     public function create() {
@@ -46,8 +51,8 @@ class CategoryController extends Controller
         $category->state=1;
         $path = $category->category_name;
 
-        $PermisssionView = new Permission(['name'=>'ver_'.$request->category_name]);
-        $PermissionAdmin = new Permission(['name'=>'administrar_'.$request->category_name]);
+        $PermisssionView = new Permission(['name'=>'ver_'.$request->category_name, 'type'=>2]);
+        $PermissionAdmin = new Permission(['name'=>'administrar_'.$request->category_name,'type'=>2]);
         $PermisssionView -> save();
         $PermissionAdmin -> save();
         $category->save();

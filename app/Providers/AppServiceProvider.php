@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $category = new Category();
-        $categories = $category -> recursiveGet();
-        View::share('categories', $categories);
+        $all_categories = $category -> recursiveGet();
+        View::share('all_categories', $all_categories);
     }
 }

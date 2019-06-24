@@ -35,11 +35,15 @@
 <script src="{{asset('plugins/counterup/jquery.counterup.min.js')}}"></script>
 
 {{-- Para carga de script segun la ruta, usar! --}}
-@switch(explode ('.',\Route::currentRouteName())[0])
-    @case('category')
+@switch(\Route::currentRouteName())
+    @case('category.show')
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://www.pikeadmin.com/demo-pro/assets/plugins/lightbox/ekko-lightbox.min.js"></script>
+        <script src="{{asset('js/categories/show.js')}}"></script>
         @break
     @case('')
-        <script src="{{asset('js/categories/show.js')}}"></script>
+        <script src="{{asset('js/categories/index.js')}}"></script>
         @break
     @default
 @endswitch
