@@ -1,4 +1,4 @@
-@if(\Request::route()->getName() != 'login')
+
     <div class="headerbar">
         <div class="headerbar-left">
             <a href="/" ><img alt="Logo" src="{{asset('images/Escudo_USACH.svg')}}" style="height: 50px; margin-left: 10px;" /> <span class="titulo">ESCUELA DE OBSTETRICIA Y PUERICULTURA</span></a>
@@ -33,6 +33,3 @@
             @endauth
         </nav>
     </div>
-@else
-    <div class="content-page" style="margin-left:0px; margin-top: 50px;">
-@endif

@@ -1,3 +1,5 @@
+@if(\Request::route()->getName() != 'login')
+
 <div class="left main-sidebar">
     <div class="sidebar-inner leftscroll">
         <div id="sidebar-menu">
@@ -179,3 +181,6 @@
         });
     })
 </script>
+@else
+<div class="content-page" style="margin-left:0px; margin-top: 50px;">
+@endif
