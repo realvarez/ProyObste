@@ -1232,6 +1232,22 @@ a .titulo :hover{
     visibility: hidden;
   }
 }
+.result-link a:link {
+  color: blue;
+  font-size: 150%;
+}
+
+/* A link that has been visited */
+.result-link a:visited {
+  color: rgb(134, 0, 134);
+  font-size: 150%;
+}
+
+/* A link that is hovered on */
+.result-link a:hover {
+  color: red;
+  font-size: 150%;
+}
 
 
 /* Barra Busqueda */
