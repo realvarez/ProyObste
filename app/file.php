@@ -9,7 +9,8 @@ use PDF;
 
 class File extends Model implements Searchable
 {
-    use \Spatie\Tags\HasTags;
+    //use \Spatie\Tags\HasTags;
+    use \Conner\Tagging\Taggable;
 
     protected $fillable = [
         'user_id',

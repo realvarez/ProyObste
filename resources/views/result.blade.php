@@ -3,9 +3,7 @@
 @section('content')
 <div class="card">
     <div class="card-header"><b>{{ $searchResults->count() }} results found for "{{ request('query') }}"</b></div>
-
-    
-        
+  
     @foreach($searchResults->groupByType() as $type => $modelSearchResults)
     @if ($type == "categories")
     <div class="card-body">    
@@ -33,7 +31,7 @@
             @endforeach
     </div>
     @endif
-    @if ($type == "tag")
+    @if ($type == "tagging_tagged")
     <div class="card-body">    
         <h2><i class="fas fa-folder-open"></i>Por Tags</h2>
 

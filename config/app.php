@@ -178,6 +178,8 @@ return [
 
         Dawson\Youtube\YoutubeServiceProvider::class,
 
+        Conner\Tagging\Providers\TaggingServiceProvider::class,
+
     ],
 
     /*

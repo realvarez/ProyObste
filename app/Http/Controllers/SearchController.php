@@ -6,6 +6,8 @@ use App\Category;
 use Spatie\Searchable\Search;
 use Illuminate\Http\Request;
 use \Spatie\Tags\Tag;
+use \Conner\Tagging\Model\Tagged;
+
 
 class SearchController extends Controller
 {
@@ -21,8 +23,10 @@ class SearchController extends Controller
         $searchResults = (new Search())
             ->registerModel(File::class, 'file_name', 'file_real_name')
             ->registerModel(Category::class, 'category_name')
+            ->registerModel(Tagged::class,'tag_slug')
             ->perform($request->input('query'));
-
+        //$searchResults['tag']=$data;
+        //dd($searchResults['tag']);
         return view('result', compact('searchResults'));
     }
 }
