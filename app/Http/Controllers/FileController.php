@@ -56,7 +56,7 @@ class FileController extends Controller
 
         $path = Storage::putFileAs($route, $request->file('file'), $file->file_real_name);
         $tags_in=explode(",",$request->file_tags);
-        $file->attachTags($tags_in);
+        //$file->attachTags($tags_in);
 
         if($file->file_extension == 'mp4'){
             $video = Youtube::upload(storage_path('app/'.$path), [
@@ -68,12 +68,14 @@ class FileController extends Controller
             $file->file_path = 'https://www.youtube.com/embed/'.$video->getVideoId();
             $file->storage_type  = 2;
             $file->save();
+            $file->tag($tags_in);
             Storage::delete($route.'/'.$file->file_real_name);
         }
         else{
             $file->file_path        =  $path;
             $file->state            =  1;
             $file->save();
+            $file->tag($tags_in);
         }
         return redirect()->action('CategoryController@show', ['id' => $request->category_id]);
     }
