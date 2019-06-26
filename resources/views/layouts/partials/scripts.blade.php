@@ -45,6 +45,9 @@
     @case('')
         <script src="{{asset('js/categories/index.js')}}"></script>
         @break
+    @case('users.index')
+        <script src="{{asset('js/admin/users/index.js')}}"></script>
+        @break    
     @default
 @endswitch
 
@@ -59,20 +62,13 @@
 
 <script type="text/javascript">
     var path = "{{ route('autocomplete') }}";
-
     $('input.typeahead').typeahead({
-
         source: function(query, process) {
-
             return $.get(path, {
                 query: query
             }, function(data) {
-
                 return process(data);
-
             });
-
         }
-
     });
 </script>

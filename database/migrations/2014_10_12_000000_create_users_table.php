@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('avatar_image_path');
-            $table->boolean('status');
+            $table->boolean('status')->default(1);
             $table->dateTime('elimination_date')->nullable($value = true)->default(null);
             $table->rememberToken();
             $table->timestamps();

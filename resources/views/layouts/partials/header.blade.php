@@ -37,10 +37,12 @@
 @switch(\Route::currentRouteName())
     @case('category.show')
         <link href="{{asset('css/categories/show.css')}}" rel="stylesheet" type="text/css"></link>
-
         @break
     @case('')
         <link href="{{asset('css/categories/show.css')}}" rel="stylesheet" type="text/css"></link>
+        @break
+    @case('users.index')
+        <link href="{{asset('css/admin/users/index.css')}}" rel="stylesheet" type="text/css"></link>
         @break
     @default
 @endswitch

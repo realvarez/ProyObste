@@ -8,7 +8,7 @@
                         <a href="javascript:;"><i class="fas fa-cogs"></i><span>Administración</span><span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             <li><a href="/roles"><i class="fas fa-user-tag"></i></i>Roles</a></li>
-                            {{-- <li><a href="/users"><i class="fas fa-user-cog"></i>Usuarios</a></li> --}}
+                            <li><a href="/users"><i class="fas fa-user-cog"></i>Usuarios</a></li>
                         </ul>
                     </li>
                     @endif
@@ -100,5 +100,5 @@
         })
     </script>
 @else
-    <div class="content-page" style="margin-left:0px; margin-top: 50px;">
+    
 @endif

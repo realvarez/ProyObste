@@ -54,6 +54,13 @@
                 </ol>
                 @break
             @case('users.index')
+                <h1 class="main-title float-left">
+                    <a href="/roles" class="breadcrumb-item" style="color:#212529;">Usuarios</a>
+                </h1>
+                <ol class="breadcrumb float-right">
+                    <li class="breadcrumb-item">Administración</li>
+                    <li class="breadcrumb-item">Usuarios</li>
+                </ol>
                 @break
             @case('users.show')
                 @break

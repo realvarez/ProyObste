@@ -2,9 +2,7 @@ var buttonFavs = document.getElementsByClassName('button-favorite');
 Array.from(buttonFavs).forEach(val=>{
     val.addEventListener('click', ()=>{
         id_cat = val.getAttribute('cat_id')
-        console.log('aqui esta el puerto: ')
         url_path = window.location.origin
-        console.log(url_path)
         if(val.classList.contains('selected')){
             $('.toast.remove.'+id_cat).toast('show');
             url= url_path+"/api/removefavorite";

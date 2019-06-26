@@ -42,8 +42,8 @@
                 </div>
                 <div class="card-footer">
                     <div class="pull-right">
-                        <button class="btn btn-primary"><span class="btn-label"><i class="fa fa-check"></i></span>Guardar cambios</button>
-                        <a href="{{route('roles.index')}}" class="btn btn-danger"><span class="btn-label"><i class="fa fa-exclamation"></i></span>Volver</a>
+                        <a href="{{route('roles.index')}}" class="btn btn-secondary">Volver</a>
+                        <button class="btn btn-primary"><span class="btn-label"><i class="fa fa-check"></i></span>Guardar</button>
                     </div>
                 </div>
             </div>
