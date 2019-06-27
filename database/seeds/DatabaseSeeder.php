@@ -10,6 +10,7 @@ use App\Roles_permission;
 use App\Hierarchy;
 use App\Teacher_category;
 use App\Academic_type;
+use App\Academic;
 class DatabaseSeeder extends Seeder
 {
     public function run()
@@ -59,13 +60,13 @@ class DatabaseSeeder extends Seeder
 				[
 				'category_name'  => 'enviada',
 				'category_level'  => 2,
-				'superior_category_id' => 4, 
+				'superior_category_id' => 4,
 				'state' => 1,
 			],
 			[
 				'category_name'  => 'recibida',
 				'category_level'  => 2,
-				'superior_category_id' => 4, 
+				'superior_category_id' => 4,
 				'state' => 1,
 			],
 			[
@@ -82,7 +83,7 @@ class DatabaseSeeder extends Seeder
 			'category_name'  => 'convenios docentes',
 				'category_level'  => 1,
 				'state' => 1,
-			],   
+			],
 		];
       	foreach ($category as $category) {
            Category::create($category);
