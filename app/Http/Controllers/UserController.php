@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
-
+use Mail;
+use App\Mail\NewUsersNotification;
 class UserController extends Controller
 {
     public function index() {
@@ -37,9 +38,10 @@ class UserController extends Controller
             $path = Storage::putFileAs($route, $request->file('avatar_image'), $request->file('avatar_image')->getClientOriginalName());
         }
         $user->avatar_image_path = (isset($path))? $path : 'images/avatars/avatar.png';
-        $user->save();
-        return redirect()->action('UserController@index');
         
+        $user->save();
+        Mail::to($user->email)->send(new NewUsersNotification($user));
+        return redirect()->action('UserController@index');
     }
 
     public function edit($id) {
