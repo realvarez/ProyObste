@@ -13,6 +13,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', 'HomeController@index');
     Route::resource('users', 'UserController');
     Route::resource('roles', 'RoleController');
+    Route::resource('academics', 'AcademicController');
+    Route::resource('resumes', 'ResumeController');
+
     Route::resource('category', 'CategoryController');
     Route::resource('files', 'FileController');
 

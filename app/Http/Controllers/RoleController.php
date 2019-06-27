@@ -11,8 +11,8 @@ class RoleController extends Controller
 {
     public function __construct()
     {}
-    
-    
+
+
     public function index() {
         $data['roles']      = Role::all();
         foreach($data['roles'] as $rol){
@@ -20,19 +20,19 @@ class RoleController extends Controller
         }
         return view('admin.roles.index', $data);
     }
- 
-    public function show($id) { 
+
+    public function show($id) {
         $data['rol']                = Role::find($id);
         $data['permissions']        = Permission::all();
         $data['permissions_system'] = array();
         $data['permissions_resumes'] = array();
         $data['permissions_categories'] = array();
-        
+
         $permissions_user = $data['rol']->has_permissions;
 
         foreach ($data['permissions'] as $permission){
             foreach ($permissions_user as $key => $_permission) {
-                if ($permission->name == $_permission->name) {                    
+                if ($permission->name == $_permission->name) {
                     $permission->has_permission = true;
                     unset($permissions_user[$key]);
                     break;
@@ -55,17 +55,17 @@ class RoleController extends Controller
     }
 
     public function create() {
-        
+
     }
- 
+
     public function store(Request $request) {
-       
+
     }
- 
+
     public function edit($id) {
-       
+
     }
- 
+
     public function update(Request $request, $id) {
         $rol                = Role::find($id);
         $rol_permissions    = $rol->has_permissions;
@@ -78,15 +78,15 @@ class RoleController extends Controller
                 array_forget($permissions_given, $value->id);
             }
         }
-        $permissions = Permission::all(); 
+        $permissions = Permission::all();
         foreach ($permissions_given as $key => $value) {
             $rol->has_permissions()->attach($permissions->firstWhere('name',$key)->id);
         }
-        
+
         return redirect()->action('RoleController@show', ['id' => $id]);
     }
- 
+
     public function destroy($id) {
- 
+
     }
 }

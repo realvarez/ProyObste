@@ -12,7 +12,12 @@
                         </ul>
                     </li>
                     @endif
-
+                    <li class="submenu">
+                        <a href="javascript:;"><i class="fas fa-cogs"></i><span>Academicos</span><span class="menu-arrow"></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="/academics"><i class="fa fa-list-alt"></i></i>Lista de academicos</a></li>
+                        </ul>
+                    </li>
                     <li class="submenu">
                         <a  href="javascript:;"><i class="fas fa-folder-open"></i><span>Favoritos</span><span class="menu-arrow"></span></a>
                         <ul class="list-unstyled" id="favorite_list">
@@ -53,7 +58,7 @@
                     <div class="modal-body">
                         @csrf
                         <div class="form-group">
-                            <label>Seleccione una categoría padre:</label> 
+                            <label>Seleccione una categoría padre:</label>
                             <a data-toggle="popover" title="Categoría padre" data-content="Cada categoría, puede contener subcategorías. Si desea crear una subcategoría, seleccione la categoría que la contendrá. Si no desea crear una subcategoría, seleccione &quot; Nueva Categoría&quot" style="cursor: pointer; color: grey !important; margin-right: 10px;" class="button"><i class="fas fa-question-circle"></i></a>
                             <select data-toggle="tooltip" data-placement="right" title="Seleccione a la categoría a la que pertenece o seleccione nueva categoría" name="superior_category_id" class="form-control form-control-sm ">
                                 <option id="superior_category_id" value="0">Categoría Nueva</option>
@@ -100,5 +105,5 @@
         })
     </script>
 @else
-    
+
 @endif
