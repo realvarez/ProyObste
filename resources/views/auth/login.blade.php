@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top:7em;">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">

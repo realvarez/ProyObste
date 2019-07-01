@@ -27,8 +27,15 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    // protected $redirectTo = '/';
+    protected function redirectTo()
+    {
+        if(Auth::user()->password == '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm'){
+            return '/changePassword';
 
+        }
+        else return '/';
+    }
     /**
      * Create a new controller instance.
      *
@@ -38,29 +45,12 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
     function index()
     {
         return view('auth.login');
     }
-    function checklogin(Request $request)
-    {
-        $this->validate($request, [
-            'email'   => 'required|email',
-            'password'  => 'required|alphaNum|min:3'
-        ]);
-
-        $user_data = array(
-            'email'  => $request->get('email'),
-            'password' => $request->get('password')
-        );
-
-        if (Auth::attempt($user_data)) {
-            return redirect('/');
-        } else {
-            return back()->with('error', 'Error en el login');
-        }
-    }
-
+    
     function successlogin()
     {
         return view('successlogin');

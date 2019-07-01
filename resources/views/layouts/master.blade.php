@@ -7,7 +7,7 @@
 		<div id="main">
 			@include('layouts.partials.topbar')
 			@include('layouts.partials.leftsidebar')
-			<div class="content-page" {{(\Request::route()->getName() == 'login')? 'style=margin-left:0px;margin-top:50px;':''}}>
+			<div class="content-page" {{(\Request::route()->getName() == 'login' || \Request::route()->getName() == 'firstUsePassword')? 'style=margin-left:0px;':''}}>
 				<div class="content">
 					@include('layouts.partials.breadcrumb')
 					@yield('content')

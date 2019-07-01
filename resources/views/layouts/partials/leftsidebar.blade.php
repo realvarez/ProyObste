@@ -1,4 +1,4 @@
-@if(\Request::route()->getName() != 'login')
+@if(\Request::route()->getName() != 'login' && \Request::route()->getName() != 'firstUsePassword')
     <div class="left main-sidebar">
         <div class="sidebar-inner leftscroll">
             <div id="sidebar-menu">

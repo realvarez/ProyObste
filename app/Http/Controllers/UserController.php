@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Role;
+use Auth;
 use Mail;
 use App\Mail\NewUsersNotification;
 class UserController extends Controller
@@ -18,7 +19,6 @@ class UserController extends Controller
     }
 
     public function show($id) {
-        dd('heeeeelloooo');
    	    // $user= User::find($id);
    	    // return $user;
     }
@@ -26,7 +26,6 @@ class UserController extends Controller
     
 
     public function create() {
-        dd('hello');
     }
 
     public function store(Request $request) {
@@ -69,17 +68,27 @@ class UserController extends Controller
     }
 
     public function changestate(Request $request) {
-        if(!User::find($request->authUser)->has_permission('administrar_usuarios')){
-            return 'error';
-        }
+        if(!User::find($request->authUser)->has_permission('administrar_usuarios'))return 'error';
         $user= User::find($request->id_to_change);
-        if($user->status){
-            $user->status = 0; 
-        }else 
-            $user->status = 1;
-
+        $user->status = ($user->status)?0:1;
         $user->save();
         return 'ok';
+    }
+
+    public function firstUseChangePasswordView(){
+        return view('auth.firstUsePassword');
+    }
+
+    public function savePassword(Request $request){
+        if($request->password == $request->passwordConfirmation){
+            $myUser = User::find(Auth::user()->id);
+            $myUser->password = bcrypt($request->password);
+            $myUser->save();
+            return redirect()->action('HomeController@index');
+        }
+        $data['error'] = 'Las contraseñas deben coincidir';
+        dump($request);
+        return view('auth.firstUsePassword', $data);
     }
 }
 
