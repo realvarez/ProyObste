@@ -5,7 +5,9 @@
         @foreach ($categories as $category)
             @if ($category->sons)
                 <div class="card-box bg-success col-xs-12 col-md-6 col-lg-6 col-xl-4" style="position: relative; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-                    <a href="javascript:;" cat_id="{{$category->id}}" class="button-favorite {{($category->favorite)?'selected':''}}" style=""><i class="fa fa-star" style="font-size: 20px;" aria-hidden="true"></i></a>
+                    <a href="javascript:;" cat_id="{{$category->id}}" class="button-favorite {{($category->favorite)?'selected':''}}" style=""><i class="fa fa-star" style="font-size: 20px;" aria-hidden="true"></i>
+                    
+                        </a>
                     <div class="toast {{$category->id}} add" style="position: absolute; top: 0; right: 0;">
                         <div class="toast-body">
                             Agregando a favoritos
@@ -13,7 +15,9 @@
                     </div>
                     <div class="toast {{$category->id}} adddone" style="position: absolute; top: 0; right: 0;">
                         <div class="toast-body">
+                
                             Agregado
+                            }
                         </div>
                     </div>
                     <div class="toast {{$category->id}} remove" style="position: absolute; top: 0; right: 0;">

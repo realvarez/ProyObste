@@ -6,7 +6,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-10">
-                        <h3><i class="fa fa-table"></i> Curriculum de {{ucfirst($academic->name)}}</h3>
+                        <h3><i class="fa fa-table"></i> Currículum de {{ucfirst($academic->name)}}</h3>
                     </div>
 
 
@@ -156,7 +156,7 @@
 
                                 @if (count($errors) > 0)
                                 <div class="alert alert-danger" lang="es">
-                                    <strong>Ups!</strong> Ha ocurrido un error al crear el curriculum
+                                    <strong>Ups!</strong> Ha ocurrido un error al crear el currículum
                                 </div>
                                 @endif
 

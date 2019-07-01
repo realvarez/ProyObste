@@ -22,7 +22,7 @@
                         <th scope="col">Rol</th>
                         <th scope="col">Descripción</th>
                         <th scope="col">Numero de Usuarios</th>
-                        <th scope="col">Opciónes</th>
+                        <th scope="col">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,7 +58,7 @@
                 <div class="form-group">
                     <label for="nameRol">Ingrese nombre de rol</label>
                     <input type="text" class="form-control" id="nameRol" aria-describedby="nameRol" placeholder="Nombre de rol" required="">
-                    <small id="nameRol" class="form-text text-muted ml-3">El nombre que tendra el rol a crear</small>
+                    <small id="nameRol" class="form-text text-muted ml-3">El nombre que tendrá el rol a crear</small>
                 </div>
 
                 <div class="form-group">

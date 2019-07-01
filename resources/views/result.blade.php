@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header"><b>{{ $searchResults->count() }} results found for "{{ request('query') }}"</b></div>
+    <div class="card-header"><b>{{ $searchResults->count() }} Resultados encontrados para "{{ request('query') }}"</b></div>
   
     @foreach($searchResults->groupByType() as $type => $modelSearchResults)
     @if ($type == "categories")

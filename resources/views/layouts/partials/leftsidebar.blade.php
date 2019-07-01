@@ -13,9 +13,9 @@
                     </li>
                     @endif
                     <li class="submenu">
-                        <a href="javascript:;"><i class="fas fa-cogs"></i><span>Academicos</span><span class="menu-arrow"></span></a>
+                        <a href="javascript:;"><i class="fas fa-cogs"></i><span>Académicos</span><span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="/academics"><i class="fa fa-list-alt"></i></i>Lista de academicos</a></li>
+                            <li><a href="/academics"><i class="fa fa-list-alt"></i></i>Lista de académicos</a></li>
                         </ul>
                     </li>
                     <li class="submenu">
@@ -27,7 +27,7 @@
                         </ul>
                     </li>
                     <li class="submenu">
-                        <a  href="javascript:;"><i class="fas fa-folder-open"></i><span>Ultimas Visitadas</span><span class="menu-arrow"></span></a>
+                        <a  href="javascript:;"><i class="fas fa-folder-open"></i><span>Últimas Visitadas</span><span class="menu-arrow"></span></a>
                         <ul class="list-unstyled">
                             @foreach (Auth::user()->recorded_categories_tolist() as $category)
                             <li><a href="/category/{{$category->id}}"><i class="fa fa-list-alt" aria-hidden="true"></i>{{ucfirst($category->category_name)}}</a></li>

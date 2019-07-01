@@ -6,8 +6,8 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">
-                    <h3><i class="fa fa-table"></i> Academicos del sistema</h3>
-                    Se encuentran listados los academicos con sus curriculums y hojas de vida.
+                    <h3><i class="fa fa-table"></i> Académicos del sistema</h3>
+                    Se encuentran listados los académicos con sus currículums y hojas de vida.
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Curriculum</th>
+                        <th scope="col">Currículum</th>
                         <th scope="col">Hoja de vida</th>
                     </tr>
                 </thead>
@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <label for="nameRol">Ingrese nombre de rol</label>
                     <input type="text" class="form-control" id="nameRol" aria-describedby="nameRol" placeholder="Nombre de rol" required="">
-                    <small id="nameRol" class="form-text text-muted ml-3">El nombre que tendra el rol a crear</small>
+                    <small id="nameRol" class="form-text text-muted ml-3">El nombre que tendrá el rol a crear</small>
                 </div>
 
                 <div class="form-group">
