@@ -47,7 +47,7 @@
         @break
     @case('users.index')
         <script src="{{asset('js/admin/users/index.js')}}"></script>
-        @break    
+        @break
     @default
 @endswitch
 

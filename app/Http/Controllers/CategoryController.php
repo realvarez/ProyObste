@@ -25,13 +25,14 @@ class CategoryController extends Controller
                 $categorie->favorite = true;
             }
         }
-        
+
         // $allCategories      = Category::all();
         $data['_category']  = Category::find($id);
         if($data['_category']->category_level!=1)
             $data['_category_father']  = Category::find($data['_category']->superior_category_id);
-        
+
         $data['files']      = File::where('category_id', $id)->where('state',1)->get();
+        $data['actualId'] = $id;
         return view('categories.show')->with($data);
     }
 

@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('stream/{archivo}', function ($archivo) {
         $file = File::find($archivo);
+        dd($file);
         //TODO: Por definir la direccion de storage
         //Variable global de storage
        // $public_path =  '/var/www/storage/app/';

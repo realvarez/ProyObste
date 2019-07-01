@@ -7,22 +7,35 @@
 					<a href="/" class="breadcrumb-item" style="color:#212529;">Categorias</a>
 					@if (isset($_category_father))
 						@if ($_category_father->category_level != 1)
-							<a class="breadcrumb-item" style="color:#212529;">...</a>						
+							<a class="breadcrumb-item" style="color:#212529;">...</a>
 						@endif
 						<a href="/category/{{$_category_father->id}}" class="breadcrumb-item" style="color:#212529;">{{ucfirst($_category_father->category_name)}}</a>
 					@endif
 					<a class="breadcrumb-item active" style="color:#212529;">{{ucfirst($_category->category_name)}}</a>
 				</h1>
-				<ol class="breadcrumb float-right">
-                    <li >
+				<ol class="breadcrumb float-right" style="margin-right: 5em">
+                    <li style="margin-top: 0.35em" >
                         <a data-toggle="modal" data-target="#categoryModal" style="color:black; cursor: pointer; margin-right: 15px; padding: 2px !important;">
                             <i class="fas fa-folder-plus"></i> Nueva sub-categoría
                         </a>
                     </li>
-                    <li>
-                        <a data-toggle="modal" data-target="#fileModal" style="color:black; cursor: pointer; margin-right: 15px;" class="button">
-                            <i class="fas fa-upload"></i> Subir Archivo
-                        </a>
+                    <li style="margin-top: 0.35em; margin-right: 0.2em">
+                            <i class="fas fa-upload"></i>
+                     </li>
+                    <li >
+                            <div class="dropdown show" style="margin-top: 0.35em">
+                                    <a  style="color:black; cursor: pointer; margin-right: 15px;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Subir
+                                    </a>
+
+                                    <div class="dropdown-menu"  style="border:0em" aria-labelledby="dropdownMenuLink">
+                                      <a class="dropdown-item" style="color:black; cursor: pointer; margin-right: 15px;" data-toggle="modal" data-target="#fileModal" data-placement="right" > Subir Archivo</a>
+                                      <a class="dropdown-item" style="color:black; cursor: pointer; margin-right: 15px;" data-toggle="modal" data-target="#linkModal" data-placement="right" > Subir Link</a>
+                                    </div>
+                            </div>
+
+
+
                     </li>
 				</ol>
                 @break
@@ -64,11 +77,11 @@
                 @break
             @case('users.show')
                 @break
-                
+
             @default
                 @break
-        @endswitch        
+        @endswitch
         <div class="clearfix"></div>
     </div>
-</div>			
+</div>
 @endif

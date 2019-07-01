@@ -1,5 +1,5 @@
 var buttonFavs = document.getElementsByClassName('button-favorite');
-
+console.log(buttonFavs);
 
 Array.from(buttonFavs).forEach(val=>{
     val.addEventListener('click', ()=>{
@@ -70,6 +70,14 @@ $(document).ready(function() {
             }
         }
     });
+
+
+     $('#close-modal').click(function(e) {
+            console.log(e);
+            e.preventDefault();
+             $('#video-embed').children('iframe').attr('src', '');
+    });
+
 
     table.columns().every( function () {
         var that = this;
