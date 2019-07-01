@@ -36,15 +36,13 @@ class File extends Model implements Searchable
     public function getSearchResult(): SearchResult
     {
         $url = route('category.show', $this->category_id);
-     
-        $name=$this->file_name;
-        $real_name=$this->file_real_name;
+
+        $name=$this->file_real_name;
 
         return new SearchResult(
             $this,
             $name,
-            $url,
-            $real_name
+            $url
          );
     }
 }
