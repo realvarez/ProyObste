@@ -18,6 +18,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('roles', 'RoleController');
     Route::resource('academics', 'AcademicController');
     Route::resource('resumes', 'ResumeController');
+    Route::resource('events', 'EventController');
+
     Route::resource('category', 'CategoryController');
     Route::resource('files', 'FileController');
 

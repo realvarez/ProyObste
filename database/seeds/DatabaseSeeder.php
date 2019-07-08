@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
     	$faker = Faker\Factory::create();
         $roles = [
 			['role_name' =>'Administrador'],
-			['role_name' =>'Director de escuela'],
+            ['role_name' =>'Director de escuela'],
+            ['role_name' =>'Academico'],
 		];
       	foreach ($roles as $role) {
 			Role::create($role);
@@ -29,6 +30,22 @@ class DatabaseSeeder extends Seeder
 				'name'  => 'administrador',
 				'email'  => 'administrador@mail.es',
 				'password' => '$2y$10$6sMwLeM6t83G018kv.ftLOGI4pEso8HlAbRSj1WzTF1kcP8xTZkOm',
+				'avatar_image_path' => 'images/avatars/avatar.png',
+				'status' =>1,
+            ],
+            [
+				'role_id' => 3,
+				'name'  => 'Ricardo Cardenas',
+				'email'  => 'ricardo.cardenas@gmail.com',
+				'password' => '123456789',
+				'avatar_image_path' => 'images/avatars/avatar.png',
+				'status' =>1,
+            ],
+            [
+				'role_id' => 3,
+				'name'  => 'Pedrito Gonzalez',
+				'email'  => 'pedrito.gonzalez@gmail.com',
+				'password' => '123456789',
 				'avatar_image_path' => 'images/avatars/avatar.png',
 				'status' =>1,
         	],
@@ -189,6 +206,20 @@ class DatabaseSeeder extends Seeder
 		];
 		foreach($academic_types as $academic_type){
 			Academic_type::create($academic_type);
+        }
+        $academics = [
+			[
+                'name'=>'Ricardo Cardenas',
+                'user_id'=>'2'
+            ],
+            [
+                'name'=>'Pedrito Gonzalez',
+                'user_id'=>'3'
+			],
+
+		];
+		foreach($academics as $academic){
+			Academic::create($academic);
 		}
 
     }

@@ -5,13 +5,13 @@
     <div class="card mb-3">
         <div class="card-header">
             <div class="row">
-                <div class="col-md-10">    
+                <div class="col-md-10">
                     <h3><i class="fa fa-table"></i> Roles del sistema</h3>
                     Se encuentran listados los distintos roles que pueden tener los usuarios en el sistema,
                     para asignar permisos entrar a configurar.
                 </div>
                 <div class="col-md-2" style="display: flex; align-items: center; justify-content: center;">
-                    <a href="#custom-modal" class="btn btn-primary" data-target="#newRolModal" data-toggle="modal">Crear Rol</a>			
+                    <a href="#custom-modal" class="btn btn-primary" data-target="#newRolModal" data-toggle="modal">Crear Rol</a>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>							
+        </div>
     </div>
 </div>
 

@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Permisos de administración del sistema</h5>
                     <div class="row">
-                        @foreach ($permissions_system as $permission) 
+                        @foreach ($permissions_system as $permission)
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
                                 <label style="font-size:17px;" for="{{$permission->name}}">{{str_replace("_", " ", ucfirst($permission->name))}}</label>
@@ -21,7 +21,7 @@
                     <hr>
                     <h5 class="card-title mt-4">Permisos hoja de vida y currículums docentes</h5>
                     <div class="row">
-                        @foreach ($permissions_resumes as $permission) 
+                        @foreach ($permissions_resumes as $permission)
                             <div class="col-sm-12 col-md-6 col-lg-4">
                                 <input type="checkbox" name="{{$permission->name}}" id="{{$permission->name}}" @if($permission->has_permission){{'checked'}}@endif>
                                 <label style="font-size:17px;" for="{{$permission->name}}">{{str_replace("_", " ", ucfirst($permission->name))}}</label>

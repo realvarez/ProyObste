@@ -25,12 +25,10 @@
                         <tr>
                             <td><a style="color:black" href="">{{ucfirst($academic->name)}}</a></td>
                             <td>
-                                <a href="" style="color:black"><i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i></a>
                                 <a href="/resumes/{{($academic->id)}}" style="color:black"><i class="fa fa-edit bigfonts fa-2x" aria-hidden="true"></i></a>
                             </td>
                             <td>
-                                    <a href="" style="color:black"><i class="fa fa-search bigfonts fa-2x" aria-hidden="true"></i></a>
-                                    <a href="" style="color:black"><i class="fa fa-edit bigfonts fa-2x" aria-hidden="true"></i></a>
+                                    <a href="/events/{{($academic->id)}}" style="color:black"><i class="fa fa-edit bigfonts fa-2x" aria-hidden="true"></i></a>
                             </td>
                         </tr>
                     @endforeach

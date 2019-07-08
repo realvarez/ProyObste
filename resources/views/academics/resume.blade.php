@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container-fluid">
+<div  style="max-width: 35em; margin-left: 35%"  >
         <div class="card mb-3">
             <div class="card-header">
                 <div class="row">
@@ -18,12 +18,7 @@
                     <form action="{{route('resumes.store',['id'=>$academic->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                              <div >
-                                    <div >
 
-                                            <a href="/academics" >  <button type="button" class="btn btn-secondary"  > Atras</button> </a>
-                                           <button type="submit" class="btn btn-primary " style="float:right"> <i class="fas fa-long-arrow-alt-up"></i> Guardar Cambios</button>
-
-                                       </div>
                                     @if ($exists)
 
 
@@ -56,13 +51,13 @@
 
                                           </div>
                                           <div class="form-group">
-                                                <label for="hierarchy">Hierarquia</label>
+                                                <label for="hierarchy">Jerarquia</label>
 
                                                 <select data-toggle="tooltip" data-placement="right" title="Ingrese la categoría a la que pertenece el documento" name="hierarchy_id" class="form-control form-control-sm ">
                                                         @foreach ($all_hierarchy as $hierarchy )
                                                             <option id="id"   {{($resume->hierarchy_id == $hierarchy->id)?'selected':'' }}  value="{{$hierarchy->id}}">{{ucfirst($hierarchy->name)}} </option>
                                                         @endforeach
-                                                </select>
+                                                <select>
 
                                            </div>
                                           <div class="form-group">
@@ -79,14 +74,19 @@
 
                                             <div class="form-group">
                                                     <label for="birth_date">Fecha de nacimiento</label>
-                                                    <input data-toggle="tooltip" data-placement="right" title="Ingrese su numero telefonico de celular" type="text" name="birth_date" class="form-control " id="category_name" placeholder="Ingrese su fecha de nacimiento"  value="{{$resume->birth_date}}">
+                                                    <input data-toggle="tooltip" data-placement="right" title="Ingrese su numero telefonico de celular" type="date" name="birth_date" class="form-control " id="category_name" placeholder="Ingrese su fecha de nacimiento"  value="{{$resume->birth_date}}">
                                                 </div>
 
                                             <div class="form-group">
                                                     <label for="area_competence">Area de competencia</label>
                                                     <textarea data-toggle="tooltip" data-placement="right" title="Ingrese su numero telefonico de celular" type="text" name="area_competence" class="form-control " id="category_name" placeholder="Ingrese su area de competencia" >{{$resume->area_competence}} </textarea>
                                                 </div>
+                                                <div >
 
+                                                        <a href="/academics" >  <button type="button" class="btn btn-secondary"  > Atras</button> </a>
+                                                       <button type="submit" class="btn btn-primary " style="float:right"> <i class="fas fa-long-arrow-alt-up"></i> Guardar Cambios</button>
+
+                                                   </div>
                                 @else
 
 
@@ -119,7 +119,7 @@
 
                                           </div>
                                           <div class="form-group">
-                                                <label for="hierarchy">Hierarquia</label>
+                                                <label for="hierarchy">Jerarquia</label>
 
                                                 <select data-toggle="tooltip" data-placement="right" title="Ingrese la categoría a la que pertenece el documento" name="hierarchy_id" class="form-control form-control-sm ">
                                                         @foreach ($all_hierarchy as $hierarchy )
@@ -141,7 +141,7 @@
 
                                         <div class="form-group">
                                                 <label for="birth_date">Fecha de nacimiento</label>
-                                                <input data-toggle="tooltip" data-placement="right" title="Ingrese su numero telefonico de celular" type="text" name="birth_date" class="form-control " id="category_name" placeholder="Ingrese su fecha de nacimiento"  >
+                                                <input data-toggle="tooltip" data-placement="right" title="Ingrese su numero telefonico de celular" type="date" name="birth_date" class="form-control " id="category_name" placeholder="Ingrese su fecha de nacimiento"  >
                                             </div>
 
                                         <div class="form-group">
@@ -151,7 +151,12 @@
 
 
 
+                                            <div >
 
+                                                    <a href="/academics" >  <button type="button" class="btn btn-secondary"  > Atras</button> </a>
+                                                   <button type="submit" class="btn btn-primary " style="float:right"> <i class="fas fa-long-arrow-alt-up"></i> Guardar Cambios</button>
+
+                                               </div>
                                 @endif
 
                                 @if (count($errors) > 0)

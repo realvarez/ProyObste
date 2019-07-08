@@ -53,8 +53,11 @@ class ResumeController extends Controller
 
     }
 
-    public function store(Request $request) {
+    public function get(Request $request) {
 
+    }
+
+    public function store(Request $request) {
         DB::table('resumes') ->updateOrInsert(
             ['academic_id' => $request->get('id')],
             $request->replace($request->except('_token','id'))->all()
