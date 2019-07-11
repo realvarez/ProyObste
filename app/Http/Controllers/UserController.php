@@ -65,7 +65,9 @@ class UserController extends Controller
     public function destroy($id)
     {
         dd($id);
-        User::delete($id);
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->action('UserController@index');
     }
 
     public function getuser($id)

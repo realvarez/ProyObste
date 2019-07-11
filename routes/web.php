@@ -24,6 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('files', 'FileController');
 
     Route::post('/search', 'SearchController@search')->name('search');
+    Route::post('/destroyer', 'UserController@destroy')->name('destroyer');
 
     Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 
