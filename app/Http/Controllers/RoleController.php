@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Role;
-use App\Roles_permission;
+use App\User;
 use App\Permission;
 use App\Category;
 class RoleController extends Controller
@@ -16,7 +16,8 @@ class RoleController extends Controller
     public function index() {
         $data['roles']      = Role::all();
         foreach($data['roles'] as $rol){
-            $rol->cantUsers = Roles_permission::where('role_id', $rol->id)->count();
+            $rol->cantUsers = User::where('role_id', $rol->id)->count();
+            //dd($rol->cantUsers);
         }
         return view('admin.roles.index', $data);
     }
