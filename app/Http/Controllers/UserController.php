@@ -49,7 +49,6 @@ class UserController extends Controller
         $ifAcademic = Role::where('id',$user->role_id )->get()->values()->get(0);
         $roleName = $ifAcademic->role_name;
         if($roleName == 'Academico' ){
-            //Es academico (por temas de video hay que crear academico como el 3er rol)
             $academic = new Academic($request->all());
             $aux= User::where('email',$user->email)->get()->values()->get(0);
             $newId = $aux->id;
@@ -73,6 +72,18 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $user->update($request->all());
+        $ifAcademic = Role::where('id',$request->role_id )->get()->values()->get(0);
+        $roleName = $ifAcademic->role_name;
+        if($roleName == 'Academico' ){
+            $academic = new Academic($request->all());
+            $aux= User::where('email',$user->email)->get()->values()->get(0);
+            $newId = $aux->id;
+
+            $academic->user_id = $newId;
+            $academic->name = $user->name;
+            $academic->save();
+
+        }
         return redirect()->action('UserController@index');
     }
 

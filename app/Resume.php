@@ -24,7 +24,7 @@ class Resume extends Model implements Searchable
         'name',
         'email',
         'phone',
-        'addres',
+        'address',
         'birth_date',
         'hours',
         'area_competence'

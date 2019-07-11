@@ -58,30 +58,43 @@ class ResumeController extends Controller
     }
 
     public function store(Request $request) {
-        DB::table('resumes') ->updateOrInsert(
+        /*DB::table('resumes') ->updateOrInsert(
             ['academic_id' => $request->get('id')],
             $request->replace($request->except('_token','id'))->all()
-        );
+        );*/
 
-       /* FORMA MANUAL
+        /*FORMA MANUAL*/
+        $resume = Resume::where('academic_id',$request->get('id'))->get();
 
-       $resume = new Resume($request->all());
+        if($resume->count() == 0){
+            $resume = new Resume($request->all());
 
-        $resume->phone=$request->phone;
-        $resume->hours=$request->hours;
-        $resume->area_competence=$request->area_competence;
-        $resume->address=$request->address;
-        $resume->birth_date=$request->birth_date;
-        $resume->email=$request->email;
+            $resume->phone=$request->phone;
+            $resume->hours=$request->hours;
+            $resume->area_competence=$request->area_competence;
+            $resume->address=$request->address;
+            $resume->birth_date=$request->birth_date;
+            $resume->email=$request->email;
 
-        //Aca esta el id del academico
-        //dd($request->resume_academic_id);
+            //Aca esta el id del academico
+            //dd($request->resume_academic_id);
 
-        $resume->academic_id=$id;
-        $resume->academic_type_id=1;
-        $resume->hierarchy_id=1;
-        $resume->teacher_category_id=1;
-        $resume->save();*/
+            $resume->academic_id=$request->get('id');
+            $resume->academic_type_id=$request->academic_type_id;
+            $resume->hierarchy_id=$request->hierarchy_id;
+            $resume->teacher_category_id=$request->teacher_category_id;
+            $resume->save();
+
+
+        }
+        else{
+            $aux = $resume->values()->get(0);
+            $aux->update($request->all());
+
+
+
+        }
+
         return redirect()->action('AcademicController@index');;
 
     }
