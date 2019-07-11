@@ -68,6 +68,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id) {
         $Category= Category::find($id);
         $Category->update($request->all());
+        return redirect()->action('CategoryController@show', $id);
     }
 
     public function destroy($id) {
@@ -85,6 +86,11 @@ class CategoryController extends Controller
         $usuario = User::find($request->id);
         $usuario->favorite_categories()->detach($request->cat);
         echo "ok";
+    }
+    public function getcat($id){
+        $user = Category::find($id);
+        unset($user->elimination_date, $user->id);
+        return $user;
     }
 }
 
