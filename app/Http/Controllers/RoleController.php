@@ -60,6 +60,12 @@ class RoleController extends Controller
     }
 
     public function store(Request $request) {
+        $role = new Role($request->all());
+        $role->role_name = $request->nameRol;
+        $role->description = $request->descriptionRol;
+
+        $role->save();
+        return redirect()->action('RoleController@index');
 
     }
 

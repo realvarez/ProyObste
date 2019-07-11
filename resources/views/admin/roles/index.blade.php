@@ -53,26 +53,34 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="modal-body">
-            <form action="">
-                <div class="form-group">
-                    <label for="nameRol">Ingrese nombre de rol</label>
-                    <input type="text" class="form-control" id="nameRol" aria-describedby="nameRol" placeholder="Nombre de rol" required="">
-                    <small id="nameRol" class="form-text text-muted ml-3">El nombre que tendrá el rol a crear</small>
-                </div>
+        <form action="{{route('roles.store')}}" method="post" enctype="multipart/form-data">
 
-                <div class="form-group">
-                    <label for="nameRol">Descripción para el rol</label>
-                    <input type="text" class="form-control" id="descriptionRol" aria-describedby="descriptionRol" placeholder="Descripción del rol" required="">
-                    <small id="descriptionRol" class="form-text text-muted ml-3">Pequeña descripción para el rol</small>
+                <div class="modal-body">            @csrf
+
+                        <div class="form-group">
+                            <label for="nameRol">Ingrese nombre de rol</label>
+                            <input type="text" name="nameRol" class="form-control" id="nameRol" aria-describedby="nameRol" placeholder="Nombre de rol" >
+                            <small  class="form-text text-muted ml-3">El nombre que tendrá el rol a crear</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="descriptionRol">Descripción para el rol</label>
+                            <input name="descriptionRol" type="text" class="form-control" id="descriptionRol" aria-describedby="descriptionRol" placeholder="Descripción del rol" required="">
+                            <small class="form-text text-muted ml-3">Pequeña descripción para el rol</small>
+                        </div>
+
                 </div>
+                    @if (count($errors) > 0)
+                    <div style="margin-top: 20px;" class="alert alert-danger" lang="es">
+                        <strong>Ups!</strong> Ha ocurrido un error al crear el rol
+                    </div>
+                    @endif
+                    <div class="modal-footer">
+                            <button class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                            <button type="submit" class="btn btn-primary"><span class="btn-label"><i class="fa fa-check"></i></span>Guardar</button>
+                    </div>
 
             </form>
-        </div>
-        <div class="modal-footer">
-                <button class="btn btn-secondary" data-dismiss="modal">Volver</button>
-                <button class="btn btn-primary"><span class="btn-label"><i class="fa fa-check"></i></span>Guardar</button>
-        </div>
+
     </div>
     </div>
 </div>
