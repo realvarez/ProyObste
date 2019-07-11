@@ -17,7 +17,7 @@ class Academic extends Model
     public function is_user(){
         $this->belongsTo(User::class);
     }
-    
+
     public function has_resume(){
         $this->hasOne(Resume::class);
     }
