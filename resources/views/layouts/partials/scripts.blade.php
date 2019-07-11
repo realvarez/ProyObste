@@ -1,11 +1,7 @@
 @auth
 <script>
-    var user = {
-        {
-            Auth::user() - > id
-        }
+var user = {{Auth::user()-> id}};
 
-    };
 </script>
 @endauth
 <script src="{{asset('js/modernizr.min.js')}}"></script>
