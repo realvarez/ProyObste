@@ -7,6 +7,8 @@ use App\User;
 use App\Role;
 use Auth;
 use App\Academic;
+use App\Event;
+use App\Resume;
 use Mail;
 use App\Mail\NewUsersNotification;
 use Illuminate\Support\Facades\Storage;
@@ -93,9 +95,11 @@ class UserController extends Controller
         $ifAcademic = Role::where('id',$user->role_id )->get()->values()->get(0);
         $roleName = $ifAcademic->role_name;
         if($roleName == 'Academico' ){
-
+            $academico=Academic::where('user_id',$user->id)->get()->values()->get(0);
+            Resume::where('academic_id',$academico->id)->delete();
+            Event::where('academic_id',$academico->id)->delete();
+            $academicoDel=Academic::where('user_id',$user->id)->delete();
         }
-        //User::destroy($id);
         $user->delete();
 
         return redirect()->action('UserController@index');
