@@ -10,9 +10,9 @@ use App\Investigation;
 use App\Course;
 use App\Position;
 use App\Subject;
+use Spatie\Searchable\Searchable;
 
-
-class Resume extends Model
+class Resume extends Model implements Searchable
 {
     protected $fillable = [
         'academic_id',
@@ -39,7 +39,7 @@ class Resume extends Model
     public function has_hierarchy(){
         $this->belongsTo(Hierarchy::class);
     }
-    
+
     public function has_teacher_category(){
         $this->belongsTo(Teacher_category::class);
     }
@@ -57,5 +57,17 @@ class Resume extends Model
 
     public function has_subjects(){
         $this->hasMany(Subject::class);
+    }
+    public function getSearchResult(): SearchResult
+    {
+        $url = route('resume.show', $this->academic_id);
+
+        $name=$this->name;
+        dd($this);
+        return new SearchResult(
+            $this,
+            $name,
+            $url
+         );
     }
 }

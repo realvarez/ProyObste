@@ -211,13 +211,6 @@
 								<label>Tags</label>
 								<input type="text" name="file_tags" id='file_tags' data-toggle="tooltip" data-placement="right" title="Ingrese tags del documento" class="form-control form-control-sm" data-role="tagsinput">
 							</div>
-							<div class="container">
-
-								<h1>Laravel 5.8 Autocomplete Search using Bootstrap Typeahead JS - ItSolutionStuff.com</h1>
-
-								<input class="typeahead form-control" type="text">
-
-							</div>
 							@if (count($errors) > 0)
 							<div style="margin-top: 20px;" class="alert alert-danger">
 								<strong>Ups!</strong> Ha ocurrido un error con la subida de su documento <br><br>
