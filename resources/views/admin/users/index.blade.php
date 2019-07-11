@@ -147,6 +147,7 @@
         </div>
     </div>
 </div>
+
 <div class="modal" id="confirmUserDelete" tabindex="-1" role="dialog" aria-labelledby="confirmUserDelete" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -156,11 +157,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{route('users.destroy',$user->id)}}" method="POST">
+            <form action="{{route('users.destroy',$user->id)}}" id="form_for_delete" method="POST">
                 @csrf
                 @method('delete')
                 <div class="modal-body">
-                    <p>¿Esta seguro de eliminar a <b>{{$user->name}}</b> del sistema?</p>
+                    <p id="delete-message"></p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
