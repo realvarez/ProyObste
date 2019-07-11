@@ -11,6 +11,8 @@ use App\Course;
 use App\Position;
 use App\Subject;
 use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
+
 
 class Resume extends Model implements Searchable
 {
