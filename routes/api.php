@@ -18,3 +18,4 @@ Route::post('addfavorite', 'CategoryController@addToFavorite');
 Route::post('removefavorite', 'CategoryController@removeFromFavorite');
 Route::get('getuser/{id}', 'UserController@getuser');
 Route::post('changestate', 'UserController@changestate');
+Route::get('getcategory/{id}','CategoryController@getcat');

@@ -41,8 +41,21 @@ Array.from(buttonFavs).forEach(val=>{
         }
     });
 })
-
-
+var buttonsUpdate = document.getElementsByName("update_category");
+Array.from(buttonsUpdate).forEach(button=>{
+    button.addEventListener('click',(ev)=>{
+        id = button.getAttribute('id').split('_')[0];
+        form = document.getElementById('form_for_cat_update').setAttribute('action',window.location.origin+'/category/'+id);
+        url= window.location.origin+"/api/getcat/"+id;
+        $.ajax({
+            method:'GET',
+            url: url,
+        }).done(function(e){
+            document.getElementById('cat_updated').value = e.category_name;
+        }).fail(function(e){
+        });
+    })
+})
 $(document).ready(function() {
     var table = $('#table-documents').DataTable({
         "language": {
