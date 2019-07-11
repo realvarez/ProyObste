@@ -20,6 +20,7 @@ class CreateEventsTable extends Migration
             $table->string('annotation');
             $table->timestamps();
             $table->foreign('academic_id')->references('id')->on('academics')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 

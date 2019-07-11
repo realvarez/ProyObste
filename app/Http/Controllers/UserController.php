@@ -89,8 +89,15 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        User::destroy($id);
-        //$user->delete();
+        $user=User::find($id);
+        $ifAcademic = Role::where('id',$user->role_id )->get()->values()->get(0);
+        $roleName = $ifAcademic->role_name;
+        if($roleName == 'Academico' ){
+
+        }
+        //User::destroy($id);
+        $user->delete();
+
         return redirect()->action('UserController@index');
     }
 

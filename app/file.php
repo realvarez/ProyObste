@@ -5,12 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use PDF;
 
 class File extends Model implements Searchable
 {
     //use \Spatie\Tags\HasTags;
     use \Conner\Tagging\Taggable;
+    use SoftDeletes;
 
     protected $fillable = [
         'user_id',

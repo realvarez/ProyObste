@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model implements Searchable
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'category_name',
         'category_level',

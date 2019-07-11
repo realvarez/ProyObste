@@ -21,6 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->boolean('state');
             $table->dateTime('elimination_date')->nullable($value = true)->default(null);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

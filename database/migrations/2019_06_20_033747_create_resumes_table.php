@@ -32,6 +32,7 @@ class CreateResumesTable extends Migration
             $table->foreign('academic_type_id')->references('id')->on('academic_types')->onDelete('cascade');
             $table->foreign('hierarchy_id')->references('id')->on('hierarchies')->onDelete('cascade');
             $table->foreign('teacher_category_id')->references('id')->on('teacher_categories')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 

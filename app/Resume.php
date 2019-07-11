@@ -12,10 +12,13 @@ use App\Position;
 use App\Subject;
 use Spatie\Searchable\Searchable;
 use Spatie\Searchable\SearchResult;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 class Resume extends Model implements Searchable
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'academic_id',
         'academic_type_id',

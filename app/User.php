@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -12,7 +14,7 @@ use Auth;
 class User extends Authenticatable
 {
     use Notifiable;
-
+    use SoftDeletes;
     /**
      * The attributes that are mass assignable.
      *
@@ -20,8 +22,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'role_id',
-        'name', 
-        'email', 
+        'name',
+        'email',
         'password',
         'avatar_image_path',
         'status',
@@ -72,7 +74,7 @@ class User extends Authenticatable
                             ->where('user_id',Auth::user()->id)
                             ->orderBy('id', 'desc')
                             ->distinct()->limit(7)->get();
-                            
+
         $categories_recorded = array();
         foreach ($_user_records as $value) {
             array_push($categories_recorded, Category::find($value->category_id));
@@ -87,7 +89,7 @@ class User extends Authenticatable
         }
         return false;
     }
-        
+
     public function has_permission_redirect($permission_name){
         foreach ($this->has_role->has_permissions as $permission) {
             if($permission->name == $permission_name)
