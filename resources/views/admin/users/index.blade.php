@@ -148,21 +148,23 @@
     </div>
 </div>
 <div class="modal" id="confirmUserDelete" tabindex="-1" role="dialog" aria-labelledby="confirmUserDelete" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form action="{{route('user.destroyer',['id'=>$users->id])}}" method="POST">
-                @method('delete')
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel2">Eliminar Usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{route('users.destroy',$user->id)}}" method="POST">
                 @csrf
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Delete Confirmation</h4>
-                </div>
+                @method('delete')
                 <div class="modal-body">
-                    <p>Are you sure you, want to delete?</p>
+                    <p>¿Esta seguro de eliminar a <b>{{$user->name}}</b> del sistema?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-sm btn-primary" id="delete-btn">Delete</button>
-                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary" type="submit"><span class="btn-label"><i class="fa fa-check"></i></span>Eliminar</button>
                 </div>
             </form>
         </div>
